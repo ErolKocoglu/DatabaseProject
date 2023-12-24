@@ -3,7 +3,7 @@ from flask_login import LoginManager
 import views
 from database import Database
 from models.user import get_user
-from models.players import Player
+from models.player import Player
 
 lm = LoginManager()
 
@@ -30,7 +30,7 @@ def create_app():
     lm.login_view = "login_page"
     
     db = Database()
-    db.add_player(Player("Ronaldo",age=38))
+    #db.add_player(Player("Ronaldo",age=38))
     app.config["db"] = db
     
     return app
@@ -38,6 +38,6 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    port = app.config.get("PORT", 5000)
-    app.run(host="0.0.0.0", port=port)
+    port = app.config.get("PORT", 5432)
+    app.run(host="localhost", port=port)
     

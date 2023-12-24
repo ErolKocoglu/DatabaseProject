@@ -3,7 +3,7 @@
 -- Table: competitions
 CREATE TABLE competitions (
     competition_id VARCHAR(4) PRIMARY KEY,
-    competition_code VARCHAR(10),
+    competition_code VARCHAR(20),
     name VARCHAR(255),
     sub_type VARCHAR(50),
     type VARCHAR(50),
