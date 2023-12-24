@@ -2,7 +2,6 @@
 from models.clubs import Club
 from models.goals import Goal
 from models.competitions import Competitions
-from models.game_lineups import GameLineup
 from models.games import Games
 from models.player import Player
 from models.player_bio import PlayerBio
@@ -61,15 +60,6 @@ def get_competition(self, competition_id):
 
 
 
-def get_game_lineups_of_game(self, game_id):
-    lineups = []
-    with dbapi2.connect(self.db_url) as connection:
-        with connection.cursor() as cursor:
-            query = "SELECT * FROM game_lineups WHERE game_id =%s;"
-            cursor.execute(query, (game_id,))
-            for game_lineup_id, game_id, club_id, type, number, player_id, team_captain, position in cursor:
-                lineups.append(GameLineup(game_lineup_id, game_id, club_id, type,number, player_id, team_captain, position))
-    return lineups
 def get_game(self, game_id):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
@@ -203,6 +193,8 @@ def get_goals_of_game(self, game_id_in):
             for goal_id, date, game_id, minute, club_name, player_name, description in cursor:
                 goals.append((Goal(goal_id, date, game_id, minute, club_name, player_name, description)))
     return goals
+
+#######################   PLAYERS   ########################
 def get_players_of_competition(self, competition_id):
     players = []
     with dbapi2.connect(self.db_url) as connection:
@@ -287,6 +279,47 @@ def get_player(self, player_id):
         competition_id
     )
     return player
+
+def get_players(self):
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = """
+                SELECT
+                    id,
+                    first_name,
+                    last_name,
+                    name,
+                    current_club_name,
+                    current_club_id,
+                    competition_id
+                FROM
+                    player
+                ORDER BY id;
+            """
+            cursor.execute(query)
+            if cursor.rowcount == 0:
+                return None
+            (
+                player_id,
+                first_name,
+                last_name,
+                player_name,
+                current_club_name,
+                current_club_id,
+                competition_id,
+            ) = cursor.fetchone()
+
+        player = Player(
+        player_id,
+        first_name,
+        last_name,
+        player_name,
+        current_club_name,
+        current_club_id,
+        competition_id,
+    )
+    return player
+
 def get_player_by_name(self, name):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
@@ -367,6 +400,7 @@ def delete_player(self, player_id):
             query = "DELETE FROM player WHERE player_id = %s;"
             cursor.execute(query, (player_id,))
 
+#################### CLUBS ###############################
 def get_club(self, club_id):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
@@ -448,6 +482,92 @@ def get_clubs_of_competition(self,competition_id):
             for club_id, club_code, name, domestic_competition_id,total_market_value, squad_size, average_age,foreigners_number, foreigners_percentage,national_team_players, stadium_name,stadium_seats,net_transfer_record, coach_name, last_season, url in cursor:
                 clubs.append((club_id, Club(club_id, club_code, name, domestic_competition_id, total_market_value, squad_size, average_age,foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, coach_name, last_season, url)))
     return clubs
+
+def get_clubs_by_search(self, search_word):
+    clubs = []
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = """SELECT * FROM clubs WHERE club_id::text LIKE %s OR club_code LIKE %s OR clubs.name LIKE %s ORDER BY club_id;"""
+            search_word = "%" + search_word + "%"
+            cursor.execute(query, (search_word, search_word, search_word,))
+            if cursor.rowcount == 0:
+                return None
+            for club_id, club_code, name, domestic_competition_id, total_market_value, squad_size, average_age,foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, coach_name, last_season, url in cursor:
+                clubs.append((club_id, Club(club_id,club_code, name,domestic_competition_id,total_market_value,squad_size,average_age,foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, coach_name,last_season, url)))
+    return clubs
+
+def get_clubs(self):
+    clubs = []
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = """
+                SELECT
+                    club_id,
+                    club_code,
+                    name,
+                    domestic_competition_id,
+                    total_market_value,
+                    squad_size,
+                    average_age,
+                    foreigners_number,
+                    foreigners_percentage,
+                    national_team_players,
+                    stadium_name,
+                    stadium_seats,
+                    net_transfer_record,
+                    coach_name,
+                    last_season,
+                    url
+                FROM
+                    clubs;
+            """
+            cursor.execute(query)
+            for (
+                    club_id,
+                    club_code,
+                    name,
+                    domestic_competition_id,
+                    total_market_value,
+                    squad_size,
+                    average_age,
+                    foreigners_number,
+                    foreigners_percentage,
+                    national_team_players,
+                    stadium_name,
+                    stadium_seats,
+                    net_transfer_record,
+                    coach_name,
+                    last_season,
+                    url
+            ) in cursor:
+                club = Club(
+                    club_id,
+                    club_code,
+                    name,
+                    domestic_competition_id,
+                    total_market_value,
+                    squad_size,
+                    average_age,
+                    foreigners_number,
+                    foreigners_percentage,
+                    national_team_players,
+                    stadium_name,
+                    stadium_seats,
+                    net_transfer_record,
+                    coach_name,
+                    last_season,
+                    url
+                )
+                clubs.append(club)
+
+    return clubs
+def get_club_name(self, club_id):
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = "SELECT name FROM club WHERE (id = %s);"
+            cursor.execute(query, (club_id,))
+            name = cursor.fetchone()[0]
+        return name
 def get_player_bio(self, player_id):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
@@ -580,25 +700,8 @@ def get_player_photo(self, player_id):
     )
     return player_photo
 
-def get_clubs_by_search(self, search_word):
-    clubs = []
-    with dbapi2.connect(self.db_url) as connection:
-        with connection.cursor() as cursor:
-            query = """SELECT * FROM clubs WHERE club_id::text LIKE %s OR club_code LIKE %s OR clubs.name LIKE %s ORDER BY club_id;"""
-            search_word = "%" + search_word + "%"
-            cursor.execute(query, (search_word, search_word, search_word,))
-            if cursor.rowcount == 0:
-                return None
-            for club_id, club_code, name, domestic_competition_id, total_market_value, squad_size, average_age,foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, coach_name, last_season, url in cursor:
-                clubs.append((club_id, Club(club_id,club_code, name,domestic_competition_id,total_market_value,squad_size,average_age,foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, coach_name,last_season, url)))
-    return clubs
-def get_club_name(self, club_id):
-        with dbapi2.connect(self.db_url) as connection:
-            with connection.cursor() as cursor:
-                query = "SELECT name FROM club WHERE (id = %s);"
-                cursor.execute(query, (club_id,))
-                name = cursor.fetchone()[0]
-        return name
+
+
 
 def add_club(self, club_in):
     with dbapi2.connect(self.db_url) as connection:
@@ -608,7 +711,7 @@ def add_club(self, club_in):
             cursor.execute(query, (club_in.club_id, club_in.club_code, club_in.name, club_in.domestic_competition_id))
             club_key = cursor.fetchone()[0]
     return club_key
-def update_team(self, club_id, club):
+def update_club(self, club_id, club):
         with dbapi2.connect(self.db_url) as connection:
             with connection.cursor() as cursor:
                 query = """UPDATE clubs
