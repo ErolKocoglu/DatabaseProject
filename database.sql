@@ -94,6 +94,7 @@ CREATE TABLE player_photo (
         ON DELETE CASCADE
 		ON UPDATE CASCADE,
     image_url VARCHAR(255),
+    url VARCHAR(255),
     FOREIGN KEY (player_id) REFERENCES player(id)
 );
 
