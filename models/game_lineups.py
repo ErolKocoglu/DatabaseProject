@@ -6,6 +6,6 @@ class GameLineup:
         self.type = type
         self.number = number
         self.player_id = player_id
-        self.player_name = player_name
+        #self.player_name = player_name
         self.team_captain = team_captain
         self.position = position

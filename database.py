@@ -1,9 +1,10 @@
 
 from models.clubs import Club
+from models.goals import Goal
 from models.competitions import Competitions
 from models.game_lineups import GameLineup
 from models.games import Games
-from models.player import Players
+from models.player import Player
 from models.player_bio import PlayerBio
 from models.player_attributes import PlayerAttributes
 from models.player_photo import PlayerPhoto
@@ -22,7 +23,6 @@ def get_competition(self, competition_id):
                     name,
                     sub_type,
                     type,
-                    country_id,
                     country_name,
                     domestic_league_code,
                     confederation,
@@ -40,7 +40,6 @@ def get_competition(self, competition_id):
                 name,
                 sub_type,
                 type,
-                country_id,
                 country_name,
                 domestic_league_code,
                 confederation,
@@ -53,7 +52,6 @@ def get_competition(self, competition_id):
             name,
             sub_type,
             type,
-            country_id,
             country_name,
             domestic_league_code,
             confederation,
@@ -61,58 +59,25 @@ def get_competition(self, competition_id):
         )
         return competition
 
-def get_game_lineup(self, game_lineup_id):
+
+
+def get_game_lineups_of_game(self, game_id):
+    lineups = []
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
-            query = """
-                SELECT
-                    game_id,
-                    club_id,
-                    type,
-                    number,
-                    player_id,
-                    player_name,
-                    team_captain,
-                    position
-                FROM
-                    game_lineups
-                WHERE
-                    game_lineup_id = %s;
-            """
-            cursor.execute(query, (game_lineup_id,))
-            if cursor.rowcount == 0:
-                return None
-            (
-                game_id,
-                club_id,
-                type,
-                number,
-                player_id,
-                player_name,
-                team_captain,
-                position
-            ) = cursor.fetchone()
-
-    game_lineup = GameLineup(
-        game_lineup_id,
-        game_id,
-        club_id,
-        type,
-        number,
-        player_id,
-        player_name,
-        team_captain,
-        position
-    )
-    return game_lineup
+            query = "SELECT * FROM game_lineups WHERE game_id =%s;"
+            cursor.execute(query, (game_id,))
+            for game_lineup_id, game_id, club_id, type, number, player_id, team_captain, position in cursor:
+                lineups.append(GameLineup(game_lineup_id, game_id, club_id, type,number, player_id, team_captain, position))
+    return lineups
 def get_game(self, game_id):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
             query = """
-                SELECT
+                SELECT 
+                    game_id,
                     competition_id,
                     season,
-                    round,
                     date,
                     home_club_id,
                     away_club_id,
@@ -126,16 +91,11 @@ def get_game(self, game_id):
                     attendance,
                     referee,
                     url,
-                    home_club_formation,
-                    away_club_formation,
                     home_club_name,
-                    away_club_name,
-                    aggregate,
-                    competition_type
-                FROM
+                    away_club_name
+                FROM 
                     games
-                WHERE
-                    game_id = %s;
+                WHERE (game_id = %s)
             """
             cursor.execute(query, (game_id,))
             if cursor.rowcount == 0:
@@ -143,7 +103,6 @@ def get_game(self, game_id):
             (
                 competition_id,
                 season,
-                round,
                 date,
                 home_club_id,
                 away_club_id,
@@ -157,19 +116,14 @@ def get_game(self, game_id):
                 attendance,
                 referee,
                 url,
-                home_club_formation,
-                away_club_formation,
                 home_club_name,
-                away_club_name,
-                aggregate,
-                competition_type
+                away_club_name
             ) = cursor.fetchone()
 
     game = Games(
         game_id,
         competition_id,
         season,
-        round,
         date,
         home_club_id,
         away_club_id,
@@ -183,44 +137,94 @@ def get_game(self, game_id):
         attendance,
         referee,
         url,
-        home_club_formation,
-        away_club_formation,
         home_club_name,
         away_club_name,
-        aggregate,
-        competition_type
     )
     return game
 
-def get_player(self, player_id):
+def get_games_of_competition(self, competition_id_in):
+    games = []
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
             query = """
-                SELECT
-                    first_name,
-                    last_name,
-                    name,
-                FROM
-                    player
-                WHERE
-                    player_id = %s;
-            """
-            cursor.execute(query, (player_id,))
-            if cursor.rowcount == 0:
-                return None
-            (
-                first_name,
-                last_name,
-                name,
-            ) = cursor.fetchone()
+                SELECT 
+                    *
+                FROM 
+                    games
+                WHERE (games.competition_id = %s)
+                """
+            cursor.execute(query, (competition_id_in,))
+            for game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position, stadium, attendance, referee, url, home_club_formation, away_club_formation in cursor:
+                games.append(Games(game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position,stadium,attendance, referee,url, home_club_formation, away_club_formation))
+    return games
 
-    player = Players(
-        player_id,
-        first_name,
-        last_name,
-        name
-    )
-    return player
+def get_games_of_club(self, club_id_in):
+    games = []
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = """
+                SELECT 
+                    *
+                FROM 
+                    games
+                WHERE (games.home_club_id = %s OR games.away_club_id = %s)
+                """
+            cursor.execute(query, (club_id_in,club_id_in))
+            for game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position, stadium, attendance, referee, url, home_club_formation, away_club_formation in cursor:
+                games.append(Games(game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position,stadium,attendance, referee,url, home_club_formation, away_club_formation))
+    return games
+
+def add_game(self, game_in):
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = "INSERT INTO games (game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position, home_club_manager_name, away_club_manager_name, stadium, attendance, referee, url, home_club_name, away_club_name) VALUES (%s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s) RETURNING game_id;"
+            cursor.execute(query,(game_in.game_id,game_in.competition_id,game_in.season,game_in.date, game_in.home_club_id, game_in.away_club_id, game_in.home_club_goals, game_in.away_club_goals, game_in.home_club_position, game_in.away_club_position,game_in.home_club_manager_name, game_in.away_club_manager_name, game_in.stadium, game_in.attendance, game_in.referee, game_in.url, game_in.home_club_name, game_in.away_club_name))
+            game_key = cursor.fetchone()[0]
+    return game_key
+
+def update_game(self, game_in):
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = "UPDATE games SET competition_id = %s, season = %s, date = %s, home_club_id = %s, away_club_id = %s, home_club_goals = %s, away_club_goals = %s, home_club_position =%s, away_club_position =%s,home_club_manager_name = %s, away_club_manager_name = %s, stadium = %s, attendance =%s, referee =%s, url =%s, home_club_name = %s, away_club_name = %s WHERE game_id =%s;"
+            cursor.execute(query, (game_in.competition_id, game_in.season, game_in.date, game_in.home_club_id, game_in.away_club_id, game_in.home_club_goals, game_in.away_club_goals, game_in.home_club_position, game_in.away_club_position,game_in.home_club_manager_name, game_in.away_club_manager_name, game_in.stadium, game_in.attendance, game_in.referee, game_in.url,game_in.home_club_name, game_in.away_club_name, game_in.game_id))
+
+def delete_game(self, game_no):
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = "DELETE FROM games WHERE game_id=%s;"
+            cursor.execute(query, (game_no,))
+
+def get_goals_of_game(self, game_id_in):
+    goals = []
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = "SELECT goal_id, date, game_id, minute, club_name, player_name, description FROM games WHERE game_id=%s;"
+            cursor.execute(query, (game_id_in,))
+            for goal_id, date, game_id, minute, club_name, player_name, description in cursor:
+                goals.append((Goal(goal_id, date, game_id, minute, club_name, player_name, description)))
+    return goals
+def get_players_of_competition(self, competition_id):
+    players = []
+    with dbapi2.connect(self.db_url) as connection:
+        with connection.cursor() as cursor:
+            query = """
+                        SELECT
+                            player_id,
+                            first_name,
+                            last_name,
+                            name,
+                            current_club_name,
+                            current_club_id,
+                            competition_id
+                        FROM
+                            player
+                        WHERE competition_id = %s;
+                    """
+            cursor.execute(query, (competition_id,))
+            for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id in cursor:
+                players.append((Player(player_id, first_name, last_name, name, current_club_name, current_club_id,
+                                       competition_id)))
+    return players
 
 def get_players_of_club(self,club_id):
     players = []
@@ -232,53 +236,19 @@ def get_players_of_club(self,club_id):
                         first_name,
                         last_name,
                         name,
-                        last_season,
+                        current_club_name,
                         current_club_id,
-                        player_code,
-                        country_of_birth,
-                        city_of_birth,
-                        country_of_citizenship,
-                        date_of_birth,
-                        sub_position,
-                        position,
-                        foot,
-                        height_in_cm,
-                        market_value_in_eur,
-                        highest_market_value_in_eur,
-                        contract_expiration_date,
-                        agent_name,
-                        image_url,
-                        url,
-                        current_club_domestic_competition_id,
-                        current_club_name
+                        competition_id
                     FROM
-                        players
+                        player
                     WHERE current_club_id = %s;
                 """
             cursor.execute(query, (club_id,))
-            for player_id, first_name, last_name, name, last_season, current_club_id, player_code, country_of_birth, city_of_birth, country_of_citizenship, date_of_birth, sub_position, position, foot, height_in_cm, market_value_in_eur, highest_market_value_in_eur, contract_expiration_date, agent_name, image_url, url, current_club_domestic_competition_id, current_club_name in cursor:
-                players.append((Players(player_id, first_name, last_name, name, last_season, current_club_id,
-                                        player_code, country_of_birth, city_of_birth, country_of_citizenship,
-                                        date_of_birth, sub_position, position, foot, height_in_cm, market_value_in_eur,
-                                        highest_market_value_in_eur, contract_expiration_date, agent_name, image_url,
-                                        url, current_club_domestic_competition_id, current_club_name)))
+            for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id in cursor:
+                players.append((Player(player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id)))
     return players
 
-def add_player(self, player):
-    with dbapi2.connect(self.db_url) as connection:
-        with connection.cursor() as cursor:
-            query = "INSERT INTO player (first_name, last_name) VALUES (%s, %s)"
-            cursor.execute(query, (player.first_name, player.last_name))
-            player_key = cursor.lastrowid
-    return player_key
 
-def delete_player(self, player_id):
-    with dbapi2.connect(self.db_url) as connection:
-        with connection.cursor() as cursor:
-            query = """
-                DELETE FROM player WHERE (player_id = %s)
-            """
-            cursor.execute(query, (player_id,))
 
 def get_player(self, player_id):
     with dbapi2.connect(self.db_url) as connection:
@@ -288,6 +258,9 @@ def get_player(self, player_id):
                     first_name,
                     last_name,
                     name,
+                    current_club_name,
+                    current_club_id,
+                    competition_id
                 FROM
                     player
                 ORDER BY id;
@@ -299,69 +272,92 @@ def get_player(self, player_id):
                 first_name,
                 last_name,
                 name,
+                current_club_name,
+                current_club_id,
+                competition_id,
             ) = cursor.fetchone()
 
     player = Player(
         player_id,
         first_name,
         last_name,
-        name
+        name,
+        current_club_name,
+        current_club_id,
+        competition_id
     )
     return player
-def get_player_name(self, player_id, name):
+def get_player_by_name(self, name):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
             query = """
                 SELECT
+                    id,
                     first_name,
                     last_name,
                     name,
+                    current_club_name,
+                    current_club_id,
+                    competition_id
                 FROM
                     player
                 WHERE
-                    id = %s;
+                    name = %s;
             """
             cursor.execute(query, (name,))
             if cursor.rowcount == 0:
                 return None
             (
+                player_id,
                 first_name,
                 last_name,
-                name,
+                player_name,
+                current_club_name,
+                current_club_id,
+                competition_id,
             ) = cursor.fetchone()
 
     player = Player(
         player_id,
         first_name,
         last_name,
-        name
+        player_name,
+        current_club_name,
+        current_club_id,
+        competition_id,
     )
     return player
 def add_player(self, player_data):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
             query = """
-                INSERT INTO player (player_id, first_name, last_name, name)
-                VALUES (%s, %s, %s, %s);
+                INSERT INTO player (player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id)
+                VALUES (%s, %s, %s, %s, %s, %s, %s);
             """
             cursor.execute(query, (
                 player_data['player_id'],
                 player_data['first_name'],
                 player_data['last_name'],
-                player_data['name']
+                player_data['name'],
+                player_data['current_club_name'],
+                player_data['current_club_id'],
+                player_data['competition_id']
             ))
 def update_player(self, player_id, updated_data):
     with dbapi2.connect(self.db_url) as connection:
         with connection.cursor() as cursor:
             query = """
                 UPDATE player
-                SET first_name = %s, last_name = %s, name = %s
+                SET first_name = %s, last_name = %s, name = %s, current_club_name = %s, current_club_id = %s, competition_id = %s
                 WHERE player_id = %s;
             """
             cursor.execute(query, (
                 updated_data['first_name'],
                 updated_data['last_name'],
                 updated_data['name'],
+                updated_data['current_club_name'],
+                updated_data['current_club_id'],
+                updated_data['competition_id'],
                 player_id
             ))
 

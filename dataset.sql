@@ -1,5 +1,5 @@
 --------------------------------------- PLAYER ENTRIES ---------------------------------------------------------
-INSERT INTO players VALUES ('54846', 'Fabian', 'Holland', 'Fabian Holland', '2023', '105', 'fabian-holland', 'Germany', 'Berlin', 'Germany', '1990-07-11', 'Left-Back', 'Defender', 'left', '172.0', '600000.0', '1000000.0', '2025-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/54846-1689058137.jpg?lm=1', 'https://www.transfermarkt.co.uk/fabian-holland/profil/spieler/54846', 'L1', 'SV Darmstadt 98');
+/*INSERT INTO players VALUES ('54846', 'Fabian', 'Holland', 'Fabian Holland', '2023', '105', 'fabian-holland', 'Germany', 'Berlin', 'Germany', '1990-07-11', 'Left-Back', 'Defender', 'left', '172.0', '600000.0', '1000000.0', '2025-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/54846-1689058137.jpg?lm=1', 'https://www.transfermarkt.co.uk/fabian-holland/profil/spieler/54846', 'L1', 'SV Darmstadt 98');
 INSERT INTO players VALUES ('106405', 'Jeffrey', 'Gouweleeuw', 'Jeffrey Gouweleeuw', '2023', '167', 'jeffrey-gouweleeuw', 'Netherlands', 'Heemskerk', 'Netherlands', '1991-07-10', 'Centre-Back', 'Defender', 'right', '188.0', '3000000.0', '12000000.0', '2024-06-30 00:00:00', 'SEG', 'https://img.a.transfermarkt.technology/portrait/header/106405-1658599599.jpg?lm=1', 'https://www.transfermarkt.co.uk/jeffrey-gouweleeuw/profil/spieler/106405', 'L1', 'FC Augsburg');
 INSERT INTO players VALUES ('108880', 'Koen', 'Casteels', 'Koen Casteels', '2023', '82', 'koen-casteels', 'Belgium', 'Bonheiden', 'Belgium', '1992-06-25', 'Goalkeeper', 'Goalkeeper', 'left', '197.0', '8000000.0', '14000000.0', '2024-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/108880-1689877715.jpg?lm=1', 'https://www.transfermarkt.co.uk/koen-casteels/profil/spieler/108880', 'L1', 'VfL Wolfsburg');
 INSERT INTO players VALUES ('111078', 'Emil', 'Forsberg', 'Emil Forsberg', '2023', '23826', 'emil-forsberg', 'Sweden', 'Sundsvall', 'Sweden', '1991-10-23', 'Attacking Midfield', 'Midfield', 'right', '177.0', '7000000.0', '28000000.0', '2025-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/111078-1613998016.jpg?lm=1', 'https://www.transfermarkt.co.uk/emil-forsberg/profil/spieler/111078', 'L1', 'RB Leipzig');
@@ -57,138 +57,637 @@ INSERT INTO players VALUES ('364234', 'Pape Abou', 'Cissé', 'Pape Abou Cissé',
 INSERT INTO players VALUES ('380913', 'Demeaco', 'Duhaney', 'Demeaco Duhaney', '2023', '924', 'demeaco-duhaney', 'England', 'Manchester', 'England', '1998-10-13', 'Right-Back', 'Defender', 'right', '180.0', '325000.0', '325000.0', '2027-06-30 00:00:00', 'CAA Base Ltd', 'https://img.a.transfermarkt.technology/portrait/header/380913-1665480827.png?lm=1', 'https://www.transfermarkt.co.uk/demeaco-duhaney/profil/spieler/380913', 'TR1', 'Istanbulspor');
 INSERT INTO players VALUES ('402887', 'Anastasios', 'Chatzigiovanis', 'Anastasios Chatzigiovanis', '2023', '868', 'anastasios-chatzigiovanis', 'Greece', 'Mytilini', 'Greece', '1997-05-31', 'Right Winger', 'Attack', 'right', '177.0', '1500000.0', '2000000.0', '2024-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/402887-1696615585.png?lm=1', 'https://www.transfermarkt.co.uk/anastasios-chatzigiovanis/profil/spieler/402887', 'TR1', 'MKE Ankaragücü');
 INSERT INTO players VALUES ('409515', 'Adnan', 'Ugur', 'Adnan Ugur', '2023', '6646', 'adnan-ugur', 'Belgium', 'Diest', 'Turkey', '2001-06-28', 'Central Midfield', 'Midfield', 'right', '174.0', '550000.0', '550000.0', '2026-06-30 00:00:00', NULL, 'https://img.a.transfermarkt.technology/portrait/header/409515-1695210413.png?lm=1', 'https://www.transfermarkt.co.uk/adnan-ugur/profil/spieler/409515', 'TR1', 'Fatih Karagümrük');
-INSERT INTO players VALUES ('481128', 'Martin', 'Minchev', 'Martin Minchev', '2023', '126', 'martin-minchev', 'Bulgaria', 'Varna', 'Bulgaria', '2001-04-22', 'Centre-Forward', 'Attack', 'right', '185.0', '1000000.0', '1000000.0', '2026-06-30 00:00:00', 'Borislav Dvorzak', 'https://img.a.transfermarkt.technology/portrait/header/481128-1694706381.png?lm=1', 'https://www.transfermarkt.co.uk/martin-minchev/profil/spieler/481128', 'TR1', 'Caykur Rizespor');
+INSERT INTO players VALUES ('481128', 'Martin', 'Minchev', 'Martin Minchev', '2023', '126', 'martin-minchev', 'Bulgaria', 'Varna', 'Bulgaria', '2001-04-22', 'Centre-Forward', 'Attack', 'right', '185.0', '1000000.0', '1000000.0', '2026-06-30 00:00:00', 'Borislav Dvorzak', 'https://img.a.transfermarkt.technology/portrait/header/481128-1694706381.png?lm=1', 'https://www.transfermarkt.co.uk/martin-minchev/profil/spieler/481128', 'TR1', 'Caykur Rizespor');*/
+
+----------------------------------------PLAYER BIOS-----------------------------------------------------------
+INSERT INTO player_bio VALUES (111078," Emil"," Forsberg"," Emil Forsberg"," Sweden"," Sundsvall"," Sweden"," 1991-10-23")
+INSERT INTO player_bio VALUES (192565,"Leroy","Sané","Leroy Sané","Germany","Essen","Germany","1996-01-11")
+INSERT INTO player_bio VALUES (262749,"David","Raya","David Raya","Spain","Barcelona","Spain","1995-09-15")
+INSERT INTO player_bio VALUES (282429,"Sergio","Reguilón","Sergio Reguilón","Spain","Madrid","Spain","1996-12-16")
+INSERT INTO player_bio VALUES (286384,"Eric","Bailly","Eric Bailly","Cote d'Ivoire","Bingerville","Cote d'Ivoire","1994-04-12")
+INSERT INTO player_bio VALUES (424204,"Alphonso","Davies","Alphonso Davies","Ghana","Buduburam","Canada","2000-11-02")
+INSERT INTO player_bio VALUES (425918,"Jakub","Kiwior","Jakub Kiwior","Poland","Tychy","Poland","2000-02-15")
+INSERT INTO player_bio VALUES (503482,"Min-jae","Kim","Min-jae Kim","Korea, South","Tongyeong, Gyeongnam","Korea, South","1996-11-15")
+INSERT INTO player_bio VALUES (549966,"Jackson","Muleka","Jackson Muleka","DR Congo","Lubumbashi","DR Congo","1999-10-04")
+INSERT INTO player_bio VALUES (610442,"Rasmus","Højlund","Rasmus Højlund","Denmark","København","Denmark","2003-02-04")
+INSERT INTO player_bio VALUES (661207,"Oscar","Bobb","Oscar Bobb","Norway","Oslo","Norway","2003-07-12")
+INSERT INTO player_bio VALUES (875333,"Göktuğ","Baytekin","Göktuğ Baytekin","Turkey","Istanbul","Turkey","2004-11-20")
+INSERT INTO player_bio VALUES (36139,"Dusan","Tadic","Dusan Tadic","Jugoslawien (SFR)","Bačka Topola","Serbia","1988-11-20")
+INSERT INTO player_bio VALUES (306462,"Mert Hakan","Yandaş","Mert Hakan Yandaş","Turkey","Bursa","Turkey","1994-08-19")
+INSERT INTO player_bio VALUES (351738," ","Lincoln","Lincoln","Brazil","Porto Alegre","Brazil","1998-11-07")
+INSERT INTO player_bio VALUES (591361,"Jayden","Oosterwolde","Jayden Oosterwolde","Netherlands","Zwolle","Netherlands","2001-04-26")
+INSERT INTO player_bio VALUES (85941,"Stefan","Ortega","Stefan Ortega","Germany","Hofgeismar","Germany","1992-11-06")
+INSERT INTO player_bio VALUES (112465,"Sérgio","Oliveira","Sérgio Oliveira","Portugal","Paços de Brandão","Portugal","1992-06-02")
+INSERT INTO player_bio VALUES (234509,"André","Onana","André Onana","Cameroon","Nkol Ngok","Cameroon","1996-04-02")
+INSERT INTO player_bio VALUES (368887,"Loïs","Openda","Loïs Openda","Belgium","Liège","Belgium","2000-02-16")
+INSERT INTO player_bio VALUES (480762,"Lisandro","Martínez","Lisandro Martínez","Argentina","Gualeguay","Argentina","1998-01-18")
+INSERT INTO player_bio VALUES (537598,"Fábio","Vieira","Fábio Vieira","Portugal","Santa Maria da Feira","Portugal","2000-05-30")
+INSERT INTO player_bio VALUES (559263,"Fábio","Carvalho","Fábio Carvalho","Portugal","Torres Vedras","Portugal","2002-08-30")
+INSERT INTO player_bio VALUES (576024,"Julián","Álvarez","Julián Álvarez","Argentina","Calchín","Argentina","2000-01-31")
+INSERT INTO player_bio VALUES (727152,"Hamza","Akman","Hamza Akman","Turkey","Istanbul","Turkey","2004-09-27")
+INSERT INTO player_bio VALUES (58088,"Fernando","Muslera","Fernando Muslera","Argentina","Buenos Aires","Uruguay","1986-06-16")
+INSERT INTO player_bio VALUES (44996,"Serdar","Aziz","Serdar Aziz","Turkey","Bursa","Turkey","1990-10-23")
+INSERT INTO player_bio VALUES (205927,"Dominik","Livakovic","Dominik Livakovic","Croatia","Zadar","Croatia","1995-01-09")
+INSERT INTO player_bio VALUES (132098,"Harry","Kane","Harry Kane","England","London","England","1993-07-28")
+INSERT INTO player_bio VALUES (170986,"Raphaël","Guerreiro","Raphaël Guerreiro","France","Le Blanc-Mesnil","Portugal","1993-12-22")
+INSERT INTO player_bio VALUES (187587,"Ante","Rebic","Ante Rebic","Croatia","Split","Croatia","1993-09-21")
+INSERT INTO player_bio VALUES (277179," ","Angeliño","Angeliño","Spain","Coristanco","Spain","1997-01-04")
+INSERT INTO player_bio VALUES (316264,"Martin","Ødegaard","Martin Ødegaard","Norway","Drammen","Norway","1998-12-17")
+INSERT INTO player_bio VALUES (495666,"William","Saliba","William Saliba","France","Bondy","France","2001-03-24")
+INSERT INTO player_bio VALUES (566931,"Xavi","Simons","Xavi Simons","Netherlands","Amsterdam","Netherlands","2003-04-21")
+INSERT INTO player_bio VALUES (580195,"Jamal","Musiala","Jamal Musiala","Germany","Stuttgart","Germany","2003-02-26")
+INSERT INTO player_bio VALUES (601883,"Matheus","Nunes","Matheus Nunes","Brazil","Rio de Janeiro","Portugal","1998-08-27")
+INSERT INTO player_bio VALUES (607224," ","Hannibal","Hannibal","France","Ivry-sur-Seine","Tunisia","2003-01-21")
+INSERT INTO player_bio VALUES (45660,"Eric Maxim","Choupo-Moting","Eric Maxim Choupo-Moting","Germany","Hamburg","Cameroon","1989-03-23")
+INSERT INTO player_bio VALUES (88755,"Kevin","De Bruyne","Kevin De Bruyne","Belgium","Drongen","Belgium","1991-06-28")
+INSERT INTO player_bio VALUES (114422,"Günay","Güvenç","Günay Güvenç","Germany","Neu-Ulm","Turkey","1991-06-25")
+INSERT INTO player_bio VALUES (149829,"Miha","Zajc","Miha Zajc","Slovenia","Sempeter pri Gorici","Slovenia","1994-07-01")
+INSERT INTO player_bio VALUES (216603,"İrfan Can","Kahveci","İrfan Can Kahveci","Turkey","Corum","Turkey","1995-07-15")
+INSERT INTO player_bio VALUES (369316,"Ferdi","Kadıoğlu","Ferdi Kadıoğlu","Netherlands","Arnhem","Turkey","1999-10-07")
+INSERT INTO player_bio VALUES (186590,"John","Stones","John Stones","England","Barnsley","England","1994-05-28")
+INSERT INTO player_bio VALUES (203460,"Jack","Grealish","Jack Grealish","England","Birmingham","England","1995-09-10")
+INSERT INTO player_bio VALUES (258004,"Rúben","Dias","Rúben Dias","Portugal","Amadora","Portugal","1997-05-14")
+INSERT INTO player_bio VALUES (287579,"Sofyan","Amrabat","Sofyan Amrabat","Netherlands","Huizen","Morocco","1996-08-21")
+INSERT INTO player_bio VALUES (401173,"Jadon","Sancho","Jadon Sancho","England","London","England","2000-03-25")
+INSERT INTO player_bio VALUES (422951,"Victor","Nelsson","Victor Nelsson","Denmark","Hornbæk","Denmark","1998-10-14")
+INSERT INTO player_bio VALUES (441170,"Valentin","Rosier","Valentin Rosier","France","Montauban","France","1996-08-19")
+INSERT INTO player_bio VALUES (701057,"Rico","Lewis","Rico Lewis","England","Bury","England","2004-11-21")
+INSERT INTO player_bio VALUES (727077,"Jankat","Yılmaz","Jankat Yılmaz","Turkey","Istanbul","Turkey","2004-08-16")
+INSERT INTO player_bio VALUES (875337,"Ege","Tıknaz","Ege Tıknaz","Turkey","Istanbul","Turkey","2004-08-17")
+INSERT INTO player_bio VALUES (51471,"Mateo","Kovacic","Mateo Kovacic","Austria","Linz","Croatia","1994-05-06")
+INSERT INTO player_bio VALUES (153084,"Leon","Goretzka","Leon Goretzka","Germany","Bochum","Germany","1995-02-06")
+INSERT INTO player_bio VALUES (170527,"Timo","Werner","Timo Werner","Germany","Stuttgart","Germany","1996-03-06")
+INSERT INTO player_bio VALUES (191614," ","Fred","Fred","Brazil","Belo Horizonte","Brazil","1993-03-05")
+INSERT INTO player_bio VALUES (214056,"Daniel","Amartey","Daniel Amartey","Ghana","Accra","Ghana","1994-12-21")
+INSERT INTO player_bio VALUES (223979,"Xaver","Schlager","Xaver Schlager","Austria","Linz","Austria","1997-09-28")
+INSERT INTO player_bio VALUES (293385,"Dani","Olmo","Dani Olmo","Spain","Terrassa","Spain","1998-05-07")
+INSERT INTO player_bio VALUES (324278,"Christoph","Baumgartner","Christoph Baumgartner","Austria","Horn","Austria","1999-08-01")
+INSERT INTO player_bio VALUES (336077,"Altay","Bayındır","Altay Bayındır","Turkey","Bursa","Turkey","1998-04-14")
+INSERT INTO player_bio VALUES (344299,"Bakhtiyor","Zaynutdinov","Bakhtiyor Zaynutdinov","Kazakhstan","Taraz","Kazakhstan","1998-04-02")
+INSERT INTO player_bio VALUES (344695,"Dayot","Upamecano","Dayot Upamecano","France","Évreux","France","1998-10-27")
+INSERT INTO player_bio VALUES (382528,"Kerem","Aktürkoğlu","Kerem Aktürkoğlu","Turkey","Kocaeli","Turkey","1998-10-21")
+INSERT INTO player_bio VALUES (666234,"Mohamed","Simakan","Mohamed Simakan","France","Marseille","France","2000-05-03")
+INSERT INTO player_bio VALUES (683828,"Emrecan","Uzunhan","Emrecan Uzunhan","Turkey","Istanbul","Turkey","2001-02-26")
+INSERT INTO player_bio VALUES (868622,"Taichi","Fukui","Taichi Fukui","Japan","---, Kanagawa","Japan","2004-07-15")
+INSERT INTO player_bio VALUES (873532,"Atakan","Ordu","Atakan Ordu","Turkey","Denizli","Turkey","2005-03-29")
+INSERT INTO player_bio VALUES (19041,"Gökhan","İnler","Gökhan İnler","Switzerland","Olten","Switzerland","1984-06-27")
+INSERT INTO player_bio VALUES (42412,"Jonny","Evans","Jonny Evans","Northern Ireland","Belfast","Northern Ireland","1988-01-03")
+INSERT INTO player_bio VALUES (57071,"Péter","Gulácsi","Péter Gulácsi","Hungary","Budapest","Hungary","1990-05-06")
+INSERT INTO player_bio VALUES (147487,"Vincent","Aboubakar","Vincent Aboubakar","Cameroon","Garoua","Cameroon","1992-01-22")
+INSERT INTO player_bio VALUES (152733,"Onur","Bulut","Onur Bulut","Germany","Werdohl","Turkey","1994-04-16")
+INSERT INTO player_bio VALUES (159471,"Serge","Gnabry","Serge Gnabry","Germany","Stuttgart","Germany","1995-07-14")
+INSERT INTO player_bio VALUES (182877,"Anthony","Martial","Anthony Martial","France","Massy","France","1995-12-05")
+INSERT INTO player_bio VALUES (279457,"Ryan","Kent","Ryan Kent","England","Oldham","England","1996-11-11")
+INSERT INTO player_bio VALUES (613725,"İsmail","Yüksek","İsmail Yüksek","Turkey","Bursa","Turkey","1999-01-26")
+INSERT INTO player_bio VALUES (258923,"Marcus","Rashford","Marcus Rashford","England","Manchester","England","1997-10-31")
+INSERT INTO player_bio VALUES (315969,"Scott","McTominay","Scott McTominay","England","Lancaster","Scotland","1996-12-08")
+INSERT INTO player_bio VALUES (450936,"Tanguy","Ndombélé","Tanguy Ndombélé","France","Longjumeau","France","1996-12-28")
+INSERT INTO player_bio VALUES (475413,"Sacha","Boey","Sacha Boey","France","Montreuil","France","2000-09-13")
+INSERT INTO player_bio VALUES (627442,"Benjamin","Sesko","Benjamin Sesko","Slovenia","Radeče","Slovenia","2003-05-31")
+INSERT INTO player_bio VALUES (68863,"Mauro","Icardi","Mauro Icardi","Argentina","Rosario","Argentina","1993-02-19")
+INSERT INTO player_bio VALUES (127048,"Cédric","Bakambu","Cédric Bakambu","France","Ivry-sur-Seine","DR Congo","1991-04-11")
+INSERT INTO player_bio VALUES (157635,"Yussuf","Poulsen","Yussuf Poulsen","Denmark","Kopenhagen","Denmark","1994-06-15")
+INSERT INTO player_bio VALUES (170838,"Salih","Uçan","Salih Uçan","Turkey","Mugla","Turkey","1994-01-06")
+INSERT INTO player_bio VALUES (241641,"Bernardo","Silva","Bernardo Silva","Portugal","Lisboa","Portugal","1994-08-10")
+INSERT INTO player_bio VALUES (250844,"Alexander","Djiku","Alexander Djiku","France","Montpellier","Ghana","1994-08-09")
+INSERT INTO player_bio VALUES (283223,"Emre","Mor","Emre Mor","Denmark","Brønshøj","Turkey","1997-07-24")
+INSERT INTO player_bio VALUES (341647,"Cengiz","Ünder","Cengiz Ünder","Turkey","Balikesir","Turkey","1997-07-14")
+INSERT INTO player_bio VALUES (353922,"Mert","Müldür","Mert Müldür","Austria","Wien","Turkey","1999-04-03")
+INSERT INTO player_bio VALUES (335721,"Ben","White","Ben White","England","Poole","England","1997-10-08")
+INSERT INTO player_bio VALUES (340325,"Reiss","Nelson","Reiss Nelson","England","London","England","1999-12-10")
+INSERT INTO player_bio VALUES (357147,"Diogo","Dalot","Diogo Dalot","Portugal","Braga","Portugal","1999-03-18")
+INSERT INTO player_bio VALUES (404950,"Nicolas","Seiwald","Nicolas Seiwald","Austria","Kuchl","Austria","2001-05-04")
+INSERT INTO player_bio VALUES (406635,"Phil","Foden","Phil Foden","England","Stockport","England","2000-05-28")
+INSERT INTO player_bio VALUES (418560,"Erling","Haaland","Erling Haaland","England","Leeds","Norway","2000-07-21")
+INSERT INTO player_bio VALUES (475959,"Josko","Gvardiol","Josko Gvardiol","Croatia","Zagreb","Croatia","2002-01-23")
+INSERT INTO player_bio VALUES (897425,"Timo","Schlieck","Timo Schlieck","Germany","Oelde","Germany","2006-03-02")
+INSERT INTO player_bio VALUES (16306," ","Casemiro","Casemiro","Brazil","São José dos Campos","Brazil","1992-02-23")
+INSERT INTO player_bio VALUES (51894,"Mert","Günok","Mert Günok","Turkey","Karabük","Turkey","1989-03-01")
+INSERT INTO player_bio VALUES (119031,"Kaan","Ayhan","Kaan Ayhan","Germany","Gelsenkirchen","Turkey","1994-11-10")
+INSERT INTO player_bio VALUES (160438,"Mohamed","Elneny","Mohamed Elneny","Egypt","Mahalla","Egypt","1992-07-11")
+INSERT INTO player_bio VALUES (202591,"Benjamin","Henrichs","Benjamin Henrichs","Germany","Bocholt","Germany","1997-02-23")
+INSERT INTO player_bio VALUES (221624,"Zack","Steffen","Zack Steffen","United States","Coatesville, Pennsylvania","United States","1995-04-02")
+INSERT INTO player_bio VALUES (318077,"Lucas","Torreira","Lucas Torreira","Uruguay","Fray Bentos","Uruguay","1996-02-11")
+INSERT INTO player_bio VALUES (337800,"Gedson","Fernandes","Gedson Fernandes","Sao Tome and Principe","São Tomé","Portugal","1999-01-09")
+INSERT INTO player_bio VALUES (341549,"Umut","Meraş","Umut Meraş","Turkey","Istanbul","Turkey","1995-12-20")
+INSERT INTO player_bio VALUES (295024,"Samet","Akaydin","Samet Akaydin","Turkey","Trabzon","Turkey","1994-03-13")
+INSERT INTO player_bio VALUES (358948,"Bright","Osayi-Samuel","Bright Osayi-Samuel","Nigeria","Okija","Nigeria","1997-12-31")
+INSERT INTO player_bio VALUES (420243,"Jurrien","Timber","Jurrien Timber","Netherlands","Utrecht","Netherlands","2001-06-17")
+INSERT INTO player_bio VALUES (465606,"Halil","Dervişoğlu","Halil Dervişoğlu","Netherlands","Rotterdam","Turkey","1999-12-08")
+INSERT INTO player_bio VALUES (602105," ","Antony","Antony","Brazil","São Paulo","Brazil","2000-02-24")
+INSERT INTO player_bio VALUES (792380,"Aleksandar","Pavlovic","Aleksandar Pavlovic","Germany","München","Germany","2004-05-03")
+INSERT INTO player_bio VALUES (53418,"Kevin","Kampl","Kevin Kampl","Germany","Solingen","Slovenia","1990-10-09")
+INSERT INTO player_bio VALUES (58358,"Thomas","Müller","Thomas Müller","Germany","Weilheim in Oberbayern","Germany","1989-09-13")
+INSERT INTO player_bio VALUES (95424,"Kyle","Walker","Kyle Walker","England","Sheffield","England","1990-05-28")
+INSERT INTO player_bio VALUES (174733,"Omar","Colley","Omar Colley","The Gambia","Lamin","The Gambia","1992-10-24")
+INSERT INTO player_bio VALUES (288255,"Donny","van de Beek","Donny van de Beek","Netherlands","Nijkerkerveen","Netherlands","1997-04-18")
+INSERT INTO player_bio VALUES (341429,"Davinson","Sánchez","Davinson Sánchez","Colombia","Caloto","Colombia","1996-06-12")
+INSERT INTO player_bio VALUES (435338,"Gabriel","Magalhães","Gabriel Magalhães","Brazil","São Paulo","Brazil","1997-12-19")
+INSERT INTO player_bio VALUES (498529,"Miguel","Crespo","Miguel Crespo","France","Lyon","Portugal","1996-09-11")
+INSERT INTO player_bio VALUES (605110,"Eyüp","Aydın","Eyüp Aydın","Germany","Heidenheim","Germany","2004-08-02")
+INSERT INTO player_bio VALUES (617074,"Ilaix","Moriba","Ilaix Moriba","Guinea","Conakry","Guinea","2003-01-19")
+INSERT INTO player_bio VALUES (640026,"Shola","Shoretire","Shola Shoretire","England","Newcastle","England","2004-02-02")
+INSERT INTO player_bio VALUES (942940,"Ali Turap","Bülbül","Ali Turap Bülbül","Turkey","Düzce","Turkey","2005-01-25")
+INSERT INTO player_bio VALUES (77710,"Necip","Uysal","Necip Uysal","Turkey","Istanbul","Turkey","1991-01-24")
+INSERT INTO player_bio VALUES (81173,"Janis","Blaswich","Janis Blaswich","Germany","Willich","Germany","1991-05-02")
+INSERT INTO player_bio VALUES (118287,"Rachid","Ghezzal","Rachid Ghezzal","France","Décines-Charpieu","Algeria","1992-05-09")
+INSERT INTO player_bio VALUES (183288,"Luke","Shaw","Luke Shaw","England","Kingston upon Thames","England","1995-07-12")
+INSERT INTO player_bio VALUES (184573,"Victor","Lindelöf","Victor Lindelöf","Sweden","Västerås","Sweden","1994-07-17")
+INSERT INTO player_bio VALUES (340456,"Noussair","Mazraoui","Noussair Mazraoui","Netherlands","Leiderdorp","Morocco","1997-11-14")
+INSERT INTO player_bio VALUES (427568,"Aaron","Ramsdale","Aaron Ramsdale","England","Chesterton","England","1998-05-14")
+INSERT INTO player_bio VALUES (477758,"Aaron","Wan-Bissaka","Aaron Wan-Bissaka","England","London","England","1997-11-26")
+INSERT INTO player_bio VALUES (500091,"Ersin","Destanoğlu","Ersin Destanoğlu","Turkey","Istanbul","Turkey","2001-01-01")
+INSERT INTO player_bio VALUES (320748,"Sebastian","Szymanski","Sebastian Szymanski","Poland","Biała Podlaska","Poland","1999-05-10")
+INSERT INTO player_bio VALUES (322873,"İrfan Can","Eğribayat","İrfan Can Eğribayat","Turkey","Adana","Turkey","1998-06-30")
+INSERT INTO player_bio VALUES (347913,"Luan","Peres","Luan Peres","Brazil","São Caetano do Sul","Brazil","1994-07-19")
+INSERT INTO player_bio VALUES (410158," ","Rodrigo Becão","Rodrigo Becão","Brazil","Salvador","Brazil","1996-01-19")
+INSERT INTO player_bio VALUES (942939,"Ali","Yeşilyurt","Ali Yeşilyurt","Turkey","Istanbul","Turkey","2005-07-30")
+INSERT INTO player_bio VALUES (56416,"Dries","Mertens","Dries Mertens","Belgium","Leuven","Belgium","1987-05-06")
+INSERT INTO player_bio VALUES (143424,"Alex","Oxlade-Chamberlain","Alex Oxlade-Chamberlain","England","Portsmouth","England","1993-08-15")
+INSERT INTO player_bio VALUES (144028,"Leandro","Trossard","Leandro Trossard","Belgium","Waterschei","Belgium","1994-12-04")
+INSERT INTO player_bio VALUES (161056,"Joshua","Kimmich","Joshua Kimmich","Germany","Rottweil","Germany","1995-02-08")
+INSERT INTO player_bio VALUES (181380,"Arthur","Masuaku","Arthur Masuaku","France","Lille","DR Congo","1993-11-07")
+INSERT INTO player_bio VALUES (190685,"Bouna","Sarr","Bouna Sarr","France","Lyon","Senegal","1992-01-31")
+INSERT INTO player_bio VALUES (217111,"Hakim","Ziyech","Hakim Ziyech","Netherlands","Dronten","Morocco","1993-03-19")
+INSERT INTO player_bio VALUES (243714,"Kingsley","Coman","Kingsley Coman","France","Paris","France","1996-06-13")
+INSERT INTO player_bio VALUES (309400,"Kai","Havertz","Kai Havertz","Germany","Aachen","Germany","1999-06-11")
+INSERT INTO player_bio VALUES (357662,"Declan","Rice","Declan Rice","England","London","England","1999-01-14")
+INSERT INTO player_bio VALUES (363205," ","Gabriel Jesus","Gabriel Jesus","Brazil","São Paulo","Brazil","1997-04-03")
+INSERT INTO player_bio VALUES (371256," ","Tetê","Tetê","Brazil","Alvorada","Brazil","2000-02-15")
+INSERT INTO player_bio VALUES (468539,"Daniel","Peretz","Daniel Peretz","Israel","Tel Aviv","Israel","2000-07-10")
+INSERT INTO player_bio VALUES (28396,"Edin","Dzeko","Edin Dzeko","Jugoslawien (SFR)","Sarajevo","Bosnia-Herzegovina","1986-03-17")
+INSERT INTO player_bio VALUES (744729,"Tarek","Buchmann","Tarek Buchmann","Germany","Augsburg","Germany","2005-02-28")
+INSERT INTO player_bio VALUES (811779,"Alejandro","Garnacho","Alejandro Garnacho","Spain","Madrid","Argentina","2004-07-01")
+INSERT INTO player_bio VALUES (875334,"Semih","Kılıçsoy","Semih Kılıçsoy","Turkey","Istanbul","Turkey","2005-08-15")
+INSERT INTO player_bio VALUES (17259,"Manuel","Neuer","Manuel Neuer","Germany","Gelsenkirchen","Germany","1986-03-27")
+INSERT INTO player_bio VALUES (69633,"Christian","Eriksen","Christian Eriksen","Denmark","Middelfart","Denmark","1992-02-14")
+INSERT INTO player_bio VALUES (112988,"Cédric","Soares","Cédric Soares","Germany","Singen","Portugal","1991-08-31")
+INSERT INTO player_bio VALUES (160971,"Leopold","Zingerle","Leopold Zingerle","Germany","München","Germany","1994-04-10")
+INSERT INTO player_bio VALUES (177476,"Nathan","Aké","Nathan Aké","Netherlands","Den Haag","Netherlands","1995-02-18")
+INSERT INTO player_bio VALUES (215599,"Lukas","Klostermann","Lukas Klostermann","Germany","Gevelsberg","Germany","1996-06-03")
+INSERT INTO player_bio VALUES (238223," ","Ederson","Ederson","Brazil","Osasco (SP)","Brazil","1993-08-17")
+INSERT INTO player_bio VALUES (291739,"Milot","Rashica","Milot Rashica","Yugoslavia (Republic)","Vushtrri","Kosovo","1996-06-28")
+INSERT INTO player_bio VALUES (342995,"Utku","Yuvakuran","Utku Yuvakuran","Turkey","Istanbul","Turkey","1997-11-02")
+INSERT INTO player_bio VALUES (402008,"Amadou","Haidara","Amadou Haidara","Mali","Bamako","Mali","1998-01-31")
+INSERT INTO player_bio VALUES (604320,"Frans","Krätzig","Frans Krätzig","Germany","Nürnberg","Germany","2003-01-14")
+INSERT INTO player_bio VALUES (639582,"Tom","Hülsmann","Tom Hülsmann","Germany","Trier","Germany","2004-04-11")
+INSERT INTO player_bio VALUES (676318,"Facundo","Pellistri","Facundo Pellistri","Uruguay","Montevideo","Uruguay","2001-12-20")
+INSERT INTO player_bio VALUES (655895,"Bartuğ","Elmaz","Bartuğ Elmaz","Turkey","Tekirdag","Turkey","2003-02-19")
+INSERT INTO player_bio VALUES (14555,"Scott","Carson","Scott Carson","England","Whitehaven","England","1985-09-03")
+INSERT INTO player_bio VALUES (93740,"Willi","Orbán","Willi Orbán","Germany","Kaiserslautern","Hungary","1992-11-03")
+INSERT INTO player_bio VALUES (102017," ","Jorginho","Jorginho","Brazil","Imbituba","Italy","1991-12-20")
+INSERT INTO player_bio VALUES (203853,"Oleksandr","Zinchenko","Oleksandr Zinchenko","Ukraine","Radomyshl, Zhytomyr Oblast","Ukraine","1996-12-15")
+INSERT INTO player_bio VALUES (284730,"Manuel","Akanji","Manuel Akanji","Switzerland","Wiesendangen","Switzerland","1995-07-19")
+INSERT INTO player_bio VALUES (293213,"Amir","Hadziahmetovic","Amir Hadziahmetovic","Denmark","Nexø","Bosnia-Herzegovina","1997-03-08")
+INSERT INTO player_bio VALUES (340324,"Eddie","Nketiah","Eddie Nketiah","England","London","England","1999-05-30")
+INSERT INTO player_bio VALUES (366930,"Sergio","Gómez","Sergio Gómez","Spain","Badalona","Spain","2000-09-04")
+INSERT INTO player_bio VALUES (462772,"Tayyip Talha","Sanuç","Tayyip Talha Sanuç","Turkey","Karabük","Turkey","1999-12-17")
+INSERT INTO player_bio VALUES (493513,"Karl","Hein","Karl Hein","Estonia","Põlva","Estonia","2002-04-13")
+INSERT INTO player_bio VALUES (536835,"Amad","Diallo","Amad Diallo","Cote d'Ivoire","Abidjan","Cote d'Ivoire","2002-07-11")
+INSERT INTO player_bio VALUES (618472,"Castello","Lukeba","Castello Lukeba","France","Lyon","France","2002-12-17")
+INSERT INTO player_bio VALUES (697149,"Kazımcan","Karataş","Kazımcan Karataş","Turkey","Izmir","Turkey","2003-01-16")
+INSERT INTO player_bio VALUES (720613,"Emirhan","Delibaş","Emirhan Delibaş","Turkey","Istanbul","Turkey","2003-01-01")
+INSERT INTO player_bio VALUES (955382,"Furkan","Akyüz","Furkan Akyüz","Turkey","Bursa","Turkey","2005-09-21")
+INSERT INTO player_bio VALUES (125858,"Kerem","Demirbay","Kerem Demirbay","Germany","Herten","Germany","1993-07-03")
+INSERT INTO player_bio VALUES (346483,"Mason","Mount","Mason Mount","England","Portsmouth","England","1999-01-10")
+INSERT INTO player_bio VALUES (351749,"Kalvin","Phillips","Kalvin Phillips","England","Leeds","England","1995-12-02")
+INSERT INTO player_bio VALUES (655488,"Gabriel","Martinelli","Gabriel Martinelli","Brazil","Guarulhos","Brazil","2001-06-18")
+INSERT INTO player_bio VALUES (820374,"Kobbie","Mainoo","Kobbie Mainoo","England","Stockport","England","2005-04-19")
+INSERT INTO player_bio VALUES (913429,"Tim","Köhler","Tim Köhler","Germany","Leipzig","Germany","2005-05-02")
+INSERT INTO player_bio VALUES (248271,"Umut","Nayir","Umut Nayir","Turkey","Kayseri","Turkey","1993-06-28")
+INSERT INTO player_bio VALUES (164770,"Raphaël","Varane","Raphaël Varane","France","Lille","France","1993-04-25")
+INSERT INTO player_bio VALUES (184440,"Tayfur","Bingöl","Tayfur Bingöl","Turkey","Ankara","Turkey","1993-01-11")
+INSERT INTO player_bio VALUES (199316,"Abdülkerim","Bardakcı","Abdülkerim Bardakcı","Turkey","Konya","Turkey","1994-09-07")
+INSERT INTO player_bio VALUES (223967,"Konrad","Laimer","Konrad Laimer","Austria","Salzburg","Austria","1997-05-27")
+INSERT INTO player_bio VALUES (230784,"Thomas","Partey","Thomas Partey","Ghana","Odumase Krobo","Ghana","1993-06-13")
+INSERT INTO player_bio VALUES (240306,"Bruno","Fernandes","Bruno Fernandes","Portugal","Maia","Portugal","1994-09-08")
+INSERT INTO player_bio VALUES (392765,"Emile","Smith Rowe","Emile Smith Rowe","England","London","England","2000-07-28")
+INSERT INTO player_bio VALUES (801734,"Mathys","Tel","Mathys Tel","France","Sarcelles","France","2005-04-27")
+INSERT INTO player_bio VALUES (34130,"Tom","Heaton","Tom Heaton","England","Chester","England","1986-04-15")
+INSERT INTO player_bio VALUES (40680,"Sven","Ulreich","Sven Ulreich","Germany","Schorndorf","Germany","1988-08-03")
+INSERT INTO player_bio VALUES (45671,"Cenk","Tosun","Cenk Tosun","Germany","Wetzlar","Turkey","1991-06-07")
+INSERT INTO player_bio VALUES (145988,"Wilfried","Zaha","Wilfried Zaha","Cote d'Ivoire","Abidjan","Cote d'Ivoire","1992-11-10")
+INSERT INTO player_bio VALUES (159844,"Christopher","Lenz","Christopher Lenz","Germany","Berlin","Germany","1994-09-22")
+INSERT INTO player_bio VALUES (177907,"Harry","Maguire","Harry Maguire","England","Sheffield","England","1993-03-05")
+INSERT INTO player_bio VALUES (318204,"David","Raum","David Raum","Germany","Nürnberg","Germany","1998-04-22")
+INSERT INTO player_bio VALUES (326031,"Matthijs","de Ligt","Matthijs de Ligt","Netherlands","Leiderdorp","Netherlands","1999-08-12")
+INSERT INTO player_bio VALUES (331560,"Takehiro","Tomiyasu","Takehiro Tomiyasu","Japan","Fukuoka, Fukuoka","Japan","1998-11-05")
+INSERT INTO player_bio VALUES (339340,"Tyrell","Malacia","Tyrell Malacia","Netherlands","Rotterdam","Netherlands","1999-08-17")
+INSERT INTO player_bio VALUES (357565," ","Rodri","Rodri","Spain","Madrid","Spain","1996-06-22")
+INSERT INTO player_bio VALUES (433177,"Bukayo","Saka","Bukayo Saka","England","London","England","2001-09-05")
+INSERT INTO player_bio VALUES (486049,"Jérémy","Doku","Jérémy Doku","Belgium","Borgerhout","Belgium","2002-05-27")
+INSERT INTO player_bio VALUES (541537,"Barış Alper","Yılmaz","Barış Alper Yılmaz","Turkey","Rize","Turkey","2000-05-23")
+INSERT INTO player_bio VALUES (656441,"Jean","Onana","Jean Onana","Cameroon","Yaoundé","Cameroon","2000-01-08")
+INSERT INTO player_bio VALUES (787912,"El Chadaille","Bitshiabu","El Chadaille Bitshiabu","France","Villeneuve-Saint-Georges","France","2005-05-16")
+INSERT INTO player_bio VALUES (1016253,"Efe","Akman","Efe Akman","Turkey","Istanbul","Turkey","2006-03-20")
+INSERT INTO player_bio VALUES (1046188,"Baran","Demiroğlu","Baran Demiroğlu","Turkey","Istanbul","Turkey","2005-05-02")
+INSERT INTO player_bio VALUES (1050797,"Emrecan","Bulut","Emrecan Bulut","Turkey","Ardahan","Turkey","2002-11-26")
+INSERT INTO player_bio VALUES (91059,"Joshua","King","Joshua King","Norway","Oslo","Norway","1992-01-15")
+INSERT INTO player_bio VALUES (179184,"Michy","Batshuayi","Michy Batshuayi","Belgium","Brussel","Belgium","1993-10-02")
+INSERT INTO player_bio VALUES (106987,"Marcel","Sabitzer","Marcel Sabitzer","Austria","Wels","Austria","1994-03-17")
+INSERT INTO player_bio VALUES (370789,"Julian","Ryerson","Julian Ryerson","Norway","Lyngdal","Norway","1997-11-17")
+INSERT INTO player_bio VALUES (388513,"Mateu","Morey","Mateu Morey","Spain","Palma de Mallorca","Spain","2000-03-02")
+INSERT INTO player_bio VALUES (718232,"Abdoulaye","Kamara","Abdoulaye Kamara","Guinea","Conakry","France","2004-11-06")
+INSERT INTO player_bio VALUES (166601,"Niklas","Süle","Niklas Süle","Germany","Frankfurt am Main","Germany","1995-09-03")
+INSERT INTO player_bio VALUES (467720,"Youssoufa","Moukoko","Youssoufa Moukoko","Cameroon","Yaoundé","Germany","2004-11-20")
+INSERT INTO player_bio VALUES (496094,"Karim","Adeyemi","Karim Adeyemi","Germany","München","Germany","2002-01-18")
+INSERT INTO player_bio VALUES (100986,"Thomas","Meunier","Thomas Meunier","Belgium","Sainte-Ode","Belgium","1991-09-12")
+INSERT INTO player_bio VALUES (257814,"Gregor","Kobel","Gregor Kobel","Switzerland","Zürich","Switzerland","1997-12-06")
+INSERT INTO player_bio VALUES (670882,"Jamie","Bynoe-Gittens","Jamie Bynoe-Gittens","England","London","England","2004-08-08")
+INSERT INTO player_bio VALUES (187492,"Julian","Brandt","Julian Brandt","Germany","Bremen","Germany","1996-05-02")
+INSERT INTO player_bio VALUES (405690,"Ole","Pohlmann","Ole Pohlmann","Germany","Minden","Germany","2001-04-05")
+INSERT INTO player_bio VALUES (181375,"Sébastien","Haller","Sébastien Haller","France","Ris-Orangis","Cote d'Ivoire","1994-06-22")
+INSERT INTO player_bio VALUES (244940,"Salih","Özcan","Salih Özcan","Germany","Köln","Turkey","1998-01-11")
+INSERT INTO player_bio VALUES (482573,"Antonios","Papadopoulos","Antonios Papadopoulos","Germany","Stuttgart","Germany","1999-09-10")
+INSERT INTO player_bio VALUES (504215,"Giovanni","Reyna","Giovanni Reyna","England","Durham","United States","2002-11-13")
+INSERT INTO player_bio VALUES (119296,"Emre","Can","Emre Can","Germany","Frankfurt am Main","Germany","1994-01-12")
+INSERT INTO player_bio VALUES (388198,"Nico","Schlotterbeck","Nico Schlotterbeck","Germany","Waiblingen","Germany","1999-12-01")
+INSERT INTO player_bio VALUES (406640,"Felix","Nmecha","Felix Nmecha","Germany","Hamburg","Germany","2000-10-10")
+INSERT INTO player_bio VALUES (39728,"Mats","Hummels","Mats Hummels","Germany","Bergisch Gladbach","Germany","1988-12-16")
+INSERT INTO player_bio VALUES (326029,"Donyell","Malen","Donyell Malen","Netherlands","Wieringen","Netherlands","1999-01-19")
+INSERT INTO player_bio VALUES (76158,"Alexander","Meyer","Alexander Meyer","Germany","Bad Oldesloe","Germany","1991-04-13")
+INSERT INTO player_bio VALUES (193900,"Marius","Wolf","Marius Wolf","Germany","Coburg","Germany","1995-05-27")
+INSERT INTO player_bio VALUES (819215,"Julien","Duranville","Julien Duranville","Belgium","Uccle","Belgium","2006-05-05")
+INSERT INTO player_bio VALUES (35207,"Marco","Reus","Marco Reus","Germany","Dortmund","Germany","1989-05-31")
+INSERT INTO player_bio VALUES (453737,"Marcel","Lotka","Marcel Lotka","Germany","Duisburg","Germany","2001-05-25")
+INSERT INTO player_bio VALUES (75489,"Niclas","Füllkrug","Niclas Füllkrug","Germany","Hannover","Germany","1993-02-09")
+INSERT INTO player_bio VALUES (284732,"Ramy","Bensebaini","Ramy Bensebaini","Algeria","Constantine","Algeria","1995-04-16")
+
+
+----------------------------------------PLAYER ATTRIBUTES----------------------------------------------
+INSERT INTO player_attributes VALUES (111078,"emil-forsberg","Attacking Midfield","Midfield","right",177,7000000,28000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (192565,"leroy-sane","Right Winger","Attack","left",183,65000000,100000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (262749,"david-raya","Goalkeeper","Goalkeeper","right",183,32000000,32000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (282429,"sergio-reguilon","Left-Back","Defender","left",178,10000000,28000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (286384,"eric-bailly","Centre-Back","Defender","right",187,4000000,35000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (424204,"alphonso-davies","Left-Back","Defender","left",183,70000000,80000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (425918,"jakub-kiwior","Centre-Back","Defender","left",189,25000000,25000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (503482,"min-jae-kim","Centre-Back","Defender","right",190,60000000,60000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (549966,"jackson-muleka","Left Winger","Attack","right",180,4500000,6000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (610442,"rasmus-hojlund","Centre-Forward","Attack","left",191,65000000,65000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (661207,"oscar-bobb","Right Winger","Attack","left",175,10000000,10000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (875333,"goktuğ-baytekin","Goalkeeper","Goalkeeper","right",186,100000,100000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (36139,"dusan-tadic","Left Winger","Attack","left",181,5500000,25000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (306462,"mert-hakan-yandaş","Central Midfield","Midfield","right",174,2200000,3500000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (351738,"lincoln","Attacking Midfield","Midfield","left",178,4000000,6000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (591361,"jayden-oosterwolde","Left-Back","Defender","left",189,5500000,5500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (85941,"stefan-ortega","Goalkeeper","Goalkeeper","right",185,9000000,9000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (112465,"sergio-oliveira","Central Midfield","Midfield","right",181,6000000,19000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (234509,"andre-onana","Goalkeeper","Goalkeeper","right",190,40000000,45000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (368887,"lois-openda","Centre-Forward","Attack","right",177,35000000,35000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (480762,"lisandro-martinez","Centre-Back","Defender","left",175,50000000,50000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (537598,"fabio-vieira","Attacking Midfield","Midfield","left",170,25000000,30000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (559263,"fabio-carvalho","Attacking Midfield","Midfield","right",170,16000000,20000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (576024,"julian-alvarez","Centre-Forward","Attack","right",170,80000000,80000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (727152,"hamza-akman","Central Midfield","Midfield","right",170,325000,450000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (58088,"fernando-muslera","Goalkeeper","Goalkeeper","right",190,1500000,18000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (44996,"serdar-aziz","Centre-Back","Defender","right",183,1700000,5000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (205927,"dominik-livakovic","Goalkeeper","Goalkeeper","right",188,12000000,15000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (132098,"harry-kane","Centre-Forward","Attack","right",188,90000000,150000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (170986,"raphael-guerreiro","Left-Back","Defender","left",170,20000000,40000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (187587,"ante-rebic","Left Winger","Attack","right",185,5000000,40000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (277179,"angelino","Left-Back","Defender","left",171,11000000,35000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (316264,"martin-odegaard","Attacking Midfield","Midfield","left",178,90000000,90000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (495666,"william-saliba","Centre-Back","Defender","right",192,70000000,70000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (566931,"xavi-simons","Right Winger","Attack","right",179,40000000,40000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (580195,"jamal-musiala","Attacking Midfield","Midfield","right",184,110000000,110000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (601883,"matheus-nunes","Central Midfield","Midfield","right",183,55000000,55000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (607224,"hannibal","Attacking Midfield","Midfield","right",183,12000000,12000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (45660,"eric-maxim-choupo-moting","Centre-Forward","Attack","right",191,5000000,10000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (88755,"kevin-de-bruyne","Attacking Midfield","Midfield","right",181,70000000,150000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (114422,"gunay-guvenc","Goalkeeper","Goalkeeper","right",187,1500000,2800000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (149829,"miha-zajc","Central Midfield","Midfield","right",178,5000000,6000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (216603,"İrfan-can-kahveci","Right Winger","Attack","left",176,7500000,11500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (369316,"ferdi-kadıoğlu","Left-Back","Defender","right",174,17000000,17000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (186590,"john-stones","Centre-Back","Defender","right",188,40000000,60000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (203460,"jack-grealish","Left Winger","Attack","right",180,75000000,100000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (258004,"ruben-dias","Centre-Back","Defender","right",187,80000000,80000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (287579,"sofyan-amrabat","Defensive Midfield","Midfield","right",185,30000000,30000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (401173,"jadon-sancho","Left Winger","Attack","right",180,32000000,130000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (422951,"victor-nelsson","Centre-Back","Defender","right",185,19000000,19000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (441170,"valentin-rosier","Right-Back","Defender","right",175,6000000,8000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (701057,"rico-lewis","Right-Back","Defender","right",169,20000000,20000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (727077,"jankat-yılmaz","Goalkeeper","Goalkeeper","left",188,200000,225000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (875337,"ege-tıknaz","Central Midfield","Midfield","right",193,450000,450000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (51471,"mateo-kovacic","Central Midfield","Midfield","right",177,38000000,45000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (153084,"leon-goretzka","Central Midfield","Midfield","right",189,45000000,70000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (170527,"timo-werner","Centre-Forward","Attack","right",180,25000000,80000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (191614,"fred","Central Midfield","Midfield","left",169,20000000,50000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (214056,"daniel-amartey","Centre-Back","Defender","right",186,12000000,15000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (223979,"xaver-schlager","Central Midfield","Midfield","left",174,22000000,27000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (293385,"dani-olmo","Attacking Midfield","Midfield","right",179,40000000,50000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (324278,"christoph-baumgartner","Attacking Midfield","Midfield","right",180,24000000,24000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (336077,"altay-bayındır","Goalkeeper","Goalkeeper","right",198,10000000,16000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (344299,"bakhtiyor-zaynutdinov","Attacking Midfield","Midfield","left",183,6500000,6500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (344695,"dayot-upamecano","Centre-Back","Defender","right",186,60000000,60000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (382528,"kerem-akturkoğlu","Left Winger","Attack","right",173,17000000,17000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (666234,"mohamed-simakan","Centre-Back","Defender","right",187,25000000,28000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (683828,"emrecan-uzunhan","Centre-Back","Defender","left",189,1400000,2000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (868622,"taichi-fukui","Central Midfield","Midfield","",173,400000,400000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (873532,"atakan-ordu","Goalkeeper","Goalkeeper","right",190,50000,50000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (19041,"gokhan-İnler","Defensive Midfield","Midfield","both",183,150000,18000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (42412,"jonny-evans","Centre-Back","Defender","both",188,2000000,15000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (57071,"peter-gulacsi","Goalkeeper","Goalkeeper","right",190,5000000,13000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (147487,"vincent-aboubakar","Centre-Forward","Attack","right",184,7000000,18000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (152733,"onur-bulut","Right-Back","Defender","right",179,3800000,3800000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (159471,"serge-gnabry","Right Winger","Attack","right",176,55000000,90000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (182877,"anthony-martial","Centre-Forward","Attack","right",181,15000000,65000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (279457,"ryan-kent","Left Winger","Attack","right",176,8000000,17500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (613725,"İsmail-yuksek","Defensive Midfield","Midfield","right",183,5500000,5500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (258923,"marcus-rashford","Left Winger","Attack","right",185,75000000,85000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (315969,"scott-mctominay","Defensive Midfield","Midfield","right",191,25000000,35000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (450936,"tanguy-ndombele","Central Midfield","Midfield","right",181,21000000,65000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (475413,"sacha-boey","Right-Back","Defender","right",178,17000000,17000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (627442,"benjamin-sesko","Centre-Forward","Attack","right",194,24000000,24000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (68863,"mauro-icardi","Centre-Forward","Attack","right",181,20000000,100000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (127048,"cedric-bakambu","Centre-Forward","Attack","right",182,3400000,25000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (157635,"yussuf-poulsen","Centre-Forward","Attack","right",192,7000000,35000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (170838,"salih-ucan","Central Midfield","Midfield","right",182,5000000,5500000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (241641,"bernardo-silva","Attacking Midfield","Midfield","left",173,80000000,100000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (250844,"alexander-djiku","Centre-Back","Defender","right",182,8000000,10000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (283223,"emre-mor","Right Winger","Attack","left",169,3300000,5000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (341647,"cengiz-under","Right Winger","Attack","left",173,20000000,35000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (353922,"mert-muldur","Right-Back","Defender","right",184,4500000,10000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (335721,"ben-white","Right-Back","Defender","right",186,55000000,55000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (340325,"reiss-nelson","Right Winger","Attack","right",175,12000000,17000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (357147,"diogo-dalot","Right-Back","Defender","right",183,40000000,40000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (404950,"nicolas-seiwald","Central Midfield","Midfield","right",179,20000000,20000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (406635,"phil-foden","Left Winger","Attack","left",171,110000000,110000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (418560,"erling-haaland","Centre-Forward","Attack","left",195,180000000,180000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (475959,"josko-gvardiol","Centre-Back","Defender","left",185,80000000,80000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (897425,"timo-schlieck","Goalkeeper","Goalkeeper","right",195,200000,200000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (16306,"casemiro","Defensive Midfield","Midfield","right",185,40000000,80000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (51894,"mert-gunok","Goalkeeper","Goalkeeper","right",196,1500000,5000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (119031,"kaan-ayhan","Centre-Back","Defender","right",185,3700000,9000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (160438,"mohamed-elneny","Defensive Midfield","Midfield","right",179,6000000,11000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (202591,"benjamin-henrichs","Right-Back","Defender","right",185,15000000,20000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (221624,"zack-steffen","Goalkeeper","Goalkeeper","right",191,3500000,10000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (318077,"lucas-torreira","Defensive Midfield","Midfield","right",166,15000000,55000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (337800,"gedson-fernandes","Central Midfield","Midfield","right",184,17000000,22000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (341549,"umut-meraş","Left-Back","Defender","left",178,750000,2500000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (295024,"samet-akaydin","Centre-Back","Defender","right",190,3100000,4200000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (358948,"bright-osayi-samuel","Right-Back","Defender","right",175,7500000,9000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (420243,"jurrien-timber","Centre-Back","Defender","right",182,42000000,45000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (465606,"halil-dervişoğlu","Centre-Forward","Attack","right",183,1800000,4300000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (602105,"antony","Right Winger","Attack","left",172,50000000,75000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (792380,"aleksandar-pavlovic","Defensive Midfield","Midfield","both",188,200000,200000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (53418,"kevin-kampl","Central Midfield","Midfield","right",178,3500000,22000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (58358,"thomas-muller","Second Striker","Attack","right",185,12000000,75000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (95424,"kyle-walker","Right-Back","Defender","right",183,13000000,50000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (174733,"omar-colley","Centre-Back","Defender","left",191,3800000,8000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (288255,"donny-van-de-beek","Central Midfield","Midfield","right",184,10000000,55000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (341429,"davinson-sanchez","Centre-Back","Defender","right",187,14000000,60000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (435338,"gabriel-magalhaes","Centre-Back","Defender","left",190,55000000,55000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (498529,"miguel-crespo","Central Midfield","Midfield","right",186,6000000,10000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (605110,"eyup-aydın","Defensive Midfield","Midfield","left",181,800000,800000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (617074,"ilaix-moriba","Central Midfield","Midfield","right",185,4000000,25000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (640026,"shola-shoretire","Attacking Midfield","Midfield","right",171,4000000,4000000)
+INSERT INTO player_attributes VALUES (942940,"ali-turap-bulbul","Right-Back","Defender","right",179,100000,100000)
+INSERT INTO player_attributes VALUES (77710,"necip-uysal","Centre-Back","Defender","right",180,600000,5500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (81173,"janis-blaswich","Goalkeeper","Goalkeeper","right",193,2500000,2500000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (118287,"rachid-ghezzal","Right Winger","Attack","left",182,4000000,12000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (183288,"luke-shaw","Left-Back","Defender","left",178,42000000,42000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (184573,"victor-lindelof","Centre-Back","Defender","right",187,18000000,35000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (340456,"noussair-mazraoui","Right-Back","Defender","right",183,28000000,28000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (427568,"aaron-ramsdale","Goalkeeper","Goalkeeper","right",190,32000000,40000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (477758,"aaron-wan-bissaka","Right-Back","Defender","right",183,25000000,40000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (500091,"ersin-destanoğlu","Goalkeeper","Goalkeeper","right",195,3500000,10000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (320748,"sebastian-szymanski","Attacking Midfield","Midfield","left",174,18000000,18000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (322873,"İrfan-can-eğribayat","Goalkeeper","Goalkeeper","right",193,2000000,3500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (347913,"luan-peres","Centre-Back","Defender","left",190,4000000,7000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (410158,"rodrigo-becao","Centre-Back","Defender","right",191,11000000,11000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (942939,"ali-yeşilyurt","Centre-Back","Defender","right",192,50000,50000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (56416,"dries-mertens","Second Striker","Attack","right",169,2600000,32000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (143424,"alex-oxlade-chamberlain","Central Midfield","Midfield","right",180,6000000,40000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (144028,"leandro-trossard","Left Winger","Attack","right",172,35000000,35000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (161056,"joshua-kimmich","Defensive Midfield","Midfield","right",177,75000000,90000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (181380,"arthur-masuaku","Left-Back","Defender","left",179,6000000,10000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (190685,"bouna-sarr","Right-Back","Defender","right",177,2000000,9000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (217111,"hakim-ziyech","Attacking Midfield","Midfield","left",181,15000000,50000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (243714,"kingsley-coman","Left Winger","Attack","right",181,65000000,65000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (309400,"kai-havertz","Attacking Midfield","Midfield","left",193,60000000,90000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (357662,"declan-rice","Defensive Midfield","Midfield","right",188,100000000,100000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (363205,"gabriel-jesus","Centre-Forward","Attack","right",175,75000000,80000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (371256,"tete","Right Winger","Attack","left",175,24000000,28000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (468539,"daniel-peretz","Goalkeeper","Goalkeeper","right",190,4000000,4000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (28396,"edin-dzeko","Centre-Forward","Attack","right",193,4000000,32000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (744729,"tarek-buchmann","Centre-Back","Defender","",188,,,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (811779,"alejandro-garnacho","Left Winger","Attack","right",180,25000000,25000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (875334,"semih-kılıcsoy","Centre-Forward","Attack","right",178,375000,375000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (17259,"manuel-neuer","Goalkeeper","Goalkeeper","right",193,7000000,45000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (69633,"christian-eriksen","Attacking Midfield","Midfield","right",182,18000000,100000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (112988,"cedric-soares","Right-Back","Defender","right",171,3000000,15000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (160971,"leopold-zingerle","Goalkeeper","Goalkeeper","right",185,400000,1500000)
+INSERT INTO player_attributes VALUES (177476,"nathan-ake","Centre-Back","Defender","left",180,42000000,42000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (215599,"lukas-klostermann","Right-Back","Defender","right",189,12000000,38000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (238223,"ederson","Goalkeeper","Goalkeeper","left",188,40000000,70000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (291739,"milot-rashica","Right Winger","Attack","right",178,8500000,35000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (342995,"utku-yuvakuran","Goalkeeper","Goalkeeper","right",192,50000,800000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (402008,"amadou-haidara","Central Midfield","Midfield","right",175,17000000,24000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (604320,"frans-kratzig","Left-Back","Defender","left",171,150000,150000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (639582,"tom-hulsmann","Goalkeeper","Goalkeeper","right",205,250000,250000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (676318,"facundo-pellistri","Right Winger","Attack","right",175,8000000,8000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (655895,"bartuğ-elmaz","Defensive Midfield","Midfield","right",179,800000,800000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (14555,"scott-carson","Goalkeeper","Goalkeeper","right",188,200000,6000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (93740,"willi-orban","Centre-Back","Defender","right",186,10000000,20000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (102017,"jorginho","Defensive Midfield","Midfield","right",178,15000000,65000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (203853,"oleksandr-zinchenko","Left-Back","Defender","left",175,42000000,42000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (284730,"manuel-akanji","Centre-Back","Defender","right",188,38000000,40000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (293213,"amir-hadziahmetovic","Defensive Midfield","Midfield","right",179,8000000,8000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (340324,"eddie-nketiah","Centre-Forward","Attack","right",175,30000000,30000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (366930,"sergio-gomez","Left-Back","Defender","left",171,13000000,15000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (462772,"tayyip-talha-sanuc","Centre-Back","Defender","right",188,4200000,5000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (493513,"karl-hein","Goalkeeper","Goalkeeper","right",193,1500000,1500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (536835,"amad-diallo","Right Winger","Attack","left",173,18000000,18000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (618472,"castello-lukeba","Centre-Back","Defender","left",184,25000000,25000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (697149,"kazımcan-karataş","Left-Back","Defender","left",182,2400000,2400000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (720613,"emirhan-delibaş","Right Winger","Attack","left",,50000,50000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (955382,"furkan-akyuz","Goalkeeper","Goalkeeper","right",191,50000,50000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (125858,"kerem-demirbay","Central Midfield","Midfield","left",183,6000000,32000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (346483,"mason-mount","Attacking Midfield","Midfield","right",181,60000000,75000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (351749,"kalvin-phillips","Defensive Midfield","Midfield","right",179,28000000,50000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (655488,"gabriel-martinelli","Left Winger","Attack","right",178,80000000,80000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (820374,"kobbie-mainoo","Central Midfield","Midfield","right",175,800000,800000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (913429,"tim-kohler","Centre-Back","Defender","right",191,,,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (248271,"umut-nayir","Centre-Forward","Attack","right",191,1300000,1500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (164770,"raphael-varane","Centre-Back","Defender","right",191,35000000,80000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (184440,"tayfur-bingol","Right-Back","Defender","right",180,1500000,2100000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (199316,"abdulkerim-bardakcı","Centre-Back","Defender","left",185,7500000,7500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (223967,"konrad-laimer","Central Midfield","Midfield","right",180,28000000,30000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (230784,"thomas-partey","Defensive Midfield","Midfield","right",185,35000000,50000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (240306,"bruno-fernandes","Attacking Midfield","Midfield","right",179,75000000,90000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (392765,"emile-smith-rowe","Attacking Midfield","Midfield","right",182,30000000,40000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (801734,"mathys-tel","Centre-Forward","Attack","right",183,20000000,20000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (34130,"tom-heaton","Goalkeeper","Goalkeeper","right",188,500000,6000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (40680,"sven-ulreich","Goalkeeper","Goalkeeper","right",192,700000,6000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (45671,"cenk-tosun","Centre-Forward","Attack","right",183,3000000,23000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (145988,"wilfried-zaha","Left Winger","Attack","right",180,20000000,55000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (159844,"christopher-lenz","Left-Back","Defender","left",180,2500000,5000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (177907,"harry-maguire","Centre-Back","Defender","right",194,20000000,70000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (318204,"david-raum","Left-Back","Defender","left",180,14000000,26000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (326031,"matthijs-de-ligt","Centre-Back","Defender","right",189,75000000,75000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (331560,"takehiro-tomiyasu","Right-Back","Defender","right",188,25000000,25000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (339340,"tyrell-malacia","Left-Back","Defender","left",169,22000000,22000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (357565,"rodri","Defensive Midfield","Midfield","right",191,100000000,100000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (433177,"bukayo-saka","Right Winger","Attack","left",178,120000000,120000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (486049,"jeremy-doku","Right Winger","Attack","right",173,60000000,60000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (541537,"barış-alper-yılmaz","Right Winger","Attack","right",186,5500000,5500000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (656441,"jean-onana","Defensive Midfield","Midfield","right",189,4800000,6000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (787912,"el-chadaille-bitshiabu","Centre-Back","Defender","left",196,7000000,7000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (1016253,"efe-akman","Defensive Midfield","Midfield","right",,100000,100000)
+INSERT INTO player_attributes VALUES (1046188,"baran-demiroğlu","Centre-Forward","Attack","right",,50000,50000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (1050797,"emrecan-bulut","Left Winger","Attack","right",185,250000,250000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (91059,"joshua-king","Centre-Forward","Attack","right",187,4100000,20000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (179184,"michy-batshuayi","Centre-Forward","Attack","right",185,9000000,40000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (106987,"marcel-sabitzer","Central Midfield","Midfield","right",177,20000000,42000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (370789,"julian-ryerson","Right-Back","Defender","right",183,13000000,13000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (388513,"mateu-morey","Right-Back","Defender","right",173,1000000,7000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (718232,"abdoulaye-kamara","Defensive Midfield","Midfield","right",185,1000000,1000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (166601,"niklas-sule","Centre-Back","Defender","right",195,35000000,60000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (467720,"youssoufa-moukoko","Centre-Forward","Attack","left",179,30000000,30000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (496094,"karim-adeyemi","Left Winger","Attack","left",180,40000000,40000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (100986,"thomas-meunier","Right-Back","Defender","right",191,5000000,35000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (257814,"gregor-kobel","Goalkeeper","Goalkeeper","right",194,35000000,35000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (670882,"jamie-bynoe-gittens","Left Winger","Attack","right",177,14000000,14000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (187492,"julian-brandt","Attacking Midfield","Midfield","right",185,40000000,50000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (405690,"ole-pohlmann","Central Midfield","Midfield","right",183,400000,400000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (181375,"sebastien-haller","Centre-Forward","Attack","right",191,30000000,45000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (244940,"salih-ozcan","Defensive Midfield","Midfield","right",183,13000000,17000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (482573,"antonios-papadopoulos","Centre-Back","Defender","right",186,600000,600000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (504215,"giovanni-reyna","Attacking Midfield","Midfield","right",185,25000000,42000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (119296,"emre-can","Defensive Midfield","Midfield","right",186,14000000,40000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (388198,"nico-schlotterbeck","Centre-Back","Defender","left",191,40000000,40000000,"2027-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (406640,"felix-nmecha","Central Midfield","Midfield","right",190,15000000,15000000,"2028-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (39728,"mats-hummels","Centre-Back","Defender","right",191,6000000,60000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (326029,"donyell-malen","Right Winger","Attack","right",176,28000000,30000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (76158,"alexander-meyer","Goalkeeper","Goalkeeper","right",195,1000000,1000000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (193900,"marius-wolf","Right-Back","Defender","right",187,10000000,10000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (819215,"julien-duranville","Right Winger","Attack","right",170,8500000,8500000)
+INSERT INTO player_attributes VALUES (35207,"marco-reus","Attacking Midfield","Midfield","right",180,7000000,50000000,"2024-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (453737,"marcel-lotka","Goalkeeper","Goalkeeper","right",190,1500000,1500000,"2025-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (75489,"niclas-fullkrug","Centre-Forward","Attack","right",189,13000000,15000000,"2026-06-30 00:00:00")
+INSERT INTO player_attributes VALUES (284732,"ramy-bensebaini","Left-Back","Defender","left",187,20000000,22000000,"2027-06-30 00:00:00")
+
+
+
 
 --------------------------------------- CLUB ENTRIES ---------------------------------------------------------
 
-INSERT INTO clubs VALUES ('105', 'sv-darmstadt-98', 'SV Darmstadt 98', 'L1', NULL, '30', '26.3', '11', '36.7', '1', 'Merck-Stadion am Böllenfalltor', '17500', '€-1.60m', NULL, '2023', 'https://www.transfermarkt.co.uk/sv-darmstadt-98/startseite/verein/105');
-INSERT INTO clubs VALUES ('114', 'besiktas-istanbul', 'Besiktas JK', 'TR1', NULL, '32', '27.3', '16', '50.0', '14', 'Tüpraş Stadyumu', '42590', '€-14.50m', NULL, '2023', 'https://www.transfermarkt.co.uk/besiktas-istanbul/startseite/verein/114');
-INSERT INTO clubs VALUES ('148', 'tottenham-hotspur', 'Tottenham Hotspur', 'GB1', NULL, '29', '26.1', '21', '72.4', '22', 'Tottenham Hotspur Stadium', '62062', '€-130.40m', NULL, '2023', 'https://www.transfermarkt.co.uk/tottenham-hotspur/startseite/verein/148');
-INSERT INTO clubs VALUES ('868', 'mke-ankaragucu', 'MKE Ankaragücü', 'TR1', NULL, '28', '27.2', '17', '60.7', '6', 'Eryaman Stadyumu', '20560', '€-3.35m', NULL, '2023', 'https://www.transfermarkt.co.uk/mke-ankaragucu/startseite/verein/868');
-INSERT INTO clubs VALUES ('989', 'afc-bournemouth', 'AFC Bournemouth', 'GB1', NULL, '29', '26.3', '20', '69.0', '14', 'Vitality Stadium', '11329', '€-126.19m', NULL, '2023', 'https://www.transfermarkt.co.uk/afc-bournemouth/startseite/verein/989');
-INSERT INTO clubs VALUES ('31', 'fc-liverpool', 'Liverpool FC', 'GB1', NULL, '26', '26.1', '21', '80.8', '17', 'Anfield', '54074', '€-111.30m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-liverpool/startseite/verein/31');
-INSERT INTO clubs VALUES ('449', 'trabzonspor', 'Trabzonspor', 'TR1', NULL, '32', '25.8', '16', '50.0', '15', 'Papara Park', '40782', '€-13.11m', NULL, '2023', 'https://www.transfermarkt.co.uk/trabzonspor/startseite/verein/449');
-INSERT INTO clubs VALUES ('6890', 'istanbul-basaksehir-fk', 'Basaksehir FK', 'TR1', NULL, '34', '26.0', '16', '47.1', '10', 'Başakşehir Fatih Terim', '17156', '+-0', NULL, '2023', 'https://www.transfermarkt.co.uk/istanbul-basaksehir-fk/startseite/verein/6890');
-INSERT INTO clubs VALUES ('141', 'galatasaray-istanbul', 'Galatasaray', 'TR1', NULL, '30', '25.8', '16', '53.3', '14', 'Ali Sami Yen Spor Kompleksi RAMS Park', '52223', '€-11.79m', NULL, '2023', 'https://www.transfermarkt.co.uk/galatasaray-istanbul/startseite/verein/141');
-INSERT INTO clubs VALUES ('18', 'borussia-monchengladbach', 'Borussia Mönchengladbach', 'L1', NULL, '31', '25.7', '17', '54.8', '8', 'Stadion im Borussia-Park', '54042', '€-4.28m', NULL, '2023', 'https://www.transfermarkt.co.uk/borussia-monchengladbach/startseite/verein/18');
-INSERT INTO clubs VALUES ('2036', '1-fc-heidenheim-1846', '1.FC Heidenheim 1846', 'L1', NULL, '28', '26.2', '5', '17.9', '1', 'Voith-Arena', '15000', '€-2.30m', NULL, '2023', 'https://www.transfermarkt.co.uk/1-fc-heidenheim-1846/startseite/verein/2036');
-INSERT INTO clubs VALUES ('1237', 'brighton-amp-hove-albion', 'Brighton & Hove Albion', 'GB1', NULL, '26', '26.2', '19', '73.1', '14', 'AMEX Stadium', '31800', '+€94.70m', NULL, '2023', 'https://www.transfermarkt.co.uk/brighton-amp-hove-albion/startseite/verein/1237');
-INSERT INTO clubs VALUES ('589', 'antalyaspor', 'Antalyaspor', 'TR1', NULL, '34', '26.4', '15', '44.1', '5', 'Corendon Airlines Park Antalya Stadı', '32537', '+€9.43m', NULL, '2023', 'https://www.transfermarkt.co.uk/antalyaspor/startseite/verein/589');
-INSERT INTO clubs VALUES ('82', 'vfl-wolfsburg', 'VfL Wolfsburg', 'L1', NULL, '29', '24.7', '19', '65.5', '12', 'Volkswagen Arena', '28917', '€-400k', NULL, '2023', 'https://www.transfermarkt.co.uk/vfl-wolfsburg/startseite/verein/82');
-INSERT INTO clubs VALUES ('15', 'bayer-04-leverkusen', 'Bayer 04 Leverkusen', 'L1', NULL, '27', '24.7', '21', '77.8', '17', 'BayArena', '30210', '€-12.10m', NULL, '2023', 'https://www.transfermarkt.co.uk/bayer-04-leverkusen/startseite/verein/15');
-INSERT INTO clubs VALUES ('703', 'nottingham-forest', 'Nottingham Forest', 'GB1', NULL, '32', '27.0', '27', '84.4', '20', 'The City Ground', '30445', '€-57.23m', NULL, '2023', 'https://www.transfermarkt.co.uk/nottingham-forest/startseite/verein/703');
-INSERT INTO clubs VALUES ('80', 'vfl-bochum', 'VfL Bochum', 'L1', NULL, '30', '27.6', '14', '46.7', '3', 'Vonovia Ruhrstadion', '26000', '€-2.45m', NULL, '2023', 'https://www.transfermarkt.co.uk/vfl-bochum/startseite/verein/80');
-INSERT INTO clubs VALUES ('1031', 'luton-town', 'Luton Town', 'GB1', NULL, '26', '27.8', '12', '46.2', '8', 'Kenilworth Road', '10226', '€-22.75m', NULL, '2023', 'https://www.transfermarkt.co.uk/luton-town/startseite/verein/1031');
-INSERT INTO clubs VALUES ('24', 'eintracht-frankfurt', 'Eintracht Frankfurt', 'L1', NULL, '36', '24.5', '20', '55.6', '9', 'Deutsche Bank Park', '55000', '+€85.85m', NULL, '2023', 'https://www.transfermarkt.co.uk/eintracht-frankfurt/startseite/verein/24');
-INSERT INTO clubs VALUES ('762', 'newcastle-united', 'Newcastle United', 'GB1', NULL, '29', '27.6', '14', '48.3', '11', 'St James Park', '52338', '€-108.60m', NULL, '2023', 'https://www.transfermarkt.co.uk/newcastle-united/startseite/verein/762');
-INSERT INTO clubs VALUES ('1148', 'fc-brentford', 'Brentford FC', 'GB1', NULL, '29', '26.0', '20', '69.0', '16', 'Gtech Community Stadium', '17250', '€-54.76m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-brentford/startseite/verein/1148');
-INSERT INTO clubs VALUES ('16', 'borussia-dortmund', 'Borussia Dortmund', 'L1', NULL, '28', '26.0', '13', '46.4', '19', 'SIGNAL IDUNA PARK', '81365', '+€50.35m', NULL, '2023', 'https://www.transfermarkt.co.uk/borussia-dortmund/startseite/verein/16');
-INSERT INTO clubs VALUES ('2381', 'sivasspor', 'Sivasspor', 'TR1', NULL, '28', '29.0', '13', '46.4', '4', 'Yeni 4 Eylül Stadı', '27532', '+€400k', NULL, '2023', 'https://www.transfermarkt.co.uk/sivasspor/startseite/verein/2381');
-INSERT INTO clubs VALUES ('2832', 'gaziantep-fk', 'Gaziantep FK', 'TR1', NULL, '31', '27.3', '15', '48.4', '5', 'Kalyon Stadyumu', '33502', '€-585k', NULL, '2023', 'https://www.transfermarkt.co.uk/gaziantep-fk/startseite/verein/2832');
-INSERT INTO clubs VALUES ('873', 'crystal-palace', 'Crystal Palace', 'GB1', NULL, '27', '26.4', '12', '44.4', '8', 'Selhurst Park', '26047', '€-38.70m', NULL, '2023', 'https://www.transfermarkt.co.uk/crystal-palace/startseite/verein/873');
-INSERT INTO clubs VALUES ('379', 'west-ham-united', 'West Ham United', 'GB1', NULL, '25', '28.3', '18', '72.0', '14', 'London Stadium', '62500', '+€18.84m', NULL, '2023', 'https://www.transfermarkt.co.uk/west-ham-united/startseite/verein/379');
-INSERT INTO clubs VALUES ('79', 'vfb-stuttgart', 'VfB Stuttgart', 'L1', NULL, '28', '24.1', '11', '39.3', '6', 'MHPArena Stuttgart', '60449', '+€27.55m', NULL, '2023', 'https://www.transfermarkt.co.uk/vfb-stuttgart/startseite/verein/79');
-INSERT INTO clubs VALUES ('86', 'sv-werder-bremen', 'SV Werder Bremen', 'L1', NULL, '24', '26.9', '10', '41.7', '6', 'Wohninvest-Weserstadion', '42100', '+€20.81m', NULL, '2023', 'https://www.transfermarkt.co.uk/sv-werder-bremen/startseite/verein/86');
-INSERT INTO clubs VALUES ('931', 'fc-fulham', 'Fulham FC', 'GB1', NULL, '26', '27.9', '24', '92.3', '14', 'Craven Cottage', '25700', '€-15.87m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-fulham/startseite/verein/931');
-INSERT INTO clubs VALUES ('2293', 'konyaspor', 'Konyaspor', 'TR1', NULL, '29', '27.1', '12', '41.4', '4', 'Medaş Konya Büyükşehir Stadyumu', '42000', '+€1.80m', NULL, '2023', 'https://www.transfermarkt.co.uk/konyaspor/startseite/verein/2293');
-INSERT INTO clubs VALUES ('36', 'fenerbahce-istanbul', 'Fenerbahce', 'TR1', NULL, '29', '27.7', '16', '55.2', '16', 'Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi', '47834', '€-1.36m', NULL, '2023', 'https://www.transfermarkt.co.uk/fenerbahce-istanbul/startseite/verein/36');
-INSERT INTO clubs VALUES ('6646', 'fatih-karagumruk', 'Fatih Karagümrük', 'TR1', NULL, '28', '27.3', '16', '57.1', '6', 'Atatürk Olimpiyat', '74753', '+€2.50m', NULL, '2023', 'https://www.transfermarkt.co.uk/fatih-karagumruk/startseite/verein/6646');
-INSERT INTO clubs VALUES ('924', 'istanbulspor', 'Istanbulspor', 'TR1', NULL, '30', '25.9', '14', '46.7', '5', 'Esenyurt Necmi Kadıoğlu Stadyumu', '7500', '€-400k', NULL, '2023', 'https://www.transfermarkt.co.uk/istanbulspor/startseite/verein/924');
-INSERT INTO clubs VALUES ('985', 'manchester-united', 'Manchester United', 'GB1', NULL, '31', '26.3', '22', '71.0', '22', 'Old Trafford', '74879', '€-149.06m', NULL, '2023', 'https://www.transfermarkt.co.uk/manchester-united/startseite/verein/985');
-INSERT INTO clubs VALUES ('11282', 'alanyaspor', 'Alanyaspor', 'TR1', NULL, '29', '25.8', '13', '44.8', '5', 'Kırbıyık Holding Stadyumu', '10128', '+€800k', NULL, '2023', 'https://www.transfermarkt.co.uk/alanyaspor/startseite/verein/11282');
-INSERT INTO clubs VALUES ('1132', 'fc-burnley', 'Burnley FC', 'GB1', NULL, '33', '25.0', '25', '75.8', '15', 'Turf Moor', '21994', '€-107.25m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-burnley/startseite/verein/1132');
-INSERT INTO clubs VALUES ('152', 'samsunspor', 'Samsunspor', 'TR1', NULL, '31', '26.8', '15', '48.4', '4', 'Samsun Yeni 19 Mayıs Stadyumu', '33919', '€-3.85m', NULL, '2023', 'https://www.transfermarkt.co.uk/samsunspor/startseite/verein/152');
-INSERT INTO clubs VALUES ('23826', 'rasenballsport-leipzig', 'RB Leipzig', 'L1', NULL, '27', '25.5', '18', '66.7', '18', 'Red Bull Arena', '47069', '+€88.20m', NULL, '2023', 'https://www.transfermarkt.co.uk/rasenballsport-leipzig/startseite/verein/23826');
-INSERT INTO clubs VALUES ('3209', 'pendikspor', 'Pendikspor', 'TR1', NULL, '27', '29.6', '13', '48.1', '3', 'Pendik Stadı', '2500', '€-3.10m', NULL, '2023', 'https://www.transfermarkt.co.uk/pendikspor/startseite/verein/3209');
-INSERT INTO clubs VALUES ('89', '1-fc-union-berlin', '1.FC Union Berlin', 'L1', NULL, '28', '27.4', '16', '57.1', '12', 'Stadion An der Alten Försterei', '22012', '€-29.90m', NULL, '2023', 'https://www.transfermarkt.co.uk/1-fc-union-berlin/startseite/verein/89');
-INSERT INTO clubs VALUES ('167', 'fc-augsburg', 'FC Augsburg', 'L1', NULL, '32', '25.1', '20', '62.5', '6', 'WWK ARENA', '30660', '+€17.45m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-augsburg/startseite/verein/167');
-INSERT INTO clubs VALUES ('3', '1-fc-koln', '1.FC Köln', 'L1', NULL, '31', '25.6', '8', '25.8', '6', 'RheinEnergieSTADION', '50000', '+€200k', NULL, '2023', 'https://www.transfermarkt.co.uk/1-fc-koln/startseite/verein/3');
-INSERT INTO clubs VALUES ('3840', 'adana-demirspor', 'Adana Demirspor', 'TR1', NULL, '31', '27.4', '16', '51.6', '7', 'Yeni Adana Stadyumu', '33000', '+€750k', NULL, '2023', 'https://www.transfermarkt.co.uk/adana-demirspor/startseite/verein/3840');
-INSERT INTO clubs VALUES ('7775', 'hatayspor', 'Hatayspor', 'TR1', NULL, '30', '24.8', '15', '50.0', '6', 'Mersin Stadyumu', '25000', '+€7.19m', NULL, '2023', 'https://www.transfermarkt.co.uk/hatayspor/startseite/verein/7775');
-INSERT INTO clubs VALUES ('11', 'fc-arsenal', 'Arsenal FC', 'GB1', NULL, '25', '25.7', '18', '72.0', '21', 'Emirates Stadium', '60704', '€-167.04m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-arsenal/startseite/verein/11');
-INSERT INTO clubs VALUES ('126', 'caykur-rizespor', 'Caykur Rizespor', 'TR1', NULL, '36', '24.5', '18', '50.0', '6', 'Çaykur Didi', '15332', '€-3.41m', NULL, '2023', 'https://www.transfermarkt.co.uk/caykur-rizespor/startseite/verein/126');
-INSERT INTO clubs VALUES ('281', 'manchester-city', 'Manchester City', 'GB1', NULL, '24', '27.1', '17', '70.8', '20', 'Etihad Stadium', '55017', '€-126.60m', NULL, '2023', 'https://www.transfermarkt.co.uk/manchester-city/startseite/verein/281');
-INSERT INTO clubs VALUES ('39', '1-fsv-mainz-05', '1.FSV Mainz 05', 'L1', NULL, '25', '26.9', '12', '48.0', '6', 'Mewa Arena', '33305', '+€14.55m', NULL, '2023', 'https://www.transfermarkt.co.uk/1-fsv-mainz-05/startseite/verein/39');
-INSERT INTO clubs VALUES ('405', 'aston-villa', 'Aston Villa', 'GB1', NULL, '26', '27.2', '19', '73.1', '16', 'Villa Park', '42682', '€-60.45m', NULL, '2023', 'https://www.transfermarkt.co.uk/aston-villa/startseite/verein/405');
-INSERT INTO clubs VALUES ('543', 'wolverhampton-wanderers', 'Wolverhampton Wanderers', 'GB1', NULL, '26', '26.1', '22', '84.6', '14', 'Molineux Stadium', '32050', '+€75.20m', NULL, '2023', 'https://www.transfermarkt.co.uk/wolverhampton-wanderers/startseite/verein/543');
-INSERT INTO clubs VALUES ('60', 'sc-freiburg', 'SC Freiburg', 'L1', NULL, '27', '26.5', '9', '33.3', '9', 'Europa-Park Stadion', '34700', '+€35.30m', NULL, '2023', 'https://www.transfermarkt.co.uk/sc-freiburg/startseite/verein/60');
-INSERT INTO clubs VALUES ('350', 'sheffield-united', 'Sheffield United', 'GB1', NULL, '30', '25.9', '18', '60.0', '8', 'Bramall Lane', '32702', '€-33.55m', NULL, '2023', 'https://www.transfermarkt.co.uk/sheffield-united/startseite/verein/350');
-INSERT INTO clubs VALUES ('3205', 'kayserispor', 'Kayserispor', 'TR1', NULL, '30', '25.9', '14', '46.7', '5', 'RHG Enertürk Enerji Stadyumu', '32864', '+-0', NULL, '2023', 'https://www.transfermarkt.co.uk/kayserispor/startseite/verein/3205');
-INSERT INTO clubs VALUES ('631', 'fc-chelsea', 'Chelsea FC', 'GB1', NULL, '30', '23.8', '20', '66.7', '20', 'Stamford Bridge', '40853', '€-198.40m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-chelsea/startseite/verein/631');
-INSERT INTO clubs VALUES ('10484', 'kasimpasa', 'Kasimpasa', 'TR1', NULL, '24', '26.0', '11', '45.8', '3', 'Recep Tayyip Erdoğan Stadyumu', '13856', '€-1.00m', NULL, '2023', 'https://www.transfermarkt.co.uk/kasimpasa/startseite/verein/10484');
-INSERT INTO clubs VALUES ('27', 'fc-bayern-munchen', 'Bayern Munich', 'L1', NULL, '25', '26.7', '13', '52.0', '18', 'Allianz Arena', '75024', '+€23.25m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-bayern-munchen/startseite/verein/27');
-INSERT INTO clubs VALUES ('29', 'fc-everton', 'Everton FC', 'GB1', NULL, '25', '27.3', '11', '44.0', '6', 'Goodison Park', '39571', '+€42.30m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-everton/startseite/verein/29');
-INSERT INTO clubs VALUES ('533', 'tsg-1899-hoffenheim', 'TSG 1899 Hoffenheim', 'L1', NULL, '30', '26.1', '13', '43.3', '12', 'PreZero Arena', '30150', '€-7.30m', NULL, '2023', 'https://www.transfermarkt.co.uk/tsg-1899-hoffenheim/startseite/verein/533');
+INSERT INTO clubs VALUES (114, 'besiktas-istanbul', 'Besiktas JK', 'TR1', NULL, 32, 27.3, 16, 50.0, 14, 'Tüpraş Stadyumu', 42590, '€-14.50m', NULL, '2023', 'https://www.transfermarkt.co.uk/besiktas-istanbul/startseite/verein/114');
+INSERT INTO clubs VALUES (141, 'galatasaray-istanbul', 'Galatasaray', 'TR1', NULL, 30, 25.8, 16, 53.3, 14, 'Ali Sami Yen Spor Kompleksi RAMS Park', 52223, '€-11.79m', NULL, '2023', 'https://www.transfermarkt.co.uk/galatasaray-istanbul/startseite/verein/141');
+INSERT INTO clubs VALUES (16, 'borussia-dortmund', 'Borussia Dortmund', 'L1', NULL, 28, 26.0, 13, 46.4, 19, 'SIGNAL IDUNA PARK', 81365, '+€50.35m', NULL, '2023', 'https://www.transfermarkt.co.uk/borussia-dortmund/startseite/verein/16');
+INSERT INTO clubs VALUES (36, 'fenerbahce-istanbul', 'Fenerbahce', 'TR1', NULL, 29, 27.7, 16, 55.2, 16, 'Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi', 47834, '€-1.36m', NULL, '2023', 'https://www.transfermarkt.co.uk/fenerbahce-istanbul/startseite/verein/36');
+INSERT INTO clubs VALUES (985, 'manchester-united', 'Manchester United', 'GB1', NULL, 31, 26.3, 22, 71.0, 22, 'Old Trafford', 74879, '€-149.06m', NULL, '2023', 'https://www.transfermarkt.co.uk/manchester-united/startseite/verein/985');
+INSERT INTO clubs VALUES (23826, 'rasenballsport-leipzig', 'RB Leipzig', 'L1', NULL, 27, 25.5, 18, 66.7, 18, 'Red Bull Arena', 47069, '+€88.20m', NULL, '2023', 'https://www.transfermarkt.co.uk/rasenballsport-leipzig/startseite/verein/23826');
+INSERT INTO clubs VALUES (11, 'fc-arsenal', 'Arsenal FC', 'GB1', NULL, 25, 25.7, 18, 72.0, 21, 'Emirates Stadium', 60704, '€-167.04m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-arsenal/startseite/verein/11');
+INSERT INTO clubs VALUES (281, 'manchester-city', 'Manchester City', 'GB1', NULL, 24, 27.1, 17, 70.8, 20, 'Etihad Stadium', 55017, '€-126.60m', NULL, '2023', 'https://www.transfermarkt.co.uk/manchester-city/startseite/verein/281');
+INSERT INTO clubs VALUES (27, 'fc-bayern-munchen', 'Bayern Munich', 'L1', NULL, 25, 26.7, 13, 52.0, 18, 'Allianz Arena', 75024, '+€23.25m', NULL, '2023', 'https://www.transfermarkt.co.uk/fc-bayern-munchen/startseite/verein/27');
 
 --------------------------------------- COMPETITION ENTRIES ---------------------------------------------------------
 
-INSERT INTO competitions VALUES ('TR1', 'super-lig', 'super-lig', 'first_tier', 'domestic_league', '174', 'Turkey', 'TR1', 'europa', 'https://www.transfermarkt.co.uk/super-lig/startseite/wettbewerb/TR1');
-INSERT INTO competitions VALUES ('GB1', 'premier-league', 'premier-league', 'first_tier', 'domestic_league', '189', 'England', 'GB1', 'europa', 'https://www.transfermarkt.co.uk/premier-league/startseite/wettbewerb/GB1');
-INSERT INTO competitions VALUES ('L1', 'bundesliga', 'bundesliga', 'first_tier', 'domestic_league', '40', 'Germany', 'L1', 'europa', 'https://www.transfermarkt.co.uk/bundesliga/startseite/wettbewerb/L1');
+INSERT INTO competitions VALUES ('TR1', 'super-lig', 'super-lig', 'first_tier', 'domestic_league', 'Turkey', 'TR1', 'europa', 'https://www.transfermarkt.co.uk/super-lig/startseite/wettbewerb/TR1');
+INSERT INTO competitions VALUES ('GB1', 'premier-league', 'premier-league', 'first_tier', 'domestic_league', 'England', 'GB1', 'europa', 'https://www.transfermarkt.co.uk/premier-league/startseite/wettbewerb/GB1');
+INSERT INTO competitions VALUES ('L1', 'bundesliga', 'bundesliga', 'first_tier', 'domestic_league',  'Germany', 'L1', 'europa', 'https://www.transfermarkt.co.uk/bundesliga/startseite/wettbewerb/L1');
 
 --------------------------------------- GAMES ENTRIES ---------------------------------------------------------
 
-INSERT INTO games VALUES ('4129467', 'TR1', '2023', '6. Matchday', '2023-09-22', '2832', '924', '2', '0', '17.0', '19.0', 'Marius Sumudica', 'Fatih Tekke', 'Kalyon Stadyumu', '7185.0', 'Murat Erdoğan', 'https://www.transfermarkt.co.uk/gaziantep-fk_istanbulspor/index/spielbericht/4129467', '3-5-2', '4-2-3-1', 'Gaziantep FK', 'Istanbulspor', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4129517', 'TR1', '2023', '11. Matchday', '2023-11-06', '2832', '126', '2', '0', '13.0', '11.0', 'Marius Sumudica', 'İlhan Palut', 'Kalyon Stadyumu', NULL, 'Ali Şansalan', 'https://www.transfermarkt.co.uk/gaziantep-fk_caykur-rizespor/index/spielbericht/4129517', '3-5-2 Attacking', '4-2-3-1', 'Gaziantep FK', 'Caykur Rizespor', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4129461', 'TR1', '2023', '5. Matchday', '2023-09-18', '2381', '868', '1', '3', '14.0', '12.0', 'Servet Çetin', 'Tolunay Kafkas', 'Yeni 4 Eylül Stadı', '3368.0', 'Çağdaş Altay', 'https://www.transfermarkt.co.uk/sivasspor_mke-ankaragucu/index/spielbericht/4129461', '4-1-4-1', '4-2-3-1', 'Sivasspor', 'MKE Ankaragücü', '1:3', 'domestic_league');
-INSERT INTO games VALUES ('4129494', 'TR1', '2023', '9. Matchday', '2023-10-22', '924', '868', '2', '1', '19.0', '14.0', 'Hakan Yakın', 'Emre Belözoğlu', 'Esenyurt Necmi Kadıoğlu Stadyumu', '925.0', 'Yiğit Arslan', 'https://www.transfermarkt.co.uk/istanbulspor_mke-ankaragucu/index/spielbericht/4129494', '4-3-3 Attacking', '4-3-3 Attacking', 'Istanbulspor', 'MKE Ankaragücü', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4126781', 'TR1', '2023', '1. Matchday', '2023-08-13', '36', '2832', '2', '1', '5.0', '15.0', 'İsmail Kartal', 'Erdal Güneş', 'Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi', '38753.0', 'Abdulkadir Bitigen', 'https://www.transfermarkt.co.uk/fenerbahce_gaziantep-fk/index/spielbericht/4126781', '4-3-3 Attacking', '4-2-3-1', 'Fenerbahce', 'Gaziantep FK', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4126783', 'TR1', '2023', '1. Matchday', '2023-08-12', '2293', '924', '1', '1', '9.0', '8.0', 'Aleksandar Stanojevic', 'Fatih Tekke', 'Medaş Konya Büyükşehir Stadyumu', '5552.0', 'Burak Pakkan', 'https://www.transfermarkt.co.uk/konyaspor_istanbulspor/index/spielbericht/4126783', '4-2-3-1', '4-2-3-1', 'Konyaspor', 'Istanbulspor', '1:1', 'domestic_league');
-INSERT INTO games VALUES ('4126825', 'TR1', '2023', '4. Matchday', '2023-09-02', '2832', '141', '0', '3', '19.0', '2.0', 'Erdal Güneş', 'Okan Buruk', 'Kalyon Stadyumu', '23510.0', 'Ali Şansalan', 'https://www.transfermarkt.co.uk/gaziantep-fk_galatasaray/index/spielbericht/4126825', '4-1-4-1', '4-2-3-1', 'Gaziantep FK', 'Galatasaray', '0:3', 'domestic_league');
-INSERT INTO games VALUES ('4126827', 'TR1', '2023', '4. Matchday', '2023-09-02', '589', '3205', '1', '1', '14.0', '10.0', 'Nuri Sahin', 'Çağdaş Atan', 'Corendon Airlines Park Antalya Stadı', '5191.0', 'Yasin Kol', 'https://www.transfermarkt.co.uk/antalyaspor_kayserispor/index/spielbericht/4126827', '4-2-3-1', '4-2-3-1', 'Antalyaspor', 'Kayserispor', '1:1', 'domestic_league');
-INSERT INTO games VALUES ('4129477', 'TR1', '2023', '7. Matchday', '2023-10-01', '3840', '11282', '4', '0', '3.0', '13.0', 'Patrick Kluivert', 'Ömer Erdoğan', 'Yeni Adana Stadyumu', '9295.0', 'Ali Şansalan', 'https://www.transfermarkt.co.uk/adana-demirspor_alanyaspor/index/spielbericht/4129477', '4-2-3-1', '4-2-3-1', 'Adana Demirspor', 'Alanyaspor', '4:0', 'domestic_league');
-INSERT INTO games VALUES ('4129495', 'TR1', '2023', '9. Matchday', '2023-10-21', '141', '114', '2', '1', '2.0', '4.0', 'Okan Buruk', 'Burak Yılmaz', 'Ali Sami Yen Spor Kompleksi RAMS Park', '50429.0', 'Halil Umut Meler', 'https://www.transfermarkt.co.uk/galatasaray_besiktas-jk/index/spielbericht/4129495', '4-2-3-1', '4-2-3-1', 'Galatasaray', 'Besiktas JK', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4129518', 'TR1', '2023', '11. Matchday', '2023-11-05', '6890', '868', '3', '3', '18.0', '12.0', 'Çağdaş Atan', 'Emre Belözoğlu', 'Başakşehir Fatih Terim', NULL, 'Çağdaş Altay', 'https://www.transfermarkt.co.uk/basaksehir-fk_mke-ankaragucu/index/spielbericht/4129518', '4-2-3-1', '4-2-3-1', 'Basaksehir FK', 'MKE Ankaragücü', '3:3', 'domestic_league');
-INSERT INTO games VALUES ('4129465', 'TR1', '2023', '6. Matchday', '2023-09-24', '10484', '3840', '2', '1', '10.0', '3.0', 'Kemal Özdeş', 'Patrick Kluivert', 'Recep Tayyip Erdoğan Stadyumu', '2794.0', 'Yasin Kol', 'https://www.transfermarkt.co.uk/kasimpasa_adana-demirspor/index/spielbericht/4129465', '4-2-3-1', '4-2-3-1', 'Kasimpasa', 'Adana Demirspor', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4129469', 'TR1', '2023', '6. Matchday', '2023-09-23', '589', '152', '2', '0', '13.0', '20.0', 'Nuri Sahin', 'Hüseyin Eroğlu', 'Corendon Airlines Park Antalya Stadı', '7404.0', 'Arda Kardeşler', 'https://www.transfermarkt.co.uk/antalyaspor_samsunspor/index/spielbericht/4129469', '4-2-3-1', '4-2-3-1', 'Antalyaspor', 'Samsunspor', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4129500', 'TR1', '2023', '9. Matchday', '2023-10-22', '36', '7775', '4', '2', '1.0', '7.0', 'İsmail Kartal', 'Volkan Demirel', 'Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi', '41976.0', 'Volkan Bayarslan', 'https://www.transfermarkt.co.uk/fenerbahce_hatayspor/index/spielbericht/4129500', '4-2-3-1', '3-4-3', 'Fenerbahce', 'Hatayspor', '4:2', 'domestic_league');
-INSERT INTO games VALUES ('4129490', 'TR1', '2023', '8. Matchday', '2023-10-08', '114', '924', '2', '0', '4.0', '19.0', 'Burak Yılmaz', 'Olcay Demir', 'Tüpraş Stadyumu', '24111.0', 'Tugay Kaan Numanoğlu', 'https://www.transfermarkt.co.uk/besiktas-jk_istanbulspor/index/spielbericht/4129490', '4-2-3-1', '4-4-2 double 6', 'Besiktas JK', 'Istanbulspor', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4129510', 'TR1', '2023', '10. Matchday', '2023-10-30', '114', '2832', '2', '0', '4.0', '16.0', 'Burak Yılmaz', 'Marius Sumudica', 'Tüpraş Stadyumu', '28952.0', 'Mete Kalkavan', 'https://www.transfermarkt.co.uk/besiktas-jk_gaziantep-fk/index/spielbericht/4129510', '4-2-3-1', '3-5-2 Attacking', 'Besiktas JK', 'Gaziantep FK', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4126822', 'TR1', '2023', '4. Matchday', '2023-09-02', '3209', '11282', '1', '1', '15.0', '8.0', 'Osman Özköylü', 'Ömer Erdoğan', 'Ümraniye Belediyesi Şehir Stadı', '854.0', 'Abdulkadir Bitigen', 'https://www.transfermarkt.co.uk/pendikspor_alanyaspor/index/spielbericht/4126822', '4-2-3-1', '4-3-3 Attacking', 'Pendikspor', 'Alanyaspor', '1:1', 'domestic_league');
-INSERT INTO games VALUES ('4129496', 'TR1', '2023', '9. Matchday', '2023-10-22', '152', '6890', '0', '0', '20.0', '17.0', 'Markus Gisdol', 'Çağdaş Atan', 'Samsun Yeni 19 Mayıs Stadyumu', '12965.0', 'Murat Erdoğan', 'https://www.transfermarkt.co.uk/samsunspor_basaksehir-fk/index/spielbericht/4129496', '4-4-2 double 6', '4-4-2 double 6', 'Samsunspor', 'Basaksehir FK', '0:0', 'domestic_league');
-INSERT INTO games VALUES ('4129515', 'TR1', '2023', '11. Matchday', '2023-11-03', '141', '10484', '2', '1', '1.0', '7.0', 'Okan Buruk', 'Kemal Özdeş', 'Ali Sami Yen Spor Kompleksi RAMS Park', NULL, 'Arda Kardeşler', 'https://www.transfermarkt.co.uk/galatasaray_kasimpasa/index/spielbericht/4129515', '4-2-3-1', '4-2-3-1', 'Galatasaray', 'Kasimpasa', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4126821', 'TR1', '2023', '4. Matchday', '2023-09-03', '7775', '3840', '3', '3', '7.0', '3.0', 'Volkan Demirel', 'Patrick Kluivert', 'Mersin Stadyumu', '8544.0', 'Sarper Barış Saka', 'https://www.transfermarkt.co.uk/hatayspor_adana-demirspor/index/spielbericht/4126821', '4-3-3 Attacking', '4-2-3-1', 'Hatayspor', 'Adana Demirspor', '3:3', 'domestic_league');INSERT INTO games VALUES ('4087929', 'GB1', '2023', '1. Matchday', '2023-08-12', '350', '873', '0', '1', '15.0', '5.0', 'Paul Heckingbottom', 'Roy Hodgson', 'Bramall Lane', '31194.0', 'John Brooks', 'https://www.transfermarkt.co.uk/sheffield-united_crystal-palace/index/spielbericht/4087929', '3-5-2 flat', '4-2-3-1', 'Sheffield United', 'Crystal Palace', '0:1', 'domestic_league');
-INSERT INTO games VALUES ('4087952', 'GB1', '2023', '3. Matchday', '2023-08-27', '762', '31', '1', '2', '13.0', '4.0', 'Eddie Howe', 'Jürgen Klopp', 'St James Park', '52214.0', 'John Brooks', 'https://www.transfermarkt.co.uk/newcastle-united_liverpool-fc/index/spielbericht/4087952', '4-3-3 Attacking', '4-3-3 Attacking', 'Newcastle United', 'Liverpool FC', '1:2', 'domestic_league');
-INSERT INTO games VALUES ('4087962', 'GB1', '2023', '4. Matchday', '2023-09-02', '281', '931', '5', '1', '1.0', '13.0', 'Pep Guardiola', 'Marco Silva', 'Etihad Stadium', '52899.0', 'Michael Oliver', 'https://www.transfermarkt.co.uk/manchester-city_fulham-fc/index/spielbericht/4087962', '4-2-3-1', '4-3-3 Attacking', 'Manchester City', 'Fulham FC', '5:1', 'domestic_league');
-INSERT INTO games VALUES ('4087965', 'GB1', '2023', '5. Matchday', '2023-09-16', '405', '873', '3', '1', '7.0', '9.0', 'Unai Emery', 'Patrick McCarthy', 'Villa Park', '40809.0', 'Darren England', 'https://www.transfermarkt.co.uk/aston-villa_crystal-palace/index/spielbericht/4087965', '4-2-3-1', '4-2-3-1', 'Aston Villa', 'Crystal Palace', '3:1', 'domestic_league');
-INSERT INTO games VALUES ('4095066', 'GB1', '2023', '6. Matchday', '2023-09-24', '631', '405', '0', '1', '14.0', '6.0', 'Mauricio Pochettino', 'Unai Emery', 'Stamford Bridge', '39700.0', 'Jarred Gillett', 'https://www.transfermarkt.co.uk/chelsea-fc_aston-villa/index/spielbericht/4095066', '4-2-3-1', '4-2-3-1', 'Chelsea FC', 'Aston Villa', '0:1', 'domestic_league');
-INSERT INTO games VALUES ('4087967', 'GB1', '2023', '5. Matchday', '2023-09-16', '985', '1237', '1', '3', '13.0', '5.0', 'Erik ten Hag', 'Roberto De Zerbi', 'Old Trafford', '73592.0', 'Jarred Gillett', 'https://www.transfermarkt.co.uk/manchester-united_brighton-amp-hove-albion/index/spielbericht/4087967', '4-4-2 Diamond', '4-2-3-1', 'Manchester United', 'Brighton & Hove Albion', '1:3', 'domestic_league');
-INSERT INTO games VALUES ('4095137', 'GB1', '2023', '7. Matchday', '2023-09-30', '405', '1237', '6', '1', '5.0', '6.0', 'Unai Emery', 'Roberto De Zerbi', 'Villa Park', '40636.0', 'Andrew Madley', 'https://www.transfermarkt.co.uk/aston-villa_brighton-amp-hove-albion/index/spielbericht/4095137', '4-2-3-1', '4-2-3-1', 'Aston Villa', 'Brighton & Hove Albion', '6:1', 'domestic_league');
-INSERT INTO games VALUES ('4087956', 'GB1', '2023', '4. Matchday', '2023-09-02', '1237', '762', '3', '1', '6.0', '14.0', 'Roberto De Zerbi', 'Eddie Howe', 'AMEX Stadium', '31620.0', 'Stuart Attwell', 'https://www.transfermarkt.co.uk/brighton-amp-hove-albion_newcastle-united/index/spielbericht/4087956', '4-2-3-1', '4-3-3 Attacking', 'Brighton & Hove Albion', 'Newcastle United', '3:1', 'domestic_league');
-INSERT INTO games VALUES ('4095136', 'GB1', '2023', '7. Matchday', '2023-09-30', '989', '11', '0', '4', '19.0', '3.0', 'Andoni Iraola', 'Mikel Arteta', 'Vitality Stadium', NULL, 'Michael Salisbury', 'https://www.transfermarkt.co.uk/afc-bournemouth_arsenal-fc/index/spielbericht/4095136', '4-2-3-1', '4-3-3 Attacking', 'AFC Bournemouth', 'Arsenal FC', '0:4', 'domestic_league');
-INSERT INTO games VALUES ('4095139', 'GB1', '2023', '7. Matchday', '2023-10-02', '931', '631', '0', '2', '13.0', '11.0', 'Marco Silva', 'Mauricio Pochettino', 'Craven Cottage', '24445.0', 'Tim Robinson', 'https://www.transfermarkt.co.uk/fulham-fc_chelsea-fc/index/spielbericht/4095139', '4-3-3 Attacking', '4-3-3 Attacking', 'Fulham FC', 'Chelsea FC', '0:2', 'domestic_league');
-INSERT INTO games VALUES ('4095141', 'GB1', '2023', '7. Matchday', '2023-10-01', '703', '1148', '1', '1', '12.0', '14.0', 'Steve Cooper', 'Thomas Frank', 'The City Ground', NULL, 'Paul Tierney', 'https://www.transfermarkt.co.uk/nottingham-forest_brentford-fc/index/spielbericht/4095141', '4-3-3 Attacking', '4-3-3 Defending', 'Nottingham Forest', 'Brentford FC', '1:1', 'domestic_league');
-INSERT INTO games VALUES ('4095067', 'GB1', '2023', '6. Matchday', '2023-09-23', '873', '931', '0', '0', '10.0', '11.0', 'Roy Hodgson', 'Marco Silva', 'Selhurst Park', '25072.0', 'Paul Tierney', 'https://www.transfermarkt.co.uk/crystal-palace_fulham-fc/index/spielbericht/4095067', '4-2-3-1', '4-3-3 Attacking', 'Crystal Palace', 'Fulham FC', '0:0', 'domestic_league');
-INSERT INTO games VALUES ('4095138', 'GB1', '2023', '7. Matchday', '2023-09-30', '29', '1031', '1', '2', '16.0', '17.0', 'Sean Dyche', 'Rob Edwards', 'Goodison Park', '39271.0', 'Anthony Taylor', 'https://www.transfermarkt.co.uk/everton-fc_luton-town/index/spielbericht/4095138', '4-4-1-1', '3-4-2-1', 'Everton FC', 'Luton Town', '1:2', 'domestic_league');
-INSERT INTO games VALUES ('4095151', 'GB1', '2023', '8. Matchday', '2023-10-07', '931', '350', '3', '1', '12.0', '20.0', 'Marco Silva', 'Paul Heckingbottom', 'Craven Cottage', '24361.0', 'Samuel Barrott', 'https://www.transfermarkt.co.uk/fulham-fc_sheffield-united/index/spielbericht/4095151', '4-3-3 Attacking', '3-5-2 flat', 'Fulham FC', 'Sheffield United', '3:1', 'domestic_league');
-INSERT INTO games VALUES ('4095159', 'GB1', '2023', '9. Matchday', '2023-10-21', '631', '11', '2', '2', '10.0', '3.0', 'Mauricio Pochettino', 'Mikel Arteta', 'Stamford Bridge', '39723.0', 'Chris Kavanagh', 'https://www.transfermarkt.co.uk/chelsea-fc_arsenal-fc/index/spielbericht/4095159', '4-2-3-1', '4-3-3 Attacking', 'Chelsea FC', 'Arsenal FC', '2:2', 'domestic_league');
-INSERT INTO games VALUES ('4095171', 'GB1', '2023', '10. Matchday', '2023-10-27', '873', '148', '1', '2', '13.0', '1.0', 'Roy Hodgson', 'Ange Postecoglou', 'Selhurst Park', NULL, 'Andrew Madley', 'https://www.transfermarkt.co.uk/crystal-palace_tottenham-hotspur/index/spielbericht/4095171', '4-2-3-1', '4-2-3-1', 'Crystal Palace', 'Tottenham Hotspur', '1:2', 'domestic_league');
-INSERT INTO games VALUES ('4095165', 'GB1', '2023', '9. Matchday', '2023-10-23', '148', '931', '2', '0', '1.0', '13.0', 'Ange Postecoglou', 'Marco Silva', 'Tottenham Hotspur Stadium', '61286.0', 'Anthony Taylor', 'https://www.transfermarkt.co.uk/tottenham-hotspur_fulham-fc/index/spielbericht/4095165', '4-2-3-1', '4-2-3-1', 'Tottenham Hotspur', 'Fulham FC', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4095175', 'GB1', '2023', '10. Matchday', '2023-10-28', '543', '762', '2', '2', '12.0', '6.0', 'Gary ONeil', 'Eddie Howe', 'Molineux Stadium', '31584.0', 'Anthony Taylor', 'https://www.transfermarkt.co.uk/wolverhampton-wanderers_newcastle-united/index/spielbericht/4095175', '4-4-2', '4-3-3 Attacking', 'Wolverhampton Wanderers', 'Newcastle United', '2:2', 'domestic_league');
-INSERT INTO games VALUES ('4095166', 'GB1', '2023', '10. Matchday', '2023-10-28', '989', '1132', '2', '1', '17.0', '19.0', 'Andoni Iraola', 'Vincent Kompany', 'Vitality Stadium', '11152.0', 'Samuel Barrott', 'https://www.transfermarkt.co.uk/afc-bournemouth_burnley-fc/index/spielbericht/4095166', '4-2-3-1', '4-3-3 Attacking', 'AFC Bournemouth', 'Burnley FC', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4095153', 'GB1', '2023', '8. Matchday', '2023-10-07', '985', '1148', '2', '1', '10.0', '15.0', 'Erik ten Hag', 'Thomas Frank', 'Old Trafford', '73453.0', 'Andrew Madley', 'https://www.transfermarkt.co.uk/manchester-united_brentford-fc/index/spielbericht/4095153', '4-2-3-1', '3-5-2 flat', 'Manchester United', 'Brentford FC', '2:1', 'domestic_league');INSERT INTO games VALUES ('4095972', 'L1', '2023', '1. Matchday', '2023-08-19', '82', '2036', '2', '0', '4.0', '15.0', 'Niko Kovac', 'Frank Schmidt', 'Volkswagen Arena', '22620.0', 'Florian Badstübner', 'https://www.transfermarkt.co.uk/vfl-wolfsburg_1-fc-heidenheim-1846/index/spielbericht/4095972', '4-3-3 Attacking', '4-1-3-2', 'VfL Wolfsburg', '1.FC Heidenheim 1846', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4095997', 'L1', '2023', '4. Matchday', '2023-09-16', '82', '89', '2', '1', '6.0', '8.0', 'Niko Kovac', 'Urs Fischer', 'Volkswagen Arena', '28217.0', 'Dr. Felix Brych', 'https://www.transfermarkt.co.uk/vfl-wolfsburg_1-fc-union-berlin/index/spielbericht/4095997', '4-2-3-1', '3-5-2 flat', 'VfL Wolfsburg', '1.FC Union Berlin', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4096019', 'L1', '2023', '6. Matchday', '2023-09-30', '2036', '89', '1', '0', '10.0', '11.0', 'Frank Schmidt', 'Urs Fischer', 'Voith-Arena', '15000.0', 'Sascha Stegemann', 'https://www.transfermarkt.co.uk/1-fc-heidenheim-1846_1-fc-union-berlin/index/spielbericht/4096019', '4-2-3-1', '3-4-3', '1.FC Heidenheim 1846', '1.FC Union Berlin', '1:0', 'domestic_league');
-INSERT INTO games VALUES ('4096022', 'L1', '2023', '7. Matchday', '2023-10-07', '16', '89', '4', '2', '4.0', '13.0', 'Edin Terzic', 'Urs Fischer', 'SIGNAL IDUNA PARK', '81365.0', 'Patrick Ittrich', 'https://www.transfermarkt.co.uk/borussia-dortmund_1-fc-union-berlin/index/spielbericht/4096022', '4-2-3-1', '3-5-2 flat', 'Borussia Dortmund', '1.FC Union Berlin', '4:2', 'domestic_league');
-INSERT INTO games VALUES ('4096032', 'L1', '2023', '8. Matchday', '2023-10-21', '60', '80', '2', '1', '8.0', '17.0', 'Christian Streich', 'Thomas Letsch', 'Europa-Park Stadion', '33900.0', 'Tobias Reichel', 'https://www.transfermarkt.co.uk/sc-freiburg_vfl-bochum/index/spielbericht/4096032', '3-4-3', '3-4-3', 'SC Freiburg', 'VfL Bochum', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4096044', 'L1', '2023', '9. Matchday', '2023-10-28', '86', '89', '2', '0', '12.0', '15.0', 'Ole Werner', 'Urs Fischer', 'Wohninvest-Weserstadion', '42100.0', 'Tobias Stieler', 'https://www.transfermarkt.co.uk/sv-werder-bremen_1-fc-union-berlin/index/spielbericht/4096044', '3-1-4-2', '3-1-4-2', 'SV Werder Bremen', '1.FC Union Berlin', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4095971', 'L1', '2023', '1. Matchday', '2023-08-20', '24', '105', '1', '0', '8.0', '14.0', 'Dino Toppmöller', 'Torsten Lieberknecht', 'Commerzbank Arena', '54000.0', 'Harm Osmers', 'https://www.transfermarkt.co.uk/eintracht-frankfurt_sv-darmstadt-98/index/spielbericht/4095971', '3-4-2-1', '3-4-3', 'Eintracht Frankfurt', 'SV Darmstadt 98', '1:0', 'domestic_league');
-INSERT INTO games VALUES ('4096014', 'L1', '2023', '6. Matchday', '2023-09-30', '82', '24', '2', '0', '7.0', '9.0', 'Niko Kovac', 'Dino Toppmöller', 'Volkswagen Arena', '28323.0', 'Frank Willenborg', 'https://www.transfermarkt.co.uk/vfl-wolfsburg_eintracht-frankfurt/index/spielbericht/4096014', '4-2-3-1', '3-4-2-1', 'VfL Wolfsburg', 'Eintracht Frankfurt', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4095987', 'L1', '2023', '3. Matchday', '2023-09-02', '15', '105', '5', '1', '1.0', '18.0', 'Xabi Alonso', 'Torsten Lieberknecht', 'BayArena', '29653.0', 'Sven Jablonski', 'https://www.transfermarkt.co.uk/bayer-04-leverkusen_sv-darmstadt-98/index/spielbericht/4095987', '3-4-2-1', '3-4-1-2', 'Bayer 04 Leverkusen', 'SV Darmstadt 98', '5:1', 'domestic_league');
-INSERT INTO games VALUES ('4096009', 'L1', '2023', '5. Matchday', '2023-09-23', '86', '3', '2', '1', '11.0', '16.0', 'Ole Werner', 'Steffen Baumgart', 'Wohninvest-Weserstadion', '42100.0', 'Bastian Dankert', 'https://www.transfermarkt.co.uk/sv-werder-bremen_1-fc-koln/index/spielbericht/4096009', '3-5-2', '4-2-3-1', 'SV Werder Bremen', '1.FC Köln', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4096013', 'L1', '2023', '6. Matchday', '2023-10-01', '60', '167', '2', '0', '8.0', '14.0', 'Christian Streich', 'Enrico Maaßen', 'Europa-Park Stadion', '33134.0', 'Harm Osmers', 'https://www.transfermarkt.co.uk/sc-freiburg_fc-augsburg/index/spielbericht/4096013', '3-4-3', '3-4-2-1', 'SC Freiburg', 'FC Augsburg', '2:0', 'domestic_league');
-INSERT INTO games VALUES ('4096023', 'L1', '2023', '7. Matchday', '2023-10-07', '23826', '80', '0', '0', '6.0', '16.0', 'Marco Rose', 'Thomas Letsch', 'Red Bull Arena', '44269.0', 'Timo Gerach', 'https://www.transfermarkt.co.uk/rb-leipzig_vfl-bochum/index/spielbericht/4096023', '4-4-2', '3-5-2 flat', 'RB Leipzig', 'VfL Bochum', '0:0', 'domestic_league');
-INSERT INTO games VALUES ('4096035', 'L1', '2023', '8. Matchday', '2023-10-22', '3', '18', '3', '1', '16.0', '13.0', 'Steffen Baumgart', 'Gerardo Seoane', 'RheinEnergieSTADION', '50000.0', 'Deniz Aytekin', 'https://www.transfermarkt.co.uk/1-fc-koln_borussia-monchengladbach/index/spielbericht/4096035', '4-2-3-1', '3-5-2 flat', '1.FC Köln', 'Borussia Mönchengladbach', '3:1', 'domestic_league');
-INSERT INTO games VALUES ('4096000', 'L1', '2023', '4. Matchday', '2023-09-16', '80', '24', '1', '1', '13.0', '9.0', 'Thomas Letsch', 'Dino Toppmöller', 'Vonovia Ruhrstadion', '26000.0', 'Benjamin Brand', 'https://www.transfermarkt.co.uk/vfl-bochum_eintracht-frankfurt/index/spielbericht/4096000', '3-5-2 flat', '3-4-2-1', 'VfL Bochum', 'Eintracht Frankfurt', '1:1', 'domestic_league');
-INSERT INTO games VALUES ('4096021', 'L1', '2023', '7. Matchday', '2023-10-08', '27', '60', '3', '0', '3.0', '9.0', 'Thomas Tuchel', 'Christian Streich', 'Allianz Arena', '75000.0', 'Robert Schröder', 'https://www.transfermarkt.co.uk/bayern-munich_sc-freiburg/index/spielbericht/4096021', '4-2-3-1', '4-4-2 double 6', 'Bayern Munich', 'SC Freiburg', '3:0', 'domestic_league');
-INSERT INTO games VALUES ('4096028', 'L1', '2023', '7. Matchday', '2023-10-07', '167', '105', '1', '2', '15.0', '11.0', 'Enrico Maaßen', 'Torsten Lieberknecht', 'WWK ARENA', '29200.0', 'Deniz Aytekin', 'https://www.transfermarkt.co.uk/fc-augsburg_sv-darmstadt-98/index/spielbericht/4096028', '3-4-2-1', '3-4-1-2', 'FC Augsburg', 'SV Darmstadt 98', '1:2', 'domestic_league');
-INSERT INTO games VALUES ('4096056', 'L1', '2023', '10. Matchday', '2023-11-03', '105', '80', '1', '2', '15.0', '14.0', 'Torsten Lieberknecht', 'Thomas Letsch', 'Merck-Stadion am Böllenfalltor', '17810.0', 'Marco Fritz', 'https://www.transfermarkt.co.uk/sv-darmstadt-98_vfl-bochum/index/spielbericht/4096056', '3-4-1-2', '3-4-2-1', 'SV Darmstadt 98', 'VfL Bochum', '1:2', 'domestic_league');
-INSERT INTO games VALUES ('4095994', 'L1', '2023', '4. Matchday', '2023-09-15', '27', '15', '2', '2', '2.0', '1.0', 'Thomas Tuchel', 'Xabi Alonso', 'Allianz Arena', '75000.0', 'Daniel Schlager', 'https://www.transfermarkt.co.uk/bayern-munich_bayer-04-leverkusen/index/spielbericht/4095994', '4-2-3-1', '3-4-2-1', 'Bayern Munich', 'Bayer 04 Leverkusen', '2:2', 'domestic_league');
-INSERT INTO games VALUES ('4096041', 'L1', '2023', '9. Matchday', '2023-10-29', '15', '60', '2', '1', '1.0', '8.0', 'Xabi Alonso', 'Christian Streich', 'BayArena', '30210.0', 'Daniel Siebert', 'https://www.transfermarkt.co.uk/bayer-04-leverkusen_sc-freiburg/index/spielbericht/4096041', '3-4-2-1', '4-3-3 Attacking', 'Bayer 04 Leverkusen', 'SC Freiburg', '2:1', 'domestic_league');
-INSERT INTO games VALUES ('4095985', 'L1', '2023', '3. Matchday', '2023-09-01', '16', '2036', '2', '2', '9.0', '15.0', 'Edin Terzic', 'Frank Schmidt', 'SIGNAL IDUNA PARK', '81365.0', 'Tobias Reichel', 'https://www.transfermarkt.co.uk/borussia-dortmund_1-fc-heidenheim-1846/index/spielbericht/4095985', '4-3-3 Attacking', '4-2-3-1', 'Borussia Dortmund', '1.FC Heidenheim 1846', '2:2', 'domestic_league');
+INSERT INTO games VALUES (3838051,'GB1','2022', '2023-02-15',11,281,1,3,1,2,'Mikel Arteta','Pep Guardiola', 'Emirates Stadium',60276,'Anthony Taylor','https://www.transfermarkt.co.uk/arsenal-fc_manchester-city/index/spielbericht/3838051','Arsenal Football Club','Manchester City Football Club');
+INSERT INTO games VALUES (3838651,'GB1','2022','2023-04-26',281,11,4,1,1,2,'Pep Guardiola','Mikel Arteta','Etihad Stadium',53482,'Michael Oliver','https://www.transfermarkt.co.uk/manchester-city_arsenal-fc/index/spielbericht/3838651','Manchester City Football Club','Arsenal Football Club');
+INSERT INTO games VALUES (3839159,'L1','2022','2022-10-08',16,27,2,2,4,3,'Edin Terzic','Julian Nagelsmann','SIGNAL IDUNA PARK',81365,'Deniz Aytekin','https://www.transfermarkt.co.uk/borussia-dortmund_bayern-munich/index/spielbericht/3839159','Borussia Dortmund','FC Bayern München');
+INSERT INTO games VALUES (3839447,'L1','2022','2023-04-01',27,16,4,2,1,2,'Thomas Tuchel','Edin Terzic','Allianz Arena',75024,'Marco Fritz','https://www.transfermarkt.co.uk/bayern-munich_borussia-dortmund/index/spielbericht/3839447','FC Bayern München','Borussia Dortmund');
+INSERT INTO games VALUES (3839564,'L1','2022','2023-05-20',27,23826,1,3,2,3,'Thomas Tuchel','Marco Rose','Allianz Arena',75000,'Deniz Aytekin','https://www.transfermarkt.co.uk/bayern-munich_rb-leipzig/index/spielbericht/3839564','FC Bayern München','RasenBallsport Leipzig');
+INSERT INTO games VALUES (3860331,'TR1','2022','2023-01-08',36,141,0,3,2,1,'Jorge Jesus','Okan Buruk','Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi',45798,'Halil Umut Meler','https://www.transfermarkt.co.uk/fenerbahce_galatasaray/index/spielbericht/3860331','Fenerbahçe Spor Kulübü','Galatasaray Spor Kulübü');
+INSERT INTO games VALUES (3838799,'GB1','2022','2023-01-14',985,281,2,1,4,2,'Erik ten Hag','Pep Guardiola','Old Trafford',75546,'Stuart Attwell','https://www.transfermarkt.co.uk/manchester-united_manchester-city/index/spielbericht/3838799','Manchester United Football Club','Manchester City Football Club');
+INSERT INTO games VALUES (3837977,'GB1','2022','2022-09-04',985,11,3,1,5,1,'Erik ten Hag','Mikel Arteta','Old Trafford',74310,'Paul Tierney','https://www.transfermarkt.co.uk/manchester-united_arsenal-fc/index/spielbericht/3837977','Manchester United Football Club','Arsenal Football Club');
+INSERT INTO games VALUES (3860430,'TR1','2022','2023-06-04',141,36,3,0,1,3,'Okan Buruk','Jorge Jesus','Ali Sami Yen Spor Kompleksi NEF Stadyumu',50453,'Abdulkadir Bitigen','https://www.transfermarkt.co.uk/galatasaray_fenerbahce/index/spielbericht/3860430','Galatasaray Spor Kulübü','Fenerbahçe Spor Kulübü');
+INSERT INTO games VALUES (3860336,'TR1','2022','2022-11-05',141,114,2,1,3,5,'Okan Buruk','Senol Günes','Ali Sami Yen Spor Kompleksi NEF Stadyumu',49788,'Halil Umut Meler','https://www.transfermarkt.co.uk/galatasaray_besiktas-jk/index/spielbericht/3860336','Galatasaray Spor Kulübü','Beşiktaş Jimnastik Kulübü');
+INSERT INTO games VALUES (3860489,'TR1','2022','2023-04-30',114,141,3,1,3,1,'Senol Günes','Okan Buruk','Vodafone Park',39165,'Ali Sansalan','https://www.transfermarkt.co.uk/besiktas-jk_galatasaray/index/spielbericht/3860489','Beşiktaş Jimnastik Kulübü','Galatasaray Spor Kulübü');
+INSERT INTO games VALUES (3839277,'L1','2022','2023-01-20',23826,27,1,1,5,1,'Marco Rose','Julian Nagelsmann','Red Bull Arena',47069,'Daniel Siebert','https://www.transfermarkt.co.uk/rb-leipzig_bayern-munich/index/spielbericht/3839277','RasenBallsport Leipzig','FC Bayern München');
+INSERT INTO games VALUES (3860498,'TR1','2022','2023-04-02',36,114,2,4,2,3,'João de Deus','Senol Günes','Ülker Stadyumu FB Şükrü Saraçoğlu Spor Kompleksi',43899,'Halil Umut Meler','https://www.transfermarkt.co.uk/fenerbahce_besiktas-jk/index/spielbericht/3860498','Fenerbahçe Spor Kulübü','Beşiktaş Jimnastik Kulübü');
+INSERT INTO games VALUES (3838015,'GB1','2022','2022-10-02',281,985,6,3,2,9,'Pep Guardiola','Erik ten Hag','Etihad Stadium',53475,'Michael Oliver','https://www.transfermarkt.co.uk/manchester-city_manchester-united/index/spielbericht/3838015','Manchester City Football Club','Manchester United Football Club');
+INSERT INTO games VALUES (3838781,'GB1','2022','2023-01-22',11,985,3,2,1,4,'Mikel Arteta','Erik ten Hag','Emirates Stadium',60325,'Anthony Taylor','https://www.transfermarkt.co.uk/arsenal-fc_manchester-united/index/spielbericht/3838781','Arsenal Football Club','Manchester United Football Club');
+INSERT INTO games VALUES (3839115,'L1','2022','2022-09-10',23826,16,3,0,10,5,'Marco Rose','Edin Terzic','Red Bull Arena',47069,'Sven Jablonski','https://www.transfermarkt.co.uk/rb-leipzig_borussia-dortmund/index/spielbericht/3839115','RasenBallsport Leipzig','Borussia Dortmund');
+INSERT INTO games VALUES (3839393,'L1','2022','2023-03-03',16,23826,2,1,2,4,'Edin Terzic','Marco Rose','SIGNAL IDUNA PARK',81365,'Sven Jablonski','https://www.transfermarkt.co.uk/borussia-dortmund_rb-leipzig/index/spielbericht/3839393','Borussia Dortmund','RasenBallsport Leipzig');
+INSERT INTO games VALUES (3860264,'TR1','2022','2022-10-02',114,36,0,0,6,7,'Valérien Ismaël','Jorge Jesus','Vodafone Park',39317,'Volkan Bayarslan','https://www.transfermarkt.co.uk/besiktas-jk_fenerbahce/index/spielbericht/3860264','Beşiktaş Jimnastik Kulübü','Fenerbahçe Spor Kulübü');
+--INSERT INTO games VALUES ('4129495', 'TR1', '2023', '2023-10-21', '141', '114', '2', '1', '2.0', '4.0', 'Okan Buruk', 'Burak Yılmaz', 'Ali Sami Yen Spor Kompleksi RAMS Park', '50429.0', 'Halil Umut Meler', 'https://www.transfermarkt.co.uk/galatasaray_besiktas-jk/index/spielbericht/4129495', '4-2-3-1', '4-2-3-1', 'Galatasaray', 'Besiktas JK', '2:1', 'domestic_league');
+
+----------------------------------------------GOALS----------------------------------------------------------
+INSERT INTO goals VALUES ('24379ca661cd35138bfd5e366d7b5c33','2023-02-15',3838051,24,'Manchester City','Kevin De Bruyne',", Right-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('d0c458681ade388261831f2cce79e66d','2023-02-15',3838051,72,'Manchester City','Jack Grealish',", Right-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('99e4c95c6dbc40f7be069d6d228e08ad','2023-02-15',3838051,82,'Manchester City','Erling Haaland',", Right-footed shot, 26. Goal of the Season")
+INSERT INTO goals VALUES ('32818d8570607b27dbda1853d94126d7','2023-02-15',3838051,42,'Arsenal FC','Bukayo Saka',", Penalty, 8. Goal of the Season")
+INSERT INTO goals VALUES ('987b59580fdfebc7caf447a9822f4bdb','2023-04-26',3838651,7,'Manchester City','Kevin De Bruyne',", Right-footed shot, 6. Goal of the Season")
+INSERT INTO goals VALUES ('824f0adc45cdf5e6663a7835d16c5d4e','2023-04-26',3838651,54,'Manchester City','Kevin De Bruyne',", Right-footed shot, 7. Goal of the Season")
+INSERT INTO goals VALUES ('07ffd2982ddbb8af05b69ba50f5bd598','2023-04-26',3838651,45,'Manchester City','John Stones',", Header, 2. Goal of the Season")
+INSERT INTO goals VALUES ('eb46f7c56a1d04f1e5aaf47332d894fa','2023-04-26',3838651,86,'Arsenal FC','Rob Holding',", Right-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('8c71a9896b88f79560820d7c36a7bd8a','2023-04-26',3838651,90,'Manchester City','Erling Haaland',", Left-footed shot, 33. Goal of the Season")
+INSERT INTO goals VALUES ('8edb9da00a77efc391c4c8ef369ddd2a','2022-10-08',3839159,90,'Borussia Dortmund','Anthony Modeste',", Header, 2. Goal of the Season")
+INSERT INTO goals VALUES ('a30b599d99c199d1e78e3bc35f934dee','2022-10-08',3839159,33,'Bayern Munich','Leon Goretzka',", Right-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('4357dd2e994d5f8a4eb2fc212b401cb6','2022-10-08',3839159,53,'Bayern Munich','Leroy Sané',", Left-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('8a4ad66374cb225600df6362ec754225','2022-10-08',3839159,74,'Borussia Dortmund','Youssoufa Moukoko',", Left-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('15c034da9e300c8996262675dc5ee935','2023-04-01',3839447,18,'Bayern Munich','Thomas Müller',", Right-footed shot, 5. Goal of the Season")
+INSERT INTO goals VALUES ('adda24b14ae6cf22180e101f3939fb90','2023-04-01',3839447,23,'Bayern Munich','Thomas Müller',", Tap-in, 6. Goal of the Season")
+INSERT INTO goals VALUES ('3b251d446bc3bd9dbe10dd0d1a8666c6','2023-04-01',3839447,72,'Borussia Dortmund','Emre Can',", Penalty, 2. Goal of the Season")
+INSERT INTO goals VALUES ('7fe34e12de9e0c85c6f6d6d63efa0350','2023-04-01',3839447,50,'Bayern Munich','Kingsley Coman',", Left-footed shot, 6. Goal of the Season")
+INSERT INTO goals VALUES ('b91749aa6644f4de37c00146a3aef8f5','2023-04-01',3839447,13,'Bayern Munich','Gregor Kobel',", Own-goal")
+INSERT INTO goals VALUES ('bbe23e64a7f5647a1909b3a5e9d59e47','2023-04-01',3839447,90,'Borussia Dortmund','Donyell Malen',", Right-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('0be45b73baede8568223c04f807ddd4c','2023-05-20',3839564,25,'Bayern Munich','Serge Gnabry',", Right-footed shot, 14. Goal of the Season")
+INSERT INTO goals VALUES ('2fb4468a8e3426dcadd3034c4bf9c04a','2023-05-20',3839564,64,'RB Leipzig','Konrad Laimer',", Right-footed shot, 2. Goal of the Season")
+INSERT INTO goals VALUES ('6aa831e2d81c18eb53d4c8e038890737','2023-05-20',3839564,76,'RB Leipzig','Christopher Nkunku',", Penalty, 14. Goal of the Season")
+INSERT INTO goals VALUES ('b409cf455b8800caea2aec2c1667b559','2023-05-20',3839564,86,'RB Leipzig','Dominik Szoboszlai',", Penalty, 6. Goal of the Season")
+INSERT INTO goals VALUES ('c357b33dcbda91d430f61ad6969b71d6','2023-01-08',3860331,90,'Galatasaray','Mauro Icardi',", Left-footed shot, 5. Goal of the Season")
+INSERT INTO goals VALUES ('e88d88090121c353aac5f6d539b7fd1a','2023-01-08',3860331,32,'Galatasaray','Sérgio Oliveira',", Right-footed shot, 2. Goal of the Season")
+INSERT INTO goals VALUES ('e243bc5cde08850f01b97de507ef01ea','2023-01-08',3860331,78,'Galatasaray','Kerem Aktürkoğlu',", Right-footed shot, 6. Goal of the Season")
+INSERT INTO goals VALUES ('23551c1a25745ba00741d54f649968e1','2023-01-14',3838799,60,'Manchester City','Jack Grealish',", Header, 2. Goal of the Season")
+INSERT INTO goals VALUES ('6949e7601b0caf61b5e95b00b30eeb33','2023-01-14',3838799,78,'Manchester United','Bruno Fernandes',", Right-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('8154201e9e0d2ca90fd9be72b87d7dc9','2023-01-14',3838799,82,'Manchester United','Marcus Rashford',", Right-footed shot, 8. Goal of the Season")
+INSERT INTO goals VALUES ('df822dd94f23d3def43aeeac6bcc825d','2022-09-04',3837977,66,'Manchester United','Marcus Rashford',", Right-footed shot, 2. Goal of the Season")
+INSERT INTO goals VALUES ('3dd9e0a7cf206651e19bb7450bada08b','2022-09-04',3837977,75,'Manchester United','Marcus Rashford',", Right-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('31c14451e73ffba22da5a9a96e378a58','2022-09-04',3837977,60,'Arsenal FC','Bukayo Saka',", Left-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('790977edc9e3b18c7cf7e595b61217f6','2022-09-04',3837977,35,'Manchester United','Antony',", Left-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('de15b580dbd60faa5e6b04febde73c7a','2023-06-04',3860430,71,'Galatasaray','Mauro Icardi',", Left-footed shot, 22. Goal of the Season")
+INSERT INTO goals VALUES ('88970ea4ad015266ce8dd8940df7623b','2023-06-04',3860430,28,'Galatasaray','Nicolò Zaniolo',", Left-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('c62549f9d84ada496c71bd245f83f04d','2023-06-04',3860430,79,'Galatasaray','Nicolò Zaniolo',", Long distance kick, 5. Goal of the Season")
+INSERT INTO goals VALUES ('9f44a05213ebd616593f22e72b3765d1','2022-11-05',3860336,28,'Besiktas JK','Cenk Tosun',", Right-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('d0dbb44937cdefe5c43b4397a43dfdb2','2022-11-05',3860336,18,'Galatasaray','Mauro Icardi',", Left-footed shot, 2. Goal of the Season")
+INSERT INTO goals VALUES ('c041e79e4eae2acc646b498e2c9e8a38','2022-11-05',3860336,59,'Galatasaray','Mauro Icardi',", Header, 3. Goal of the Season")
+INSERT INTO goals VALUES ('50c80ecbde9daa20f43dc6de7710cc45','2023-04-30',3860489,20,'Galatasaray','Mauro Icardi',", Right-footed shot, 14. Goal of the Season")
+INSERT INTO goals VALUES ('aba2824596730e771320572619f3df3f','2023-04-30',3860489,90,'Besiktas JK','Vincent Aboubakar',", Counter attack goal, 8. Goal of the Season")
+INSERT INTO goals VALUES ('7382b821979c3f01a90ead1d95bc8498','2023-04-30',3860489,35,'Besiktas JK','Romain Saïss',", Header, 1. Goal of the Season")
+INSERT INTO goals VALUES ('709eaa4ac0b45dace0ff04029d00dd29','2023-04-30',3860489,58,'Besiktas JK','Amir Hadziahmetovic',", Right-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('de03aaef96346ff7db27b1143ac83391','2023-01-20',3839277,37,'Bayern Munich','Eric Maxim Choupo-Moting',", 7. Goal of the Season")
+INSERT INTO goals VALUES ('509e4e6c5afc4fe7f983e20f3bc3dca7','2023-01-20',3839277,52,'RB Leipzig','Rasmus Sjöstedt',", 1. Goal of the Season")
+INSERT INTO goals VALUES ('b318bf8755160c04c6e6b5624b97e815','2023-04-02',3860498,58,'Besiktas JK','Cenk Tosun',", Header, 11. Goal of the Season")
+INSERT INTO goals VALUES ('5d1de0676758f6dd54c80ac214c94ece','2023-04-02',3860498,62,'Besiktas JK','Cenk Tosun',", Right-footed shot, 12. Goal of the Season")
+INSERT INTO goals VALUES ('99a981123ad69afc6e58a4fcf581ce6b','2023-04-02',3860498,75,'Besiktas JK','Nathan Redmond',", Counter attack goal, 3. Goal of the Season")
+INSERT INTO goals VALUES ('ae389a92fc06b1e9f1180ad5233daa4d','2023-04-02',3860498,41,'Fenerbahce','Enner Valencia',", Penalty, 26. Goal of the Season")
+INSERT INTO goals VALUES ('b4d19b5be867e9672da083cafde5573b','2023-04-02',3860498,90,'Besiktas JK','Vincent Aboubakar',", Right-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('e621e949375d5f371855d91981126ca3','2023-04-02',3860498,90,'Fenerbahce','İrfan Can Kahveci',", Left-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('1a6cd0d43aabac4937124b6f5924bcac','2022-10-02',3838015,84,'Manchester United','Anthony Martial',", Header, 1. Goal of the Season")
+INSERT INTO goals VALUES ('86952e087c2ac99204968ce5831c2006','2022-10-02',3838015,90,'Manchester United',182877,", Penalty, 2. Goal of the Season")
+INSERT INTO goals VALUES ('2ac858133bb3c50a51d5612fc135fc48','2022-10-02',3838015,8,'Manchester City',406635,", Left-footed shot, 3. Goal of the Season")
+INSERT INTO goals VALUES ('78c5b902821e68a58c64825cbaf95610','2022-10-02',3838015,44,'Manchester City',406635,", Counter attack goal, 4. Goal of the Season")
+INSERT INTO goals VALUES ('15ac25dddcfee89f3dc3f79740aa54c3','2022-10-02',3838015,73,'Manchester City',406635,", Left-footed shot, 5. Goal of the Season")
+INSERT INTO goals VALUES ('430570d10f65d26f666332aabb04c26d','2022-10-02',3838015,34,'Manchester City',418560,", Header, 12. Goal of the Season")
+INSERT INTO goals VALUES ('46546cc4a98ec656b1548a8d2ae4b143','2022-10-02',3838015,37,'Manchester City',418560,", Left-footed shot, 13. Goal of the Season")
+INSERT INTO goals VALUES ('0f33172b9b0418338856702669e36f37','2022-10-02',3838015,64,'Manchester City',418560,", Left-footed shot, 14. Goal of the Season")
+INSERT INTO goals VALUES ('f947d53d50b62f869bc04f84024490f8','2022-10-02',3838015,56,'Manchester United',602105,", Left-footed shot, 2. Goal of the Season")
+INSERT INTO goals VALUES ('2ebb6bf175b1286fc43c2969f28a319f','2023-01-22',3838781,17,'Manchester United',258923,", Right-footed shot, 9. Goal of the Season")
+INSERT INTO goals VALUES ('303fca03a424acc7698a6eb80a56cb1a','2023-01-22',3838781,24,'Arsenal FC',340324,", Header, 3. Goal of the Season")
+INSERT INTO goals VALUES ('a0575af6f4db3d3389e805c450d41150','2023-01-22',3838781,90,'Arsenal FC',340324,", Right-footed shot, 4. Goal of the Season")
+INSERT INTO goals VALUES ('be3a2a6eb31f1fde88554a13d0586175','2023-01-22',3838781,53,'Arsenal FC',433177,", Left-footed shot, 7. Goal of the Season")
+INSERT INTO goals VALUES ('c7efb40d8156892353a5af4f986d09e3','2023-01-22',3838781,59,'Manchester United',480762,", Header, 1. Goal of the Season")
+INSERT INTO goals VALUES ('254b14adab941dbb229efd55d5c87ad8','2022-09-10',3839115,6,'RB Leipzig',93740,", Header, 2. Goal of the Season")
+INSERT INTO goals VALUES ('eb85ea3f57fd3327e300f8f4d80d45a9','2022-09-10',3839115,84,'RB Leipzig',402008,", Right-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('2d7b882e503496182dfb6787c938b758','2022-09-10',3839115,45,'RB Leipzig',451276,", Right-footed shot, 1. Goal of the Season")
+INSERT INTO goals VALUES ('4a27eed86f75336df487ed0892208dd0','2023-03-03',3839393,21,'Borussia Dortmund',35207,", Penalty, 4. Goal of the Season")
+INSERT INTO goals VALUES ('65480c0c44a7e551fe95737ff76537f0','2023-03-03',3839393,74,'RB Leipzig',111078,", Right-footed shot, 5. Goal of the Season")
+INSERT INTO goals VALUES ('ecdf4b381834bdee7d61c2289564aea4','2023-03-03',3839393,39,'Borussia Dortmund',119296,", Right-footed shot, 1. Goal of the Season")
+
+
 --------------------------------------- GAMES LINEUPS ---------------------------------------------------------
 
-INSERT INTO game_lineups VALUES ('4095972', '28b7f906d8a7d8b69c5af8adc666649a', '82', 'starting_lineup', '1', '108880', 'Koen Casteels', '1', 'Goalkeeper');
+/*INSERT INTO game_lineups VALUES ('4095972', '28b7f906d8a7d8b69c5af8adc666649a', '82', 'starting_lineup', '1', '108880', 'Koen Casteels', '1', 'Goalkeeper');
 INSERT INTO game_lineups VALUES ('4095972', '5d75ed9f04e95314b0271ffb8063ae8e', '82', 'starting_lineup', '31', '119277', 'Yannick Gerhardt', '0', 'Defensive Midfield');
 INSERT INTO game_lineups VALUES ('4095972', '15cff7dce7a8a1a63c14504c2d48bebb', '82', 'starting_lineup', '19', '387106', 'Lovro Majer', '0', 'Central Midfield');
 INSERT INTO game_lineups VALUES ('4095972', '0d08bbee8b2b57aca69a44f72acf5156', '82', 'starting_lineup', '32', '342405', 'Mattias Svanberg', '0', 'Central Midfield');
@@ -427,4 +926,4 @@ INSERT INTO game_lineups VALUES ('4096044', 'fc7f60fc3cc921d20543b5ef029e0132', 
 INSERT INTO game_lineups VALUES ('4096044', 'e261fb0359464eab40a32e2e528ce009', '89', 'substitutes', '20', '233782', 'Aïssa Laïdouni', '0', 'Central Midfield');
 INSERT INTO game_lineups VALUES ('4096044', '9eda584f1d2a1bfc2b7cf2eb390e280d', '89', 'substitutes', '10', '82009', 'Kevin Volland', '0', 'Centre-Forward');
 INSERT INTO game_lineups VALUES ('4096044', '50535c95cf00e4cce62c2e485b0c96ce', '89', 'substitutes', '9', '545332', 'Mikkel Kaufmann', '0', 'Centre-Forward');
-INSERT INTO game_lineups VALUES ('4096044', '4b83e6b35174938041a767d87528a8cf', '89', 'substitutes', '16', '453870', 'Benedict Hollerbach', '0', 'Centre-Forward');
+INSERT INTO game_lineups VALUES ('4096044', '4b83e6b35174938041a767d87528a8cf', '89', 'substitutes', '16', '453870', 'Benedict Hollerbach', '0', 'Centre-Forward');*/
