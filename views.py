@@ -104,7 +104,7 @@ def players_page():
     db = current_app.config["db"]
     if request.method == "GET":
         players = db.get_players()
-        return render_template("players.html", players=sorted(players))
+        return render_template("players.html", players=(players))
     else:
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
@@ -148,7 +148,7 @@ def player_page(player_key):
 def players_attributes_page():
     db = current_app.config["db"]
     if request.method == "GET":
-        player_attributes = db.get_players_attributes()
+        player_attributes = db.get_player_attributes()
         return render_template("player_attributes.html", player_attributes=player_attributes)
     else:
         player_attributes_to_delete = request.form.get("player_attributes_to_delete")
@@ -285,16 +285,28 @@ def add_attributes_page():
     return render_template("attributes_add.html", form=form)
 
 
-def players_photos_page():
-    db = current_app.config["db"]
-    player_photos = db.get_player_photo()
-    return render_template("player_photos.html", player_photos=player_photos)
+#def players_photos_page():
+#    db = current_app.config["db"]
+#    player_photos = db.get_all_player_photos()
+#    return render_template("player_photos.html", player_photos=player_photos)
 
 
-def players_bios_page():
-    db = current_app.config["db"]
-    player_bios = db.get_player_bio()
-    return render_template("player_bios.html", player_bios=player_bios)
+#def player_photo_page(player_id):
+#    db = current_app.config["db"]
+#    player_photo = db.get_player_photos(player_id)
+#    return render_template("player_photo.html", player_photo=player_photo)
+
+
+#def players_bios_page():
+#    db = current_app.config["db"]
+#    player_bios = db.get_all_player_bios()
+#    return render_template("player_bios.html", player_bios=player_bios)
+
+
+#def player_bio_page():
+#    db = current_app.config["db"]
+#    player_bio = db.get_player_bios()
+#    return render_template("player_bio.html", player_bios=player_bio)
 
 
 ################################ CLUBS ########################################
@@ -327,7 +339,7 @@ def clubs_page():
 def comp_clubs_page(competition_id):
     db = current_app.config["db"]
     if request.method == "GET":
-        clubs = db.get(competition_id)
+        clubs = db.get_clubs_of_competition(competition_id)
         return render_template("comp_clubs.html", clubs=clubs)
     else:
         search = request.form.get("search")

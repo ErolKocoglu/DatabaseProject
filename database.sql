@@ -86,7 +86,6 @@ CREATE TABLE player_attributes (
 
 -- Table player bio
 CREATE TABLE player_bio (
-    --id INT PRIMARY KEY,
     player_id INT  NOT NULL REFERENCES player(player_id)
         ON DELETE CASCADE
 		ON UPDATE CASCADE,
