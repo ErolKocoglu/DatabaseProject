@@ -234,8 +234,8 @@ class Database:
                     WHERE (games.home_club_id = %s OR games.away_club_id = %s)
                     """
                 cursor.execute(query, (club_id_in,club_id_in))
-                for game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position, stadium, attendance, referee, url, home_club_formation, away_club_formation in cursor:
-                    games.append(Games(game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position,stadium,attendance, referee,url, home_club_formation, away_club_formation))
+                for game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position,home_club_manager_name, away_club_manager_name, stadium, attendance, referee, url,home_club_name,away_club_name in cursor:
+                    games.append(Games(game_id, competition_id, season, date, home_club_id, away_club_id, home_club_goals, away_club_goals, home_club_position, away_club_position,home_club_manager_name, away_club_manager_name,stadium,attendance, referee,url,home_club_name,away_club_name))
         return games
 
     def add_game(self, game_in):
@@ -798,7 +798,7 @@ class Database:
 
         return player_photos
     def get_player_attributes(self, player_id):
-        with dbapi2.connect(self.db_url) as connection:
+        with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
                 query = """
                     SELECT

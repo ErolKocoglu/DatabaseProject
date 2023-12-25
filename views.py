@@ -507,6 +507,7 @@ def games_page():
 
 def club_games_page(club_id):
     db = current_app.config["db"]
+    game = []
     game = db.get_games_of_club(club_id)
     if game is None:
         abort(404)
