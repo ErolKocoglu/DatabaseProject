@@ -34,12 +34,18 @@ def add_player_page():
         name = form.data["name"]
         first_name = form.data["first_name"]
         last_name = form.data["last_name"]
+        current_club_name = form.data["current_club_name"],
+        current_club_id = form.data["current_club_id"],
+        competition_id = form.data["competition_id"],
 
         player = Player(
             id=0,  # Assuming you set id to 0 for a new player
             name=name,
             first_name=first_name,
             last_name=last_name,
+            current_club_name=current_club_name,
+            current_club_id=current_club_id,
+            competition_id=competition_id,
         )
 
         try:
@@ -80,11 +86,18 @@ def edit_player_page(player_id):
         name = form.data["name"]
         first_name = form.data["first_name"]
         last_name = form.data["last_name"]
+        current_club_name = form.data["current_club_name"]
+        current_club_id = form.data["current_club_id"]
+        competition_id = form.data["competition_id"]
         updated_player = Player(
             id=player.id,
             name=name,
             first_name=first_name,
             last_name=last_name,
+            current_club_name=current_club_name,
+            current_club_id=current_club_id,
+            competition_id=competition_id,
+
         )
         try:
             db.update_player(player_id, updated_player)
