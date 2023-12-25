@@ -115,8 +115,9 @@ def players_page():
 def comp_player_page(competition_id):
     db = current_app.config["db"]
     if request.method == "GET":
+        players = []
         players = db.get_players_of_competition(competition_id)
-        return render_template("comp_players.html", players=sorted(players))
+        return render_template("players.html", players=players)
     else:
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
@@ -291,10 +292,10 @@ def add_attributes_page():
 #    return render_template("player_photos.html", player_photos=player_photos)
 
 
-#def player_photo_page(player_id):
-#    db = current_app.config["db"]
-#    player_photo = db.get_player_photos(player_id)
-#    return render_template("player_photo.html", player_photo=player_photo)
+def player_photo_page(player_id):
+    db = current_app.config["db"]
+    player_photo = db.get_player_photos(player_id)
+    return render_template("player_photos.html", player_photos=player_photo)
 
 
 #def players_bios_page():
@@ -527,7 +528,7 @@ def game_page(game_id):
     game = db.get_game(game_id)
     if game is None:
         abort(404)
-    return render_template("game_single.html", game=game)
+    return render_template("game.html", game=game)
 
 
 @login_required

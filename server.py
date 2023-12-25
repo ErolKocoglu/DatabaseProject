@@ -20,7 +20,7 @@ def create_app():
     app.add_url_rule("/", view_func=views.home_page)
     #######################   PLAYERS   ########################
     app.add_url_rule("/players", view_func=views.players_page, methods=["GET", "POST"])
-    app.add_url_rule("/players/<int:competition_id>/", view_func=views.comp_player_page, methods=["GET", "POST"])
+    app.add_url_rule("/players/<competition_id>/", view_func=views.comp_player_page, methods=["GET", "POST"])
     app.add_url_rule("/players/<int:club_id>/", view_func=views.club_player_page, methods=["GET", "POST"])
     app.add_url_rule("/players/<int:player_id>", view_func=views.player_page)
     app.add_url_rule("/add_player", view_func=views.add_player_page, methods=["GET", "POST"])
@@ -49,9 +49,9 @@ def create_app():
     app.add_url_rule("/club_delete/<int:id>/", view_func=views.club_delete_page, methods=["GET", "POST"])
     #################### GAMES ###############################
     app.add_url_rule("/games", view_func=views.games_page, methods=["GET", "POST"])
+    app.add_url_rule("/games/<int:game_id>", view_func=views.game_page)
     app.add_url_rule("/games/<int:club_id>", view_func=views.club_games_page, methods=["GET", "POST"])
     app.add_url_rule("/games/<int:competition_id>", view_func=views.comp_games_page, methods=["GET", "POST"])
-    app.add_url_rule("/games/<int:game_id>", view_func=views.game_page)
     app.add_url_rule("/games/<int:game_id>/edit", view_func=views.game_edit_page, methods=["GET", "POST"])
     app.add_url_rule("/add_game", view_func=views.game_add_page, methods=["GET", "POST"])
     app.add_url_rule("/game_delete", view_func=views.game_delete_page)

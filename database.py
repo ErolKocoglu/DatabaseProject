@@ -135,7 +135,7 @@ class Database:
         return games
 
     def get_game(self, game_id):
-        with dbapi2.connect(self.db_url) as connection:
+        with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
                 query = """
                     SELECT 
@@ -165,6 +165,7 @@ class Database:
                 if cursor.rowcount == 0:
                     return None
                 (
+                    game_id,
                     competition_id,
                     season,
                     date,
@@ -272,7 +273,7 @@ class Database:
 
     def get_players_of_competition(self, competition_id):
         players = []
-        with dbapi2.connect(self.db_url) as connection:
+        with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
                 query = """
                             SELECT
@@ -526,7 +527,7 @@ class Database:
 
     def get_clubs_of_competition(self,competition_id):
         clubs = []
-        with dbapi2.connect(self.db_url) as connection:
+        with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
                 query = """
                     SELECT
@@ -742,8 +743,8 @@ class Database:
                     player_bios.append(player_bio)
 
         return player_bios
-    def get_player_photo(self, player_id):
-        with dbapi2.connect(self.db_url) as connection:
+    def get_player_photos(self, player_id):
+        with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
                 query = """
                     SELECT
