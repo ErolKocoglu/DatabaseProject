@@ -842,6 +842,56 @@ class Database:
             contract_expiration_date
         )
         return player_attributes
+
+    def get_all_player_attributes(self):
+        with dbapi2.connect(host="localhost", user="postgres", password="12345678",
+                            database="DatabaseProject") as connection:
+            with connection.cursor() as cursor:
+                query = """
+                    SELECT
+                        player_id,
+                        player_code,
+                        sub_position,
+                        position,
+                        foot,
+                        height_in_cm,
+                        market_value_in_eur,
+                        highest_market_value_in_eur,
+                        contract_expiration_date
+                    FROM
+                        player_attributes;
+                """
+                cursor.execute(query)
+                player_attributes_list = []
+
+                for row in cursor.fetchall():
+                    (
+                        player_id,
+                        player_code,
+                        sub_position,
+                        position,
+                        foot,
+                        height_in_cm,
+                        market_value_in_eur,
+                        highest_market_value_in_eur,
+                        contract_expiration_date
+                    ) = row
+
+                    player_attributes = PlayerAttributes(
+                        player_id,
+                        player_code,
+                        sub_position,
+                        position,
+                        foot,
+                        height_in_cm,
+                        market_value_in_eur,
+                        highest_market_value_in_eur,
+                        contract_expiration_date
+                    )
+
+                    player_attributes_list.append(player_attributes)
+
+                return player_attributes_list
     def add_player_attributes(self, player_attributes_data):
         with dbapi2.connect(self.db_url) as connection:
             with connection.cursor() as cursor:

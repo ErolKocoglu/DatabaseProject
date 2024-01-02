@@ -162,7 +162,7 @@ def player_page(player_key):
 def players_attributes_page():
     db = current_app.config["db"]
     if request.method == "GET":
-        player_attributes = db.get_player_attributes()
+        player_attributes = db.get_all_player_attributes()
         return render_template("player_attributes.html", player_attributes=player_attributes)
     else:
         player_attributes_to_delete = request.form.get("player_attributes_to_delete")
@@ -291,12 +291,12 @@ def add_attributes_page():
             db.add_player_attributes(attributes)
         except Error as e:
             flash("Error adding attributes.", "danger")
-            return render_template("attributes_add.html", form=form)
+            return render_template("player_attributes_add.html", form=form)
 
         flash("Attributes added.", "success")
         return redirect(url_for("attributes_page"))
 
-    return render_template("attributes_add.html", form=form)
+    return render_template("player_attributes_add.html", form=form)
 
 
 #def players_photos_page():
