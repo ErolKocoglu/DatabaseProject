@@ -331,7 +331,7 @@ class Database:
                         competition_id
                     FROM
                         player
-                    ORDER BY id;
+                    ORDER BY player_id;
                 """
                 cursor.execute(query, (player_id,))
                 if cursor.rowcount == 0:

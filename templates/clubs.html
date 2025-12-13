@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block title %}Clubs{% endblock %}
+{% block content %}
+<h1 class="title">Clubs</h1>
+
+<div class="field has-addons">
+    <form action="{{ url_for('clubs_page') }}" method="post" class="control is-expanded">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="search" placeholder="Search for clubs...">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+
+{% if clubs %}
+<form action="" method="post">
+    <table class="table is-striped is-fullwidth">
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Squad Size</th>
+                <th>Average Age</th>
+                <th>Market Value</th>
+                <th>Stadium</th>
+                <th>Coach</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for club in clubs %}
+            <tr>
+                <td style="width: 50px;">
+                    <label class="checkbox">
+                        <input type="checkbox" name="club_ids" value="{{ club.club_id }}">
+                    </label>
+                </td>
+                <td>
+                    <a href="{{ url_for('club_page', club_id=club.club_id) }}">
+                        {{ club.name }}
+                    </a>
+                </td>
+                <td>{{ club.squad_size }}</td>
+                <td>{{ club.average_age }}</td>
+                <td>{{ club.total_market_value }}</td>
+                <td>{{ club.stadium_name }}</td>
+                <td>{{ club.coach_name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if current_user.is_admin %}
+    <div class="field is-grouped">
+        <div class="control">
+            <button type="submit" class="button is-danger is-small"
+                onclick="return confirm('Are you sure you want to delete selected clubs?')">Delete Selected</button>
+        </div>
+    </div>
+    {% endif %}
+</form>
+{% else %}
+<p>No clubs found.</p>
+{% endif %}
+
+{% if current_user.is_admin %}
+<div class="field is-grouped mt-3">
+    <div class="control">
+        <a href="{{ url_for('club_add_page') }}" class="button is-primary">Add New Club</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

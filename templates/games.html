@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block title %}Games{% endblock %}
+{% block content %}
+<h1 class="title">Games</h1>
+
+{% if game %}
+<table class="table is-striped is-fullwidth">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Home Club</th>
+            <th>Away Club</th>
+            <th>Result</th>
+            <th>Stadium</th>
+            <th>Attendance</th>
+            <th>Referee</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for g in game %}
+        <tr>
+            <td>{{ g.date }}</td>
+            <td>
+                <a href="{{ url_for('club_page', club_id=g.home_club_id) }}">
+                    {{ g.home_club_name }}
+                </a>
+            </td>
+            <td>
+                <a href="{{ url_for('club_page', club_id=g.away_club_id) }}">
+                    {{ g.away_club_name }}
+                </a>
+            </td>
+            <td>{{ g.home_club_goals }} - {{ g.away_club_goals }}</td>
+            <td>{{ g.stadium }}</td>
+            <td>{{ g.attendance }}</td>
+            <td>{{ g.referee }}</td>
+            <td>
+                <a href="{{ url_for('game_page', game_id=g.game_id) }}" class="button is-info is-small">View</a>
+                {% if current_user.is_admin %}
+                <a href="{{ url_for('game_edit_page', game_id=g.game_id) }}" class="button is-warning is-small">Edit</a>
+                <a href="{{ url_for('game_delete_page', game_id=g.game_id) }}" class="button is-danger is-small"
+                    onclick="return confirm('Are you sure you want to delete this game?')">Delete</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No games found.</p>
+{% endif %}
+
+{% if current_user.is_admin %}
+<div class="field is-grouped mt-3">
+    <div class="control">
+        <a href="{{ url_for('game_add_page') }}" class="button is-primary">Add New Game</a>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
