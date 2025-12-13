@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}{{ club.name }}{% endblock %}
+{% block content %}
+<h1 class="title">{{ club.name }}</h1>
+
+<div class="card">
+    <div class="card-content">
+        <div class="media">
+            <div class="media-content">
+                <p class="title is-4">{{ club.name }}</p>
+                <p class="subtitle is-6">Code: {{ club.club_code }}</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <table class="table is-fullwidth">
+                <tr>
+                    <th>Coach</th>
+                    <td>{{ club.coach_name }}</td>
+                </tr>
+                <tr>
+                    <th>Stadium</th>
+                    <td>{{ club.stadium_name }} ({{ club.stadium_seats }} seats)</td>
+                </tr>
+                <tr>
+                    <th>Squad Size</th>
+                    <td>{{ club.squad_size }}</td>
+                </tr>
+                <tr>
+                    <th>Average Age</th>
+                    <td>{{ club.average_age }}</td>
+                </tr>
+                <tr>
+                    <th>Total Market Value</th>
+                    <td>{{ club.total_market_value }}</td>
+                </tr>
+                <tr>
+                    <th>Foreigners</th>
+                    <td>{{ club.foreigners_number }} ({{ club.foreigners_percentage }}%)</td>
+                </tr>
+                <tr>
+                    <th>National Team Players</th>
+                    <td>{{ club.national_team_players }}</td>
+                </tr>
+                <tr>
+                    <th>Net Transfer Record</th>
+                    <td>{{ club.net_transfer_record }}</td>
+                </tr>
+                <tr>
+                    <th>Last Season</th>
+                    <td>{{ club.last_season }}</td>
+                </tr>
+                <tr>
+                    <th>URL</th>
+                    <td><a href="{{ club.url }}" target="_blank">Link</a></td>
+                </tr>
+            </table>
+
+            <div class="buttons">
+                <a href="{{ url_for('club_games_page', club_id=club.club_id) }}" class="button is-info">View Games</a>
+                <a href="{{ url_for('club_player_page', club_id=club.club_id) }}" class="button is-success">View
+                    Players</a>
+                {% if current_user.is_admin %}
+                <a href="{{ url_for('club_edit_page', club_id=club.club_id) }}" class="button is-warning">Edit Club</a>
+                <a href="{{ url_for('club_delete_page', club_id=club.club_id) }}" class="button is-danger"
+                    onclick="return confirm('Are you sure you want to delete this club?')">Delete Club</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a href="{{ url_for('clubs_page') }}" class="button is-light">Back to Clubs List</a>
+</div>
+
+{% endblock %}

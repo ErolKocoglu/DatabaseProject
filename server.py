@@ -42,8 +42,8 @@ def create_app():
 
     #################### CLUBS ###############################
     app.add_url_rule("/clubs", view_func=views.clubs_page, methods=["GET", "POST"])
-    app.add_url_rule("/clubs/<int:competition_id>", view_func=views.comp_clubs_page, methods=["GET", "POST"])
     app.add_url_rule("/clubs/<int:club_id>", view_func=views.club_page)
+    app.add_url_rule("/clubs/<int:competition_id>", view_func=views.comp_clubs_page, methods=["GET", "POST"])
     app.add_url_rule("/clubs/<int:club_id>/edit", view_func=views.club_edit_page, methods=["GET", "POST"])
     app.add_url_rule("/add_club", view_func=views.club_add_page, methods=["GET", "POST"])
     app.add_url_rule("/club_delete/<int:id>/", view_func=views.club_delete_page, methods=["GET", "POST"])
@@ -57,6 +57,7 @@ def create_app():
     app.add_url_rule("/game_delete", view_func=views.game_delete_page)
     #################### SCORES ###############################
     ##app.add_url_rule("/scores/<int:game_id>", view_func=views.scores_page, methods=["GET", "POST"])
+    app.add_url_rule("/goals/<int:game_id>", view_func=views.goals_page, methods=["GET", "POST"])
 
     app.add_url_rule(
         "/login", view_func=views.login_page, methods=["GET", "POST"]

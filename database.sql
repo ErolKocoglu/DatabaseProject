@@ -16,7 +16,7 @@ CREATE TABLE competitions (
 -- Table: games
 CREATE TABLE games (
     game_id INT PRIMARY KEY,
-    competition_id INT REFERENCES competitions(competition_id) ON DELETE CASCADE,
+    competition_id VARCHAR(4) REFERENCES competitions(competition_id) ON DELETE CASCADE,
     season VARCHAR(10),
     date DATE,
     home_club_id INT REFERENCES clubs(club_id) ON DELETE CASCADE,
@@ -32,7 +32,7 @@ CREATE TABLE games (
     referee VARCHAR(255),
     url VARCHAR(255),
     home_club_name VARCHAR(255),
-    away_club_name VARCHAR(255),
+    away_club_name VARCHAR(255)
 );
 
 CREATE TABLE goals (
@@ -74,14 +74,14 @@ CREATE TABLE player_attributes (
     player_id INT  NOT NULL REFERENCES player(player_id)
         ON DELETE CASCADE
 		ON UPDATE CASCADE,
-    player_code VARCHAR(20),
+    player_code VARCHAR(50),
     sub_position VARCHAR(50),
     position VARCHAR(50),
     foot VARCHAR(10),
     height_in_cm INT,
     market_value_in_eur DECIMAL(15, 2),
     highest_market_value_in_eur DECIMAL(15, 2),
-    contract_expiration_date DATE,
+    contract_expiration_date DATE
 );
 
 -- Table player bio
@@ -95,7 +95,7 @@ CREATE TABLE player_bio (
     country_of_birth VARCHAR(255),
     city_of_birth VARCHAR(255),
     country_of_citizenship VARCHAR(255),
-    date_of_birth DATE,
+    date_of_birth DATE
 );
 
 -- Table: clubs

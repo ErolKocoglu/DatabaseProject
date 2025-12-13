@@ -265,7 +265,7 @@ INSERT INTO player_bio VALUES (282429,'Sergio','Reguilón','Sergio Reguilón','S
 INSERT INTO player_bio VALUES (286384,'Eric','Bailly','Eric Bailly','Cote d Ivoire','Bingerville','Cote d Ivoire','1994-04-12');
 INSERT INTO player_bio VALUES (424204,'Alphonso','Davies','Alphonso Davies','Ghana','Buduburam','Canada','2000-11-02');
 INSERT INTO player_bio VALUES (425918,'Jakub','Kiwior','Jakub Kiwior','Poland','Tychy','Poland','2000-02-15');
-INSERT INTO player_bio VALUES (503482,'Min-jae','Kim','Min-jae Kim','"Korea',' South"','"Tongyeong',' Gyeongnam"','"Korea',' South"','1996-11-15');
+INSERT INTO player_bio VALUES (503482,'Min-jae','Kim','Min-jae Kim','"Korea, South"','"Tongyeong, Gyeongnam"','"Korea, South"','1996-11-15');
 INSERT INTO player_bio VALUES (549966,'Jackson','Muleka','Jackson Muleka','DR Congo','Lubumbashi','DR Congo','1999-10-04');
 INSERT INTO player_bio VALUES (610442,'Rasmus','Højlund','Rasmus Højlund','Denmark','København','Denmark','2003-02-04');
 INSERT INTO player_bio VALUES (661207,'Oscar','Bobb','Oscar Bobb','Norway','Oslo','Norway','2003-07-12');
@@ -364,7 +364,7 @@ INSERT INTO player_bio VALUES (51894,'Mert','Günok','Mert Günok','Turkey','Kar
 INSERT INTO player_bio VALUES (119031,'Kaan','Ayhan','Kaan Ayhan','Germany','Gelsenkirchen','Turkey','1994-11-10');
 INSERT INTO player_bio VALUES (160438,'Mohamed','Elneny','Mohamed Elneny','Egypt','Mahalla','Egypt','1992-07-11');
 INSERT INTO player_bio VALUES (202591,'Benjamin','Henrichs','Benjamin Henrichs','Germany','Bocholt','Germany','1997-02-23');
-INSERT INTO player_bio VALUES (221624,'Zack','Steffen','Zack Steffen','United States','"Coatesville',' Pennsylvania"','United States','1995-04-02');
+INSERT INTO player_bio VALUES (221624,'Zack','Steffen','Zack Steffen','United States','"Coatesville, Pennsylvania"','United States','1995-04-02');
 INSERT INTO player_bio VALUES (318077,'Lucas','Torreira','Lucas Torreira','Uruguay','Fray Bentos','Uruguay','1996-02-11');
 INSERT INTO player_bio VALUES (337800,'Gedson','Fernandes','Gedson Fernandes','Sao Tome and Principe','São Tomé','Portugal','1999-01-09');
 INSERT INTO player_bio VALUES (341549,'Umut','Meraş','Umut Meraş','Turkey','Istanbul','Turkey','1995-12-20');
@@ -469,7 +469,7 @@ INSERT INTO player_bio VALUES (159844,'Christopher','Lenz','Christopher Lenz','G
 INSERT INTO player_bio VALUES (177907,'Harry','Maguire','Harry Maguire','England','Sheffield','England','1993-03-05');
 INSERT INTO player_bio VALUES (318204,'David','Raum','David Raum','Germany','Nürnberg','Germany','1998-04-22');
 INSERT INTO player_bio VALUES (326031,'Matthijs','de Ligt','Matthijs de Ligt','Netherlands','Leiderdorp','Netherlands','1999-08-12');
-INSERT INTO player_bio VALUES (331560,'Takehiro','Tomiyasu','Takehiro Tomiyasu','Japan','"Fukuoka',' Fukuoka"','Japan','1998-11-05');
+INSERT INTO player_bio VALUES (331560,'Takehiro','Tomiyasu','Takehiro Tomiyasu','Japan','"Fukuoka, Fukuoka"','Japan','1998-11-05');
 INSERT INTO player_bio VALUES (339340,'Tyrell','Malacia','Tyrell Malacia','Netherlands','Rotterdam','Netherlands','1999-08-17');
 INSERT INTO player_bio VALUES (357565,' ','Rodri','Rodri','Spain','Madrid','Spain','1996-06-22');
 INSERT INTO player_bio VALUES (433177,'Bukayo','Saka','Bukayo Saka','England','London','England','2001-09-05');

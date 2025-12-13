@@ -117,7 +117,7 @@ def players_page():
     db = current_app.config["db"]
     if request.method == "GET":
         players = db.get_players()
-        return render_template("players.html", players=(players))
+        return render_template("players.html", players=players)
     else:
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
@@ -141,8 +141,8 @@ def comp_player_page(competition_id):
 def club_player_page(club_id):
     db = current_app.config["db"]
     if request.method == "GET":
-        players = db.get_players_of_competition(club_id)
-        return render_template("club_players.html", players=sorted(players))
+        players = db.get_players_of_club(club_id)
+        return render_template("players.html", players=sorted(players, key=lambda x: x.name))
     else:
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
@@ -150,9 +150,9 @@ def club_player_page(club_id):
         return redirect(url_for("club_player_page"))
 
 
-def player_page(player_key):
+def player_page(player_id):
     db = current_app.config["db"]
-    player = db.get_player(player_key)
+    player = db.get_player(player_id)
     return render_template("player.html", player=player)
 
 
@@ -180,12 +180,12 @@ def player_attributes_page(player_id):
 
 
 @login_required
-def edit_attributes_page(attributes_id):
+def edit_attributes_page(player_attributes_id):
     if not current_user.is_admin:
         abort(401)  # “Unauthorized” error
 
     db = current_app.config["db"]
-    attributes = db.get_player_attributes(attributes_id)
+    attributes = db.get_player_attributes(player_attributes_id)
 
     if attributes is None:
         abort(404)
@@ -215,14 +215,14 @@ def edit_attributes_page(attributes_id):
         )
 
         try:
-            db.update_player_atr(attributes_id, updated_attributes)
+            db.update_player_atr(player_attributes_id, updated_attributes)
         except Error as e:
             if isinstance(e, errors.UniqueViolation):
                 flash("Values must be unique!", "danger")
             return render_template("attributes_edit.html", form=form)
 
         flash("Attributes are updated.", "success")
-        return redirect(url_for("attributes_page", attributes_id=attributes_id))
+        return redirect(url_for("player_attributes_page", player_id=player_attributes_id))
 
     form.sub_position.data = attributes.sub_position
     form.position.data = attributes.position
@@ -236,24 +236,24 @@ def edit_attributes_page(attributes_id):
 
 
 @login_required
-def delete_attributes_page(attributes_id):
+def delete_attributes_page(id):
     if not current_user.is_admin:
         abort(401)  # “Unauthorized” error
 
     db = current_app.config["db"]
-    attributes = db.get_player_attributes(attributes_id)
+    attributes = db.get_player_attributes(id)
 
     if attributes is None:
         abort(404)
 
     try:
-        db.delete_player_attributes(attributes_id)
+        db.delete_player_attributes(id)
     except Error as e:
         flash("Error deleting attributes.", "danger")
-        return redirect(url_for("attributes_page", attributes_id=attributes_id))
+        return redirect(url_for("player_attributes_page", player_id=id))
 
     flash("Attributes deleted.", "success")
-    return redirect(url_for("attributes_page"))
+    return redirect(url_for("players_attributes_page"))
 
 
 @login_required
@@ -294,7 +294,7 @@ def add_attributes_page():
             return render_template("player_attributes_add.html", form=form)
 
         flash("Attributes added.", "success")
-        return redirect(url_for("attributes_page"))
+        return redirect(url_for("players_attributes_page"))
 
     return render_template("player_attributes_add.html", form=form)
 
@@ -380,7 +380,7 @@ def club_page(club_id):
     club = db.get_club(club_id)
     if club is None:
         abort(404)  # HTTP “Not Found” (404) error.
-    return render_template("club_spesific.html", club=club)
+    return render_template("club_specific.html", club=club)
 
 
 @login_required
@@ -603,7 +603,7 @@ def game_add_page():
             return render_template("game_add.html", form=form, type="Add")
 
         flash("Game is added.", "success")
-        return redirect(url_for("game_page", gameID=game.game_id))
+        return redirect(url_for("game_page", game_id=game.game_id))
 
     return render_template("game_add.html", form=form, type="Add")
 
@@ -653,7 +653,7 @@ def game_edit_page(game_id):
             return render_template("game_add.html", form=form, type="Update")
 
         flash("Game is updated.", "success")
-        return redirect(url_for("games_page", gameID=game.game_id))
+        return redirect(url_for("game_page", game_id=game.game_id))
 
     # Populate the form with existing game data
     form.process(obj=game)

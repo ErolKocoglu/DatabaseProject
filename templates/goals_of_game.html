@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Goals of Game{% endblock %}
+{% block content %}
+<h1 class="title">Goals</h1>
+
+{% if goals %}
+<table class="table is-striped is-fullwidth">
+    <thead>
+        <tr>
+            <th>Minute</th>
+            <th>Type</th>
+            <th>Player Name</th>
+            <th>Assist Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for goal in goals %}
+        <tr>
+            <td>{{ goal.minute }}'</td>
+            <td>{{ goal.type }}</td>
+            <td>{{ goal.name }}</td>
+            <td>{{ goal.assist_name }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No goals found for this game.</p>
+{% endif %}
+
+<div class="mt-3">
+    <a href="javascript:history.back()" class="button is-light">Back</a>
+</div>
+
+{% endblock %}
