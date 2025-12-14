@@ -42,6 +42,7 @@ class ClubForm(FlaskForm):
     domestic_competition_id = StringField('Domestic Competition ID', validators=[Length(max=4)])
     submit = SubmitField('Submit')
 class GameAddForm(FlaskForm):
+    game_id = IntegerField('Game ID', validators=[DataRequired(), NumberRange(min=0)])
     competition_id = StringField('Competition ID', validators=[DataRequired(), Length(max=255)])
     season = StringField('Season', validators=[Length(max=255)])
     date = DateField('Date', format='%Y-%m-%d', validators=[DataRequired()])
