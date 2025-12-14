@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+{% block title %}Add Club{% endblock %}
+{% block content %}
+<h1 class="title">Add Club</h1>
+
+<div class="card">
+    <div class="card-content">
+        <form action="" method="post">
+            {{ form.csrf_token }}
+
+            <div class="columns is-multiline">
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control">
+                            {{ form.name(class="input") }}
+                        </div>
+                        {% for error in form.name.errors %}
+                        <p class="help is-danger">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Club Code</label>
+                        <div class="control">
+                            {{ form.clubCode(class="input") }}
+                        </div>
+                        {% for error in form.clubCode.errors %}
+                        <p class="help is-danger">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Domestic Competition ID</label>
+                        <div class="control">
+                            {{ form.domesticCompetitionId(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Coach Name</label>
+                        <div class="control">
+                            {{ form.coachName(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Stadium Name</label>
+                        <div class="control">
+                            {{ form.stadiumName(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Stadium Seats</label>
+                        <div class="control">
+                            {{ form.stadiumSeats(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Squad Size</label>
+                        <div class="control">
+                            {{ form.squadSize(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Average Age</label>
+                        <div class="control">
+                            {{ form.averageAge(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Total Market Value</label>
+                        <div class="control">
+                            {{ form.totalMarketValue(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Foreigners Number</label>
+                        <div class="control">
+                            {{ form.foreignersNumber(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Foreigners Percentage</label>
+                        <div class="control">
+                            {{ form.foreignersPercentage(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">National Team Players</label>
+                        <div class="control">
+                            {{ form.nationalTeamPlayers(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Net Transfer Record</label>
+                        <div class="control">
+                            {{ form.netTransferRecord(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="field">
+                        <label class="label">Last Season</label>
+                        <div class="control">
+                            {{ form.lastSeason(class="input") }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-12">
+                    <div class="field">
+                        <label class="label">URL</label>
+                        <div class="control">
+                            {{ form.url(class="input") }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    {{ form.submit(class="button is-primary") }}
+                </div>
+                <div class="control">
+                    <a href="{{ url_for('clubs_page') }}" class="button is-light">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,35 +1,62 @@
 {% extends "layout.html" %}
-{% block title %}Goals of Game{% endblock %}
+{% block title %}Goals{% endblock %}
 {% block content %}
-<h1 class="title">Goals</h1>
 
-{% if goals %}
-<table class="table is-striped is-fullwidth">
-    <thead>
-        <tr>
-            <th>Minute</th>
-            <th>Type</th>
-            <th>Player Name</th>
-            <th>Assist Name</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for goal in goals %}
-        <tr>
-            <td>{{ goal.minute }}'</td>
-            <td>{{ goal.type }}</td>
-            <td>{{ goal.name }}</td>
-            <td>{{ goal.assist_name }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% else %}
-<p>No goals found for this game.</p>
-{% endif %}
+<div class="d-flex justify-content-between align-items-center mb-5">
+    <h1 class="title mb-0">Match Goals</h1>
+    <a href="javascript:history.back()" class="btn btn-primary text-white">
+        &larr; Back to Match
+    </a>
+</div>
 
-<div class="mt-3">
-    <a href="javascript:history.back()" class="button is-light">Back</a>
+<div class="card shadow-lg border-0" style="border-radius: 15px; overflow: hidden;">
+    <div class="card-content p-0">
+        {% if goals %}
+        <div class="table-responsive">
+            <table class="table table-hover mb-0 align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-center py-4" style="width: 100px;">Minute</th>
+                        <th class="py-4">Player</th>
+                        <th class="py-4">Club</th>
+                        <th class="py-4">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for goal in goals %}
+                    <tr style="cursor: default;">
+                        <td class="text-center py-3">
+                            <span class="badge rounded-pill bg-light text-dark shadow-sm border"
+                                style="font-size: 1.1rem; width: 60px;">{{ goal.minute }}'</span>
+                        </td>
+                        <td class="py-3">
+                            <div class="fw-bold fs-5 text-dark">{{ goal.player_name }}</div>
+                        </td>
+                        <td class="py-3">
+                            <span class="text-muted fw-semibold">{{ goal.club_name }}</span>
+                        </td>
+                        <td class="py-3 text-secondary">{{ goal.description }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="p-5 text-center">
+            <div class="mb-3 text-muted">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-calendar-x" viewBox="0 0 16 16">
+                    <path
+                        d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z" />
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                </svg>
+            </div>
+            <h4 class="fw-bold text-secondary">No goals recorded</h4>
+            <p class="text-muted">This match ended in a 0-0 draw or data is missing.</p>
+        </div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

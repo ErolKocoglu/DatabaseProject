@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, validators,IntegerField,DecimalField,DateField
-from wtforms.validators import DataRequired, Length, NumberRange
+from wtforms.validators import DataRequired, Length, NumberRange, Optional
 
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[validators.DataRequired()])
@@ -11,8 +11,8 @@ class PlayerAttributesForm(FlaskForm):
     position = StringField('Position', validators=[Length(max=50)])
     foot = StringField('Foot', validators=[Length(max=50)])
     height_in_cm = IntegerField('Height (cm)', validators=[NumberRange(min=0)])
-    market_value_in_eur = IntegerField('Market Value (EUR)', validators=[NumberRange(min=0)])
-    highest_market_value_in_eur = IntegerField('Highest Market Value (EUR)', validators=[NumberRange(min=0)])
+    market_value_in_eur = DecimalField('Market Value (EUR)', validators=[NumberRange(min=0)])
+    highest_market_value_in_eur = DecimalField('Highest Market Value (EUR)', validators=[NumberRange(min=0)])
     contract_expiration_date = StringField('Contract Expiration Date', validators=[Length(max=50)])
     submit = SubmitField('Submit')
 
@@ -25,22 +25,24 @@ class PlayerForm(FlaskForm):
     competition_id = StringField('Competition ID', validators=[Length(max=4)])
     submit = SubmitField('Submit')
 class ClubForm(FlaskForm):
-    club_code = StringField('Club Code', validators=[DataRequired(), Length(min=1, max=10)])
+    club_code = StringField('Club Code', validators=[DataRequired(), Length(min=1, max=25)])
     name = StringField('Name', validators=[DataRequired(), Length(min=1, max=255)])
-    total_market_value = DecimalField('Total Market Value (EUR)', validators=[NumberRange(min=0)])
-    squad_size = IntegerField('Squad Size', validators=[NumberRange(min=0)])
-    average_age = DecimalField('Average Age', validators=[NumberRange(min=0)])
-    foreigners_number = IntegerField('Foreigners Number', validators=[NumberRange(min=0)])
-    foreigners_percentage = DecimalField('Foreigners Percentage', validators=[NumberRange(min=0, max=100)])
-    national_team_players = IntegerField('National Team Players', validators=[NumberRange(min=0)])
+    total_market_value = DecimalField('Total Market Value (EUR)', validators=[Optional(), NumberRange(min=0)])
+    squad_size = IntegerField('Squad Size', validators=[Optional(), NumberRange(min=0)])
+    average_age = DecimalField('Average Age', validators=[Optional(), NumberRange(min=0)])
+    foreigners_number = IntegerField('Foreigners Number', validators=[Optional(), NumberRange(min=0)])
+    foreigners_percentage = DecimalField('Foreigners Percentage', validators=[Optional(), NumberRange(min=0, max=100)])
+    national_team_players = IntegerField('National Team Players', validators=[Optional(), NumberRange(min=0)])
     stadium_name = StringField('Stadium Name', validators=[Length(max=255)])
-    stadium_seats = IntegerField('Stadium Seats', validators=[NumberRange(min=0)])
-    net_transfer_record = DecimalField('Net Transfer Record (EUR)', validators=[NumberRange(min=0)])
+    stadium_seats = IntegerField('Stadium Seats', validators=[Optional(), NumberRange(min=0)])
+    net_transfer_record = StringField('Net Transfer Record (EUR)', validators=[Length(max=20)])
     coach_name = StringField('Coach Name', validators=[Length(max=255)])
     last_season = StringField('Last Season', validators=[Length(max=10)])
     url = StringField('URL', validators=[Length(max=255)])
+    domestic_competition_id = StringField('Domestic Competition ID', validators=[Length(max=4)])
     submit = SubmitField('Submit')
 class GameAddForm(FlaskForm):
+    game_id = IntegerField('Game ID', validators=[DataRequired(), NumberRange(min=0)])
     competition_id = StringField('Competition ID', validators=[DataRequired(), Length(max=255)])
     season = StringField('Season', validators=[Length(max=255)])
     date = DateField('Date', format='%Y-%m-%d', validators=[DataRequired()])

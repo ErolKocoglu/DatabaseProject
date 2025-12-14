@@ -27,16 +27,16 @@ def add_player_page():
     if not current_user.is_admin:
         abort(401)  # “Unauthorized” error
 
-    form = PlayerAttributesForm()
+    form = PlayerForm()
     db = current_app.config["db"]
 
     if form.validate_on_submit():
         name = form.data["name"]
         first_name = form.data["first_name"]
         last_name = form.data["last_name"]
-        current_club_name = form.data["current_club_name"],
-        current_club_id = form.data["current_club_id"],
-        competition_id = form.data["competition_id"],
+        current_club_name = form.data["current_club_name"]
+        current_club_id = form.data["current_club_id"]
+        competition_id = form.data["competition_id"]
 
         player = Player(
             id=0,  # Assuming you set id to 0 for a new player
@@ -135,7 +135,7 @@ def comp_player_page(competition_id):
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
             db.delete_player(int(form_player_keys))
-        return redirect(url_for("comp_player_page"))
+        return redirect(url_for("comp_player_page", competition_id=competition_id))
 
 
 def club_player_page(club_id):
@@ -147,7 +147,7 @@ def club_player_page(club_id):
         form_player_keys = request.form.getlist("player_keys")
         for form_player_keys in form_player_keys:
             db.delete_player(int(form_player_keys))
-        return redirect(url_for("club_player_page"))
+        return redirect(url_for("club_player_page", club_id=club_id))
 
 
 def player_page(player_id):
@@ -215,24 +215,28 @@ def edit_attributes_page(player_attributes_id):
         )
 
         try:
-            db.update_player_atr(player_attributes_id, updated_attributes)
+            db.update_player_attributes(player_attributes_id, updated_attributes)
         except Error as e:
             if isinstance(e, errors.UniqueViolation):
                 flash("Values must be unique!", "danger")
-            return render_template("attributes_edit.html", form=form)
+            return render_template("player_attributes_edit.html", form=form, player=db.get_player(player_attributes_id))
 
         flash("Attributes are updated.", "success")
         return redirect(url_for("player_attributes_page", player_id=player_attributes_id))
+    
+    if request.method == 'GET':
+        form.player_code.data = attributes.player_code
+        form.sub_position.data = attributes.sub_position
+        form.position.data = attributes.position
+        form.foot.data = attributes.foot
+        form.height_in_cm.data = attributes.height_in_cm
+        form.market_value_in_eur.data = attributes.market_value_in_eur
+        form.highest_market_value_in_eur.data = attributes.highest_market_value_in_eur
+        form.contract_expiration_date.data = attributes.contract_expiration_date
+    
+    player = db.get_player(player_attributes_id)
 
-    form.sub_position.data = attributes.sub_position
-    form.position.data = attributes.position
-    form.foot.data = attributes.foot
-    form.height_in_cm.data = attributes.height_in_cm
-    form.market_value_in_eur.data = attributes.market_value_in_eur
-    form.highest_market_value_in_eur.data = attributes.highest_market_value_in_eur
-    form.contract_expiration_date.data = attributes.contract_expiration_date
-
-    return render_template("attributes_edit.html", form=form)
+    return render_template("player_attributes_edit.html", form=form, player=player)
 
 
 @login_required
@@ -398,20 +402,20 @@ def club_add_page():
     # Validate the form on submission
     if form.validate_on_submit():
         # Extract form data
-        club_code = form.data["clubCode"]
+        club_code = form.data["club_code"]
         name = form.data["name"]
-        domestic_competition_id = form.data["domesticCompetitionId"]
-        total_market_value = form.data["totalMarketValue"]
-        squad_size = form.data["squadSize"]
-        average_age = form.data["averageAge"]
-        foreigners_number = form.data["foreignersNumber"]
-        foreigners_percentage = form.data["foreignersPercentage"]
-        national_team_players = form.data["nationalTeamPlayers"]
-        stadium_name = form.data["stadiumName"]
-        stadium_seats = form.data["stadiumSeats"]
-        net_transfer_record = form.data["netTransferRecord"]
-        coach_name = form.data["coachName"]
-        last_season = form.data["lastSeason"]
+        domestic_competition_id = form.data["domestic_competition_id"]
+        total_market_value = form.data["total_market_value"]
+        squad_size = form.data["squad_size"]
+        average_age = form.data["average_age"]
+        foreigners_number = form.data["foreigners_number"]
+        foreigners_percentage = form.data["foreigners_percentage"]
+        national_team_players = form.data["national_team_players"]
+        stadium_name = form.data["stadium_name"]
+        stadium_seats = form.data["stadium_seats"]
+        net_transfer_record = form.data["net_transfer_record"]
+        coach_name = form.data["coach_name"]
+        last_season = form.data["last_season"]
         url = form.data["url"]
 
         # Create a Club instance

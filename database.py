@@ -263,7 +263,7 @@ class Database:
         goals = []
         with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
-                query = "SELECT goal_id, date, game_id, minute, club_name, player_name, description FROM games WHERE game_id=%s;"
+                query = "SELECT goal_id, date, game_id, minute, club_name, player_name, description FROM goals WHERE game_id=%s;"
                 cursor.execute(query, (game_id_in,))
                 for goal_id, date, game_id, minute, club_name, player_name, description in cursor:
                     goals.append((Goal(goal_id, date, game_id, minute, club_name, player_name, description)))
@@ -300,20 +300,22 @@ class Database:
             with connection.cursor() as cursor:
                 query = """
                         SELECT
-                            player_id,
-                            first_name,
-                            last_name,
-                            name,
-                            current_club_name,
-                            current_club_id,
-                            competition_id
+                            player.player_id,
+                            player.first_name,
+                            player.last_name,
+                            player.name,
+                            player.current_club_name,
+                            player.current_club_id,
+                            player.competition_id,
+                            player_photo.image_url
                         FROM
                             player
-                        WHERE current_club_id = %s;
+                        LEFT JOIN player_photo ON player.player_id = player_photo.player_id
+                        WHERE player.current_club_id = %s;
                     """
                 cursor.execute(query, (club_id,))
-                for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id in cursor:
-                    players.append((Player(player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id)))
+                for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id, image_url in cursor:
+                    players.append((Player(player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id, image_url)))
         return players
 
 
@@ -323,15 +325,19 @@ class Database:
             with connection.cursor() as cursor:
                 query = """
                     SELECT
-                        first_name,
-                        last_name,
-                        name,
-                        current_club_name,
-                        current_club_id,
-                        competition_id
+                        p.first_name,
+                        p.last_name,
+                        p.name,
+                        p.current_club_name,
+                        p.current_club_id,
+                        p.competition_id,
+                        ph.image_url
                     FROM
-                        player
-                    ORDER BY player_id;
+                        player p
+                    LEFT JOIN
+                        player_photo ph ON p.player_id = ph.player_id
+                    WHERE
+                        p.player_id = %s;
                 """
                 cursor.execute(query, (player_id,))
                 if cursor.rowcount == 0:
@@ -343,6 +349,7 @@ class Database:
                     current_club_name,
                     current_club_id,
                     competition_id,
+                    image_url
                 ) = cursor.fetchone()
 
         player = Player(
@@ -352,7 +359,8 @@ class Database:
             name,
             current_club_name,
             current_club_id,
-            competition_id
+            competition_id,
+            image_url
         )
         return player
     def get_players(self):
@@ -361,20 +369,23 @@ class Database:
             with connection.cursor() as cursor:
                 query = """
                             SELECT
-                                player_id,
-                                first_name,
-                                last_name,
-                                name,
-                                current_club_name,
-                                current_club_id,
-                                competition_id
+                                p.player_id,
+                                p.first_name,
+                                p.last_name,
+                                p.name,
+                                p.current_club_name,
+                                p.current_club_id,
+                                p.competition_id,
+                                ph.image_url
                             FROM
-                                player
+                                player p
+                            LEFT JOIN
+                                player_photo ph ON p.player_id = ph.player_id
                         """
                 cursor.execute(query)
-                for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id in cursor:
-                    players.append((Player(player_id, first_name, last_name, name, current_club_name, current_club_id,
-                                           competition_id)))
+                for player_id, first_name, last_name, name, current_club_name, current_club_id, competition_id, image_url in cursor:
+                    players.append(Player(player_id, first_name, last_name, name, current_club_name, current_club_id,
+                                           competition_id, image_url))
         return players
     def get_player_by_name(self, name):
         with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
@@ -424,13 +435,13 @@ class Database:
                     VALUES (%s, %s, %s, %s, %s, %s, %s);
                 """
                 cursor.execute(query, (
-                    player_data['player_id'],
-                    player_data['first_name'],
-                    player_data['last_name'],
-                    player_data['name'],
-                    player_data['current_club_name'],
-                    player_data['current_club_id'],
-                    player_data['competition_id']
+                    player_data.id,
+                    player_data.first_name,
+                    player_data.last_name,
+                    player_data.name,
+                    player_data.current_club_name,
+                    player_data.current_club_id,
+                    player_data.competition_id
                 ))
     def update_player(self, player_id, updated_data):
         with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
@@ -441,12 +452,12 @@ class Database:
                     WHERE player_id = %s;
                 """
                 cursor.execute(query, (
-                    updated_data['first_name'],
-                    updated_data['last_name'],
-                    updated_data['name'],
-                    updated_data['current_club_name'],
-                    updated_data['current_club_id'],
-                    updated_data['competition_id'],
+                    updated_data.first_name,
+                    updated_data.last_name,
+                    updated_data.name,
+                    updated_data.current_club_name,
+                    updated_data.current_club_id,
+                    updated_data.competition_id,
                     player_id
                 ))
 
@@ -577,7 +588,7 @@ class Database:
                         national_team_players = %s, stadium_name = %s, stadium_seats = %s, 
                         net_transfer_record = %s, coach_name = %s, last_season = %s, url = %s
                     WHERE club_id = %s;"""
-                    cursor.execute(query, (club.club_name, club.club_code, club.total_market_value, club.squad_size, club.average_age,
+                    cursor.execute(query, (club.name, club.club_code, club.total_market_value, club.squad_size, club.average_age,
                         club.foreigners_number, club.foreigners_percentage, club.national_team_players,
                         club.stadium_name, club.stadium_seats, club.net_transfer_record, club.coach_name,
                         club.last_season, club.url, club_id))
@@ -918,13 +929,12 @@ class Database:
             with connection.cursor() as cursor:
                 query = """
                     UPDATE player_attributes
-                    SET player_id = %s, player_code = %s, sub_position = %s, position = %s,
+                    SET player_code = %s, sub_position = %s, position = %s,
                         foot = %s, height_in_cm = %s, market_value_in_eur = %s,
                         highest_market_value_in_eur = %s, contract_expiration_date = %s
-                    WHERE (id = %s)
+                    WHERE (player_id = %s)
                 """
                 cursor.execute(query, (
-                    player_attributes.player_id,
                     player_attributes.player_code,
                     player_attributes.sub_position,
                     player_attributes.position,
@@ -938,6 +948,6 @@ class Database:
     def delete_player_attributes(self, player_attributes_key):
         with dbapi2.connect(host="localhost", user = "postgres", password = "12345678", database = "DatabaseProject") as connection:
             with connection.cursor() as cursor:
-                query = "DELETE FROM player_attributes WHERE id = %s"
+                query = "DELETE FROM player_attributes WHERE player_id = %s"
                 cursor.execute(query, (player_attributes_key,))
 
