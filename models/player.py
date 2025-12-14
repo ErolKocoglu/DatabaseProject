@@ -1,5 +1,5 @@
 class Player:
-    def __init__(self, id,  first_name, last_name,name, current_club_name, current_club_id, competition_id):
+    def __init__(self, id,  first_name, last_name, name, current_club_name, current_club_id, competition_id, image_url=None):
         self.id = id
         self.name = name
         self.first_name = first_name
@@ -7,6 +7,7 @@ class Player:
         self.current_club_name = current_club_name
         self.current_club_id = current_club_id
         self.competition_id = competition_id
+        self.image_url = image_url if image_url else "https://bulma.io/images/placeholders/128x128.png"
 """class Player:
     def __init__(self, player_id, first_name, last_name, name, last_season, current_club_id, player_code, country_of_birth, city_of_birth, country_of_citizenship, date_of_birth, sub_position, position, foot, height_in_cm, market_value_in_eur, highest_market_value_in_eur, contract_expiration_date, agent_name, image_url, url, current_club_domestic_competition_id, current_club_name):
         self.player_id = player_id

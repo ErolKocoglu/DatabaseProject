@@ -61,9 +61,9 @@
                 <div>
                     <label for="height">Height</label>
                     <div class="form-group col-md-12">
-                        {{ form.height (class='form-control') }}
+                        {{ form.height_in_cm (class='form-control') }}
                     </div>
-                    {% for error in form.height.errors %}
+                    {% for error in form.height_in_cm.errors %}
                     <p>
                         {{ error }}
                     </p>

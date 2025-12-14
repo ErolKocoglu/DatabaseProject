@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-{% block title %}Edit {{ form.first_name.data }} {{ form.last_name.data }}'s Attributes{% endblock %}
+{% block title %}Edit {{ player.first_name }} {{ player.last_name }}'s Attributes{% endblock %}
 {% block content %}
 <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h2 class="display-4">Edit {{ form.first_name.data }} {{ form.last_name.data }}'s Attributes</h2>
+    <h2 class="display-4">Edit {{ player.first_name }} {{ player.last_name }}'s Attributes</h2>
 </div>
 
 
@@ -26,7 +26,7 @@
                 <div>
                     <label for="position">Position</label>
                     <div class="form-group col-md-12">
-                        {{ form.position (required=True, autofocus=True, class='form-control')  }}
+                        {{ form.position (required=True, autofocus=True, class='form-control') }}
                     </div>
                     {% for error in form.position.errors %}
                     <p>
@@ -38,7 +38,7 @@
                 <div>
                     <label for="sub_position">Sub Position</label>
                     <div class="form-group col-md-12">
-                        {{ form.sub_position (class='form-control')  }}
+                        {{ form.sub_position (class='form-control') }}
                     </div>
                     {% for error in form.sub_position.errors %}
                     <p>
@@ -50,7 +50,7 @@
                 <div>
                     <label for="foot">Foot</label>
                     <div class="form-group col-md-12">
-                        {{ form.foot (class='form-control')  }}
+                        {{ form.foot (class='form-control') }}
                     </div>
                     {% for error in form.foot.errors %}
                     <p>
@@ -62,9 +62,9 @@
                 <div>
                     <label for="height">Height</label>
                     <div class="form-group col-md-12">
-                        {{ form.height (class='form-control') }}
+                        {{ form.height_in_cm (class='form-control') }}
                     </div>
-                    {% for error in form.height.errors %}
+                    {% for error in form.height_in_cm.errors %}
                     <p>
                         {{ error }}
                     </p>

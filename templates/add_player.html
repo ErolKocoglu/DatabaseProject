@@ -9,9 +9,9 @@
     <div>
         <label for="full_name">Full Name</label>
         <div>
-            {{ form.full_name (required=True, autofocus=True, class='input') }}
+            {{ form.name (required=True, autofocus=True, class='input') }}
         </div>
-        {% for error in form.full_name.errors %}
+        {% for error in form.name.errors %}
         <p>
             {{ error }}
         </p>

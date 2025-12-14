@@ -3,6 +3,12 @@
 {% block content %}
 <h1 class="title">Player Attributes</h1>
 
+<div class="field is-grouped">
+    <div class="control">
+        <a href="{{ url_for('add_attributes_page') }}" class="button is-primary">Add New Attributes</a>
+    </div><br>
+</div>
+
 {% if player_attributes %}
 <table class="table is-striped is-fullwidth">
     <thead>
@@ -48,10 +54,6 @@
 <p>No attributes found.</p>
 {% endif %}
 
-<div class="field is-grouped">
-    <div class="control">
-        <a href="{{ url_for('add_attributes_page') }}" class="button is-primary">Add New Attributes</a>
-    </div>
-</div>
+
 
 {% endblock %}
